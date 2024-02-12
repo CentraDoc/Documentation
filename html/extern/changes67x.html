@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.7.x - Summary of Changes since 6.7.2</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-7-x-summary-of-changes-since-6-7-2">
+<h1 class="title">CentraDoc 6.7.x - Summary of Changes since 6.7.2</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="#b45e2a3e19" id="id2">6.7.7 2014.08.06 [41b45e2a3e19]</a></li>
+<li><a class="reference internal" href="#f3f07e08cb16" id="id3">6.7.5 2014.04.10 [f3f07e08cb16]</a></li>
+<li><a class="reference internal" href="#fe95c824086e" id="id4">6.7.4 2014.01.27 [fe95c824086e]</a></li>
+<li><a class="reference internal" href="#r12040" id="id5">6.7.3 2013.10.22 r12040</a></li>
+<li><a class="reference internal" href="#references" id="id6">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes to the Liberty CentraDoc 6.7 branch since r12000) -->
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a></h2>
+<p>This document covers changes to the 6.7 branch since the 6.7.2 release.
+Latest changes are at the top.</p>
+</div>
+<div class="section" id="b45e2a3e19">
+<h2><a class="toc-backref" href="#id2">6.7.7 2014.08.06 [41b45e2a3e19]</a></h2>
+<blockquote>
+<ul class="simple">
+<li>Unticketed fixed issues with Linux and single threaded build</li>
+<li>Unticketed XFA stub for Non-Windows build</li>
+<li>Unticketed PdfUpd missing some dirty flags when updating files</li>
+<li>Unticketed PreviewSDK built in DEBUG mode does not trap ERR_TRY exceptions
+correctly for some calls, causing some arbitrary crashes.</li>
+<li><strong>#1519</strong> Workaround for Producer Bug, PlotSoft PDFill 12.0
+CID Font with incorrect /W2 entries</li>
+<li><strong>#1517</strong> Annotation unload left a smart font with a bogus dictionary reference
+causing later bomb</li>
+<li><strong>#1515</strong> QA issues: leaks and bombs from PDF update with XRef hybrid files
+* also add alpha support to PDF output driver (distiller)</li>
+<li><strong>#1512</strong> Fix PDF bomb from unnamed layer</li>
+<li><strong>#1502</strong> XFA and XFAF fixes &amp; enhancements</li>
+<li><strong>#1509</strong> PDF JBIG2 image ignore more errors like #589</li>
+<li><strong>#1508</strong> PDF annotations, only synthesize HighlightOver if no appearance present</li>
+<li><strong>#1504</strong>/<strong>#1516</strong> Linux RIP bomb in VITAL image display
+because of uninitialized errValue in non-SEH exception mechanism</li>
+<li><strong>#1502</strong><ul>
+<li>XFA font mapping problem</li>
+<li>multiple XFAF data binding &amp; SOM lookup problems</li>
+</ul>
+</li>
+<li><strong>#1500</strong> fix an XFA data binding problem &amp; layout sheet # is 0 based</li>
+<li><strong>#1499</strong> PDF Transparency workaround
+if XPC transparency group not supported, multiply nested alphas</li>
+<li><strong>#1498</strong> PDF Distiller (ps2pdf) enhancement for N-Up printing</li>
+<li><strong>#1497</strong> ini setting for PSIShowStartupMessage=N default is Y
+and ini PSIstdout=N to force PSI stdout to be stderr
+some fixes to the CDocRIP API for PostScript page &amp; band reset</li>
+<li><strong>#1496</strong> XFA fixes:<ul>
+<li>SSN format</li>
+<li>allow . in object names with escape</li>
+<li>render checkbutton as a check instead of as an X</li>
+</ul>
+</li>
+<li><strong>#1495</strong> PostScript PageCount don't abort on error</li>
+<li><strong>#1489</strong> PdfUpd text output force full Tm if moving y location
+fixes creeping placement issues</li>
+<li><strong>#1485</strong> Changing how encoding inversion returns characters so that
+we get space == 0x20 instead of space == 0xa0 from Windows map.</li>
+<li><strong>#1483</strong> PDF Line width very small valid matrix didn't pass sanity check,
+resulting in very large(tm) line width.</li>
+<li><strong>#1482</strong><ul>
+<li>fix PDF alpha settings not being passed to DvCharEm calls</li>
+</ul>
+</li>
+<li><strong>#1479</strong> multiple issues, multiple fixes<ul>
+<li>Fix for PDF Patterns with non-zero BBox origins
+Disable RIP &quot;image pattern only&quot; example due to sync issues
+Fix RIP pattern sync issues for standard pattern capture</li>
+<li>Wrong default for Functional Shader Matrix, and fix single patch case</li>
+<li>RIP add support for PDF Alpha-style soft mask, and start with a clear mask</li>
+<li>VITAL transparency alpha/luminosity enum backwards, moving source dependency</li>
+</ul>
+</li>
+<li><strong>#1478</strong> PdfUpd enable rich text in PdfAnnot_CreateFreeText
+* also fix current font glitch in XFA showtext</li>
+<li><strong>#1475</strong> PDF fix defaults for CID font vertical writing offset vector, ref #1390
+pending fix for Windows GDI driver!</li>
+<li><strong>#1474</strong> PDF Continue rendering page after syntax warning</li>
+<li><strong>#1473</strong> PdfUpd Incorrect FontBBox when creating Type 1 font</li>
+<li><strong>#1465</strong> fix some PDF Annotation encoding issues</li>
+<li><strong>#1464</strong> RIP changing pattern sanity filters to allow more patterns into native</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="f3f07e08cb16">
+<h2><a class="toc-backref" href="#id3">6.7.5 2014.04.10 [f3f07e08cb16]</a></h2>
+<blockquote>
+<ul class="simple">
+<li><strong>#1471</strong> fix for encoding passed to DvCharEmStart for invisible text:
+if we're emulating invisible text, don't go get external fonts</li>
+<li><strong>#1469</strong> fix jaggy emulated stroked text: call Pth_Flatten <em>before</em> calling LINEMU</li>
+<li><strong>#1470</strong> fix a bomb on redrawing a page:
+PdfUniDict lock the underlying PdfDictionary so it doesn't get tossed</li>
+<li><strong>#1468</strong> fix bomb from ownership issue: putting a PDF object in multiple containers is bad</li>
+<li><strong>#1463</strong> fix for nested layers: don't show something unless all of its owning layers are turned on</li>
+<li><strong>#1460</strong> Recent fix for automatic Unicode BOM detection in PDF infrastructure strings
+was looking at page contents strings and should not have been.</li>
+<li><strong>#1456</strong> V8 related updates.  V8 is a plugin (jsvm.dll) used to handle the PDF XFA format<ul>
+<li>Updated V8 glue &amp; build to support V8 3.24</li>
+<li>lots of tweaking the V8 build and glue to for multithreading compatibility</li>
+<li>calling jsvm.dll from pvsdk.dll (or the like) and unloading/reloading pvsdk.dll will cause a bomb</li>
+<li>JsVMx_Unload to unload the jsvm.dll, if UnloadJsvmDll=Y default = N</li>
+<li>enable linking directly to the V8 Libraries if V8_EMBEDDED is defined</li>
+</ul>
+</li>
+<li><strong>#1426</strong> Unicode to WinAnsi was returning 160 for space</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="fe95c824086e">
+<h2><a class="toc-backref" href="#id4">6.7.4 2014.01.27 [fe95c824086e]</a></h2>
+<blockquote>
+<ul class="simple">
+<li>Between 6.7.3 and 6.7.4 Liberty moved the CentraDoc code base from
+subversion to mercurial.  This caused some changes in relative locations
+of a few directories which affects how the build projects are organized.</li>
+<li><strong>#1453</strong> Shutdown bomb if not using the Multithreaded build.
+High level Color Manager and low level Color Management Module
+ordering issue at shutdown.  Can't unplug the little CMS allocator
+before all little CMS objects are freed.</li>
+<li><strong>#1452</strong> PDF parsing handle &quot;E&quot; in float notation,
+and default MediaBox to letter page if existing numbers are too small</li>
+<li><strong>#1446</strong> JPEG2000 ownership issues with DvImgGrab</li>
+<li><strong>#1445</strong> Driver extension for 1 bit colored image
+gxc-&gt;image_1bit overrides image_mono - driver has to look at color/back</li>
+<li><strong>#1444</strong> Handle TIFF Predicator 2 on 1 bit image</li>
+<li><strong>#1437</strong>, <strong>#1448</strong> PDF image pattern detector issues<ul>
+<li>ignore rectangle clips</li>
+<li>mini-parser glitches</li>
+</ul>
+</li>
+<li><strong>#1434</strong> Image issues<ul>
+<li>Don't to the one bpc to indexed conversion if we're already indexed</li>
+<li>Bug in 1 bit -&gt; 8 bit indexed decode</li>
+<li>Bump up threshold in monochrome image detection</li>
+</ul>
+</li>
+<li><strong>#1432</strong> PDF Fix exception caused by unloading used resource objects</li>
+<li><strong>#1431</strong> More Fixes for PDF corruption recovery logic<ul>
+<li>trap and ignore exceptions when processing images</li>
+</ul>
+</li>
+<li><strong>#1430</strong> More XFA fixes<ul>
+<li>Don't look for dynamic render flag if relevant XFA node is missing</li>
+<li>bomb in pdfcopy for missing indirect object</li>
+<li>black background for some fields</li>
+<li>ownership issue from <strong>#1426</strong></li>
+</ul>
+</li>
+<li><strong>#1429</strong> Memory issues<ul>
+<li>Change where ICC color spaces are cached and fixed again <strong>#1439</strong>, <strong>#1440</strong></li>
+<li>Add GrabIccJpeg=Y to offer ICC JPEG Images to DvImgGrab</li>
+<li>Change sRGB color space comparison to make matching spaces more likely,
+reducing unnecessary color management</li>
+<li>Some Ansi/Wide function call issues<ul>
+<li>LoadLibraryA in clrmgr.c</li>
+<li>GetModuleFileNameA in rt_stdlib.c</li>
+<li>various in pvsdk</li>
+</ul>
+</li>
+<li>Note that CentraDoc should not be built with UNICODE defined</li>
+</ul>
+</li>
+<li><strong>#1427</strong> Detect /uniXXX style encoding for PDF Fonts</li>
+<li><strong>#1426</strong> PDF output PdfAnnot_CreateFreeText API, with text wrapping</li>
+<li><strong>#1425</strong> Some XFA fixes</li>
+<li><strong>#1424</strong> PDF Pattern trap object ownership stack bomb &amp;
+changing pathology detector to give image patterns priority over fills</li>
+<li><strong>#1420</strong> Handle PDF AES Decryption key length of 256</li>
+<li><strong>#1419</strong> RIP Gray colorspace output format not handling image alpha correctly</li>
+<li><strong>#1418</strong> Some fine tuning of text capture driver</li>
+<li><strong>#1417</strong> PDF output increase number of decimals output for some operators</li>
+<li><strong>#1415</strong> Handle PDF file with Undocumented PS operator</li>
+<li><strong>#1414</strong> Fixes for PDF corruption recovery logic</li>
+<li><strong>#1409</strong> PDF Exception, Annotation embedded file spec keys</li>
+<li><strong>#1407</strong>, <strong>#1435</strong>, <strong>#1441</strong> PDF Font with identity mapping issues</li>
+<li><strong>#1406</strong> PDF Pathological pattern trap bomb and memory leak</li>
+<li><strong>#1405</strong> Handle PDF with invalid page contents array member</li>
+<li><strong>#1341</strong> Some distiller enhancements for drawing on existing PDF Pages<ul>
+<li>automatically wrapping existing page with q/Q (save/restore)</li>
+<li>detect and handle rotation or other coordinate anomalies</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</div>
+<div class="section" id="r12040">
+<h2><a class="toc-backref" href="#id5">6.7.3 2013.10.22 r12040</a></h2>
+<ul class="simple">
+<li><strong>#1391</strong> Visual Studio vcxproj updates for x64 builds and other build fixes<ul>
+<li>New engine to generate .vcxproj and 2010.sln files from build.py recipes</li>
+<li>Liberty will no longer be distributing the VS2005 builds (vcproj files).
+The VS6 builds are still included for now, but are not supported.
+The vcxproj files are for Visual Studio 2010 and later.
+Please contact Liberty if this causes you grief.</li>
+<li>Dropped the build for pvsdklib.lib (not in use, and problematic link)</li>
+<li>Jsvm.dll (the PDF XFA implementation) won't build without the V8 and
+DMTX library binaries (it also won't run without jsvm.jsl).
+Contact Liberty to acquire these binaries.</li>
+<li>pagecount.dll wouldn't build correctly in 64 bit mode in 6.7.2 (pagecount64.dll)</li>
+<li>the riptestdll example didn't build correctly in 6.7.2</li>
+</ul>
+</li>
+<li><strong>#1386</strong> FreeType tweak for max hint instructions wasn't merged into 6.7.2</li>
+<li><strong>#1402</strong> PDF handle missing color space for SoftMasks, defaults to RGB</li>
+<li><strong>#1401</strong> PostScript from PSCRIPTx.DLL Windows glyph id encoded font handling issues:<ul>
+<li>If %IncludeResource font, attempt to load glyph map and coerce encoding for driver</li>
+<li>If driver accepts FtLoad but bails from FtSet, attempt to load external font</li>
+</ul>
+</li>
+<li><strong>#1400</strong> JBIG2 fix: Referenced Huffman segments not loaded correctly.</li>
+<li><strong>#1399</strong> ignore PDF exceptions when checking the Info/Producer key.
+This keys is only checked because of a Snow Leopard bug; example file had
+corruption in Info key but everything else was OK.</li>
+<li><strong>#1398</strong> several XFA related fixes:<ul>
+<li>Fail PDF file if XFA is present and doesn't load, avoids &quot;Get Latest Acrobat&quot; rendering</li>
+<li>page template selection issues</li>
+<li>som fix for this.resolveNode(&quot;THIS NODE NAME&quot;)</li>
+<li>html fixes for embedded data and nested spans</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id6">References</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference external" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></li>
+<li><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference external" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></li>
+<li><a class="reference external" href="http://partners.adobe.com/public/developer/ps/index_specs.html">Adobe PostScript language specifications</a></li>
+<li><a class="reference external" href="http://www.adobe.com/devnet/pdf/pdf_reference.edu.html">Adobe PDF Reference and Adobe Extensions to the PDF Specification</a></li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.5.5 - Summary of Changes since 6.5.2</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date$
+:Revision: $Revision$
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-5-5-summary-of-changes-since-6-5-2">
+<h1 class="title">CentraDoc 6.5.5 - Summary of Changes since 6.5.2</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#build-issues" id="id1">Build Issues</a></li>
+<li><a class="reference internal" href="#latest-freetype" id="id2">Latest FreeType</a></li>
+<li><a class="reference internal" href="#repairs-and-enhancements-by-ticket" id="id3">Repairs and Enhancements by Ticket #</a></li>
+<li><a class="reference internal" href="#references" id="id4">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes to the Liberty CentraDoc 6.5 branch,
+revision r9886 through r10475) -->
+<div class="section" id="build-issues">
+<h2><a class="toc-backref" href="#id1">Build Issues</a></h2>
+<blockquote>
+<ul class="simple">
+<li>Mac OS/X projects are now included in the release.</li>
+<li>6.5.2 was released with broken Windows projects for the PageCount dll</li>
+<li>.sln &amp; .vcproj files are now included for Windows Visual Studio 2005</li>
+</ul>
+</blockquote>
+<p>In the past, only the .dsw/.dsp files for Visual Studio 6 were included,
+and Visual Studio can convert those files to .sln/.vcproj files without
+incident.  However, Visual Studio 2010 is unable to convert and build
+the .dsw/.dsp files correctly.  It has no trouble with the .sln/.vcproj files.</p>
+</div>
+<div class="section" id="latest-freetype">
+<h2><a class="toc-backref" href="#id2">Latest FreeType</a></h2>
+<p>FreeType has been updated to 2.4.5 with additional patches for CVE-2011-0226
+(pulled from <a class="reference external" href="http://git.savannah.gnu.org/cgit/freetype/freetype2.git/">http://git.savannah.gnu.org/cgit/freetype/freetype2.git/</a> master 2011.07.18)</p>
+</div>
+<div class="section" id="repairs-and-enhancements-by-ticket">
+<h2><a class="toc-backref" href="#id3">Repairs and Enhancements by Ticket #</a></h2>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>#1116</strong> and <strong>#1104</strong> native axial extend clipped draws incorrect color space.</dt>
+<dd><p class="first last">fixed axial and radial extend issues when banding.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1115</strong> numerous threading &amp; class binding tweaks</p>
+</li>
+<li><p class="first"><strong>#1114</strong> Nasty glitch with JPEG using tmpfile which doesn't work in Windows 7</p>
+</li>
+<li><p class="first"><strong>#1110</strong> and <strong>#1075</strong> RIP Image Croppping for bands.</p>
+</li>
+<li><p class="first"><strong>#1107</strong> Gradient issues in RIP, using fake transparency groups as a workaround</p>
+</li>
+<li><p class="first"><strong>#1106</strong> Various subtle PostScript bugs</p>
+</li>
+<li><p class="first"><strong>#1103</strong> Bomb rendering PDF that contains broken XFA forms</p>
+</li>
+<li><p class="first"><strong>#1102</strong> the PDF pattern pathology threshold was lowered in #1014 and this causes problems
+Added PdfPatternTrapThreshold=# for ini access</p>
+</li>
+<li><p class="first"><em>#1092*</em> RIPTranslatedPatterns=Y
+Quick hack to enable RIP to grab patterns with questionable matrix 4 &amp; 5,
+for improved performance in some cases.</p>
+</li>
+<li><p class="first"><strong>#1094</strong> Pdf Encrypt algorithm 3.2 step 6 only applies if R &gt;= 4</p>
+</li>
+<li><p class="first"><strong>#1091</strong> Color Manager settings happened before FFS Search Path setup</p>
+</li>
+<li><p class="first"><strong>#1088</strong> Round instead of truncate for PDF page box (e.g. MediaBox) queries</p>
+</li>
+<li><p class="first"><strong>#1086</strong> Gradient extend and overprint issues</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1085</strong> LS_OpenPSBuffer with LS_Reset caused problems</dt>
+<dd><p class="first last">LS_Reset would free the buffer object</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1083</strong> Performance and Functionality enhancements for PostScript CIE color.</p>
+</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>Added <tt class="docutils literal">PostScriptCIEtoICC=Y</tt> option which skips the PostScript CIE CRD backend
+and replaces the CRD with the Color Manager's ICC profiles.
+** This is experimental and not completely functional **</li>
+<li>Improved caching for CIE color objects speeds up some conversions by an order of magnitude or more.</li>
+<li>Note that <tt class="docutils literal">IgnoreCIEColors=Y</tt> was already an option that will speed up CIE conversions for PostScript,
+but it may reduce color fidelity in minor to catastrophic ways, depending on input.</li>
+</ul>
+</blockquote>
+<ul>
+<li><dl class="first docutils">
+<dt><strong>#1082</strong> Add ini setting for <strong>AggClipGamma=#</strong></dt>
+<dd><p class="first last">As before, default == -2 (&quot;greedy&quot; aliased) which can help with
+faint lines in some constructs, but this can cause bulkiness in
+other circumstances.  The default gamma for regular rendering is 0.75</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1078</strong> Loop in example PostScript file caused by currentfile operator
+incorrectly handling ReusableStreamDecode filter</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1076</strong> Make vg_AGG_WIDE_BUFFERS the default (RIP width &gt; 32767 pixels)</dt>
+<dd><p class="first last">This potentially makes the RIP slower.  Define vg_AGG_WIDE_BUFFERS=0
+at compile time, or edit vg_aggtarget.h to disable.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1073</strong> PostScript Type 42 fonts -</dt>
+<dd><p class="first last">Arbitrary limit in type42 sfnts array length breaks example file fonts.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1072</strong> PDF font in GID mode isn't Unicode,
+so don't run Unicode substitutions from override-utf16</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1070</strong> PDF JBIG2 monochrome image parser fix.</dt>
+<dd><p class="first last">Also prevent (recovered) exception in PDF parser handling extra white space before xref in check_xref.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1069</strong> PDF Encryption: fixed incorrect handling of AES padding</p>
+</li>
+<li><p class="first"><strong>#1068</strong> PDF missing ownership tracking for indirect objects in Object Streams,
+caused a bomb in example file due to free objects while processing attachments.</p>
+</li>
+<li><p class="first"><strong>#1067</strong> Fix bug in #941 (6.5.2) PDF save/restore color profile causing bomb</p>
+</li>
+<li><p class="first"><strong>#1066</strong> Skip image resizer if image_raw stuff is turned on</p>
+</li>
+<li><p class="first"><strong>#1064</strong> PDF example file InvalidResource error due to Type 3 font referencing
+a different font in the enclosing form XObject.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1062</strong> Enhancements for PostScript embedded Type 1 font glyph quality</dt>
+<dd><p class="first last">also added <tt class="docutils literal">UseAliasedGlyphs=Y</tt> as an alternative to <tt class="docutils literal">UseFontGlyphs=Y</tt>
+(PreviewSDK only - equivalent <tt class="docutils literal"><span class="pre">gxc-&gt;glyph_asmask</span></tt> already present)</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1060</strong> Clr object management bomb</dt>
+<dd><p class="first last">and &quot;riptest -white&quot; showed blend mode not flushing for native gradients</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1059</strong> Correctly handle asymmetric DPI settings</p>
+</li>
+<li><p class="first"><strong>#1056</strong> More PDF Layer information in PSDVLAYER:</p>
+<pre class="literal-block">
+typedef struct tagPSDVLAYER             /* for DvLayer -&gt; Layers nest (!?) */
+{
+    const char *layer_name;             /* name of the layer */
+    void       *layer_object;           /* opaque at this level */
+    int         is_visible;             /* is the layer visible? only valid on Enter */
+    int         is_locked;              /* AI layers, read only #593 */
+    int         is_print;               /* #1056 more layer info */
+    int         is_export;
+    int         in_UI;
+} PSDVLAYER;
+</pre>
+</li>
+<li><p class="first"><strong>#1055</strong> riptest -dib option for creating Windows DIB compatible BMP files</p>
+</li>
+<li><p class="first"><strong>#1049</strong> Transparency.txt added to ps/doc/notes</p>
+</li>
+<li><p class="first"><strong>#1046</strong> PDF XObject forms require BBox clip for correct rendering</p>
+</li>
+<li><p class="first"><strong>#1045</strong> PDF ignore bogus generation numbers in xref free entry</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1043</strong> PDF Image Index Decode didn't set up correctly.</dt>
+<dd><p class="first last">Also: fixed some leakage in Soft Mask objects.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1042</strong> Added more Cyrillic glyph names to default Unicode map.</p>
+</li>
+<li><p class="first"><strong>#1041</strong> Color manager Image transform not walking image correctly in
+some cases where output transform is missing.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1037</strong> Example PostScript file had problems with resourceforall results;</dt>
+<dd><p class="first last">improved response to the capability queries.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1036</strong> Ini setting PdfAnnotations=N as a quick way to disable drawing annotations</p>
+</li>
+<li><p class="first"><strong>#1036</strong> &amp; <strong>#1035</strong> riptest PDF -layer &amp; -layers options:</p>
+</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>-layers option will report layer names only (and includes group layer names)</li>
+<li>-layer NAME will restrict rendering to specified layer</li>
+<li>use multiple -layer NAME options to render multiple specific layers at once</li>
+<li>-layer ALL special option to turn on all layers (normal is default visibilit)</li>
+<li>-layer NONE special option to turn on all objects not in any layer</li>
+</ul>
+</blockquote>
+<ul>
+<li><p class="first"><strong>#1034</strong> PostScript enable additional character remapping for normal encodings
+in unused slots - fixes problem with Euro and some other characters</p>
+</li>
+<li><p class="first"><strong>#1031</strong> On request, change Mac XCode project architectures to $(ARCHS_STANDARD_32_64_BIT)</p>
+</li>
+<li><p class="first"><strong>#1029</strong> Handle PDF transparency case where soft mask specification includes
+a non-zero soft mask value outside of the soft mask bounding box.</p>
+</li>
+<li><p class="first"><strong>#1026</strong> Another Lab color space glitch, relates to Clr_SetMode &amp; flush</p>
+</li>
+<li><p class="first"><strong>#1023</strong> Fix placement of <strong>#954</strong> DvCharEmEnd redraw signal (Thanks Ken!)</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1022</strong> Unbruise in PostScript scale operator.</dt>
+<dd><p class="first last">If scale operands are &quot;very close&quot; to integer, treat them as integer</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1021</strong> Repair problem with <strong>#515</strong> type 3 encoding bounds check</p>
+</li>
+<li><p class="first"><strong>#1020</strong> PostScript additional clipping stage for native shader</p>
+</li>
+<li><p class="first"><strong>#1019</strong> Bump MAX_PDF_PATTERN_OPERATORS from 256 to 768</p>
+</li>
+<li><p class="first"><strong>#1018</strong> PDF ObjStrm noise FFsSeekRel backtrack fix / smarter parsing</p>
+</li>
+<li><p class="first"><strong>#1014</strong> PDF reduce size of pathological pattern trap threshold</p>
+</li>
+<li><p class="first"><strong>#1012</strong> Pathological PDF caused image resizer to allocate height == 0</p>
+</li>
+<li><p class="first"><strong>#1011</strong> Added text counts to PDiImg info scanner</p>
+</li>
+<li><p class="first"><strong>#1009</strong> Driver error from DvImgStr didn't clean up correctly for nesting cases</p>
+</li>
+<li><p class="first"><strong>#1007</strong> Some fixes in RIP native gradient implementation</p>
+</li>
+<li><p class="first"><strong>#1005</strong> and <strong>#933</strong> Improve PDF stream validation</p>
+</li>
+<li><p class="first"><strong>#1004</strong> Make up a default line width &amp; cap/join for type 3 glyphs</p>
+</li>
+<li><p class="first"><strong>#1003</strong> Winding rule for glyph drawing was arbitrary left-over</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#1002</strong> PDF now using bezier curves for round cap &amp; join emulation instead of preflattening.</dt>
+<dd><p class="first last">Not yet implemented for PostScript.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#1001</strong> More tricky CJK fonts requiring hinting like <strong>#965</strong>, <strong>#969</strong></p>
+</li>
+<li><p class="first"><strong>#999</strong> If PDF string syntax error lead to reading to EOF, ignore error and string</p>
+</li>
+<li><p class="first"><strong>#997</strong> Fixed several issues with PDF password security handling</p>
+</li>
+<li><p class="first"><strong>#995</strong> Type 3 capture can set &quot;emulate all lines&quot; to simplify stroked glyphs</p>
+</li>
+<li><p class="first"><strong>#994</strong> Fix PDF Link annotation for BorderStyle Width 0 (/BS &lt;&lt;/W 0&gt;&gt;)</p>
+</li>
+<li><p class="first"><strong>#992</strong> Fix TIFF Output for Gray colorspace</p>
+</li>
+<li><p class="first"><strong>#989</strong> Fix gxc-&gt;image_explicit4stencil bomb while cleaning up color spaces</p>
+</li>
+<li><p class="first"><strong>#914</strong> Support for wide (Unicode) file names via
+FFsBase_NewWide, FFS_OpenWide, FFS_CreateWide and rt_fopen_wide,
+for use wth psisetsource or CDocRIP_OpenFFs, and CDocRIP_FFsWrite* functions.</p>
+</li>
+<li><p class="first"><strong>#531</strong> Hacks to cpp source to get template instantiation for IBM AIX</p>
+</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id4">References</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference external" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></li>
+<li><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference external" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></li>
+<li><a class="reference external" href="http://www.adobe.com/products/PostScript/pdfs/PLRM.PDF">Adobe PostScript Language Reference</a></li>
+<li><a class="reference external" href="http://www.adobe.com/devnet/Acrobat/pdfs/pdf_reference.PDF">Adobe PDF Reference, Sixth Edition, version 1.7</a></li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

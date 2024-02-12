@@ -1,0 +1,829 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.10: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.2.3 - Summary of Changes since 6.2.1</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-2-3-summary-of-changes-since-6-2-1">
+<h1 class="title">CentraDoc 6.2.3 - Summary of Changes since 6.2.1</h1>
+<div class="section">
+<h2><a id="introduction" name="introduction">Introduction</a></h2>
+<!-- (This document covers changes to Liberty CentraDoc 6.2 branch,
+revision r6991 through r7555) -->
+<p>CentraDoc 6.2.3 includes a small number of high profile bug fixes, and a
+large number of lower profile bug fixes.  There are also some significant
+enhancements to the new RIP, including CMYKA and Overprint support.</p>
+<p>Most of the issues addressed are listed here by ticket number.  This
+material comes from the check-in and ticket logs, and although it has been
+edited, it is still somewhat &quot;raw&quot;.  If you have any questions about a
+specific ticket or issue, please contact <a class="reference" href="http://www.lib-sys.com">Liberty Technology Systems</a>.</p>
+</div>
+<div class="section">
+<h2><a id="tickets" name="tickets">Tickets</a></h2>
+<dl class="docutils">
+<dt><strong>#2</strong> More PDF Transparency issues, including:</dt>
+<dd><ul class="first last simple">
+<li>blend mode not updated in lower level (<strong>#74</strong>)</li>
+<li>BBox issues with transparency groups (<strong>#367</strong> &amp; <strong>#368</strong>, <strong>#481</strong>)</li>
+<li>Soft mask ownership issues causing bombs in RIP</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#318</strong> Fixed random problems with PostScript CIE DEFG color spaces</p>
+<p><strong>#348</strong> Saturation misspelled (PDF Transparency blend mode not working)</p>
+<dl class="docutils">
+<dt><strong>#359</strong> RIP fixes, reenabling CMYK</dt>
+<dd><ul class="first last simple">
+<li>Note that this actually renders CMYKA in the working buffer, to
+get correct / consistent results for PDF files with transparency.
+A new &quot;NCha&quot; color type has been introduced for use with the AGG code
+that replaces all the AGG colorspaces.</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#362</strong> RIP banding now goes from top to bottom (instead of bottom to top)</p>
+<p><strong>#363</strong> fix blue gradient rendering black
+The PDF file contains degenerate type 3 stitching functions
+where bounds[0]==domain[0], causing the sub-function
+interpolation to return crap.  This fix also guarantees
+that at least the last sub-function will be called in other degenerate scenarios.</p>
+<dl class="docutils">
+<dt><strong>#364</strong> multithread glitches, including</dt>
+<dd><ul class="first last simple">
+<li>type42 had some <tt class="docutils literal"><span class="pre">FT_</span></tt> calls outside the lock</li>
+<li>sysalloc MEMTRACK stuff was glitchy</li>
+<li>note that the GCO object tracking (for debug reporting)
+is known to be inaccurate in multithreaded mode; avoided putting more locks in.
+(GCO debug report can show funky object counts if running multiple threads).</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#366</strong> GetSpotColorCMYK broken -
+in DvImgStr, gxs-&gt;color_space will now contain the &quot;original&quot; image color space.
+Example code to get the separation name for the color
+(better than GetSpotColorCMYK):</p>
+<pre class="literal-block">
+const char *getSeparationName(ClrPtr clr)
+{
+  if (!clr)
+      return 0;
+
+  if (CLR_Type(clr)==cIndex)
+      clr = CLR_BaseColor(clr);
+  if (CLR_Type(clr)==cSeparation)
+      return CLRSEP_GetName((ClrSepPtr)clr);
+  return 0;
+}
+</pre>
+<p><strong>#367</strong> Line emulation drawing partial circles; path flattening requires weeding points</p>
+<p><strong>#369</strong> Not correctly handling mono image with explicit or soft mask.
+Resizing logic had some weird conditionals.</p>
+<p><strong>#370</strong> PDF had Invalid object due to mis-cased encoding name.
+PdfDocEncoding shouldn't be used for fonts, anyway: see table PDF ref d.1</p>
+<p><strong>#371</strong> PDF Bad text placement of annotation due to non-normalized rectangle</p>
+<p><strong>#372</strong> Control JPEG output quality via ini setting JpegOutputQuality.
+Default==75, Best==100.  Also FFsJpeg_SetOutputQuality() function -
+call before creating Jpeg output streams.</p>
+<p><strong>#373</strong> Handle funky outline structure in example PDF file</p>
+<p><strong>#374</strong> PDF embedded cff font with no charmap / wingdings example</p>
+<dl class="docutils">
+<dt><strong>#380</strong> PostScript failures in example file</dt>
+<dd><ul class="first last simple">
+<li>File has troublesome LZW encoding (extra code before reset, causing a Fatal Error)</li>
+<li>Execution of strings had a problem if the string did a restore -
+the temporary file object got freed.
+So, we no longer &quot;track&quot; these temporary objects, they get
+deleted on end-of-file during execution, which means they
+can still leak if the execution doesn't run to end of string.</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#381</strong> Windows driver example implementation handling /G## style encodings</p>
+<p><strong>#383</strong> PDF quick fix allowing UCR_LETTERLIKE_SYMBOLS in DefaultCharSet for font ToUnicode maps</p>
+<p><strong>#385</strong> PostScript bogus matrix breaks shade fill in example file
+due to use of clippath pathbbox sequence causing undefined result error.</p>
+<p><strong>#386</strong> PDF another font glitch like <strong>#204</strong> (parsing FreeType glyph outline)
+(the #204 change had misplaced parentheses)</p>
+<p><strong>#387</strong> Control jpeg output quality via ini JpegOutputQuality= default == 75, best==100.
+API FFsJpeg_SetOutputQuality function - call before creating jpeg output streams.</p>
+<p><strong>#389</strong> Some predefined PDF CMaps missing from our collection.</p>
+<p><strong>#391</strong> PostScript file allow for ZapfDingbats encoding - get the right encoding in the driver</p>
+<p><strong>#392</strong> Color Manager - disable color conversion if input profile == output profile,
+and assume input profile == output profile if input not specified.</p>
+<dl class="docutils">
+<dt><strong>#393</strong> PDF encryption related:</dt>
+<dd><ul class="first last simple">
+<li>deal with XRefStm in encrypted PDF file</li>
+<li>deferral of string decryption -
+can't decrypt strings in the /Root /Catalog until the /Crypt stuff is loaded</li>
+<li><strong>#448</strong> Encrypted PDF file won't open - original bug <strong>#243</strong> re-broken by fix for <strong>#393</strong></li>
+</ul>
+</dd>
+</dl>
+<p><strong>#394</strong> Tickler for pseudo progress - Windows application needs time slices for events
+<tt class="docutils literal"><span class="pre">psc-&gt;tickle_every</span> <span class="pre">=</span> <span class="pre">integer</span></tt> will call progressCB (with this value) after counting down
+this many driver calls.  Throws Abort if the progressCB returns a non-zero value.
+Currently implemented for PDF conversion only.</p>
+<p><strong>#397</strong> and <strong>469</strong> PostScript <tt class="docutils literal"><span class="pre">show</span></tt> inside CID font <tt class="docutils literal"><span class="pre">cshow</span></tt> requires special handling (see PLRM)</p>
+<p><strong>#398</strong> PostScript file crashing - Type3 procs blowing up because <tt class="docutils literal"><span class="pre">psstrokepath</span></tt> changed <tt class="docutils literal"><span class="pre">gxs-&gt;path</span></tt> identity</p>
+<p><strong>#401</strong> PostScript Font dictionary FreeType object lifetime issues.
+Moved the object to the baggage mechanism, like the color arrays.
+Also using the font change token to avoid excessive thrashing of the Type 42 objects.</p>
+<p><strong>#403</strong> RIP put scale and clipping API calls back in the RIP interface</p>
+<dl class="docutils">
+<dt><strong>#404</strong> PostScript issues with example file</dt>
+<dd><ul class="first last simple">
+<li>limitcheck - clip paths exceeds <tt class="docutils literal"><span class="pre">PSG_MAXCLPS</span></tt> - bumped to 64</li>
+<li>handling CharStrings proc in type 1 and type 42 similar to type 3</li>
+<li><tt class="docutils literal"><span class="pre">gxc-&gt;embedded_font_metrics</span></tt> - set this to tell PostScript to use
+the driver to measure embedded fonts grabbed by the driver.
+This used to be somewhat haphazard.</li>
+<li><strong>#465</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;embedded_font_metrics</span></tt> (#404) not handling type 3 correctly</li>
+<li><strong>#465</strong> for font type 203 (driver type 3) re-flush after measure in case it uses a sub font</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#406 #411</strong> PostScript JPEG decode that doesn't close due to wrapping the filter in procs</p>
+<p><strong>#407</strong> Postscript save/restore -
+If a local object is getting removed from a global dictionary, we still need to track the change.</p>
+<p><strong>#408</strong> (and <strong>#426</strong>) broken in r6813 for ticket <strong>#333</strong> before 6.2 release
+(Type42 Sanity Checks still suspect)</p>
+<dl class="docutils">
+<dt><strong>#409</strong> RIP Overprint</dt>
+<dd><ul class="first last simple">
+<li>CMYK does full channel overprint and value overprint</li>
+<li>RGB emulates value overprint with Darken blend mode</li>
+<li>RGB does not emulate full channel overprint</li>
+<li>testing discovered a memory management glitch/bomb in ClrDev_Clone</li>
+<li><strong>#482 #485 #486 #487</strong> all overprint issues, fixed</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#410</strong> Nasty glitch in rt_strcpyz when target == source
+(if compiler is not Visual Studio 2005)</p>
+<p><strong>#412</strong> Trap pathologically excessive PDF patterns.
+Count pattern operators, and stop executing pattern if MAX_PDF_PATTERN_OPERATORS
+limit is exceeded.  Includes friendly rt_Warning_Message.
+(original PDF example file has a pattern definition &gt; 100K text including &gt; 3000 operators).</p>
+<dl class="docutils">
+<dt><strong>#413</strong> CDocRIP API cleanups and riptest changes</dt>
+<dd><ul class="first last simple">
+<li>remove cdocrip.h unused color manager fields to avoid confusion</li>
+<li>riptest calls psbbox incorrectly, breaking scale option</li>
+<li>riptest renamed -siz to -size for consistency,</li>
+<li>riptest &#64;infile mode for running multiple files at once</li>
+<li>riptest report errors</li>
+<li>riptest adding -rot to riptest (rotation) (<strong>#479</strong>)</li>
+</ul>
+</dd>
+<dt><strong>#414</strong> Fixed a variety of QA issues</dt>
+<dd><ul class="first last simple">
+<li>PostScript issues using external TrueType fonts</li>
+<li>qa/fonttest.ps type 3 fonts broken, leak</li>
+<li>qa/encstd.pdf ligatures broken</li>
+<li>cheshire.pdf leaks fixed</li>
+<li>several issues detected by Purify including returning a local in makefont</li>
+<li>a charenc memory change exposed a bug in charenc_isligature -
+returning the argument instead of the global,
+and all of a sudden the argument is going away at some later point</li>
+<li>Windows image AlphaBlend problems</li>
+<li>cdocrip looking in the wrong place for error return</li>
+<li>PostScript images, driver <em>must</em> read all rows.  3 cases:<ul>
+<li>mono sizer doesn't read all input rows</li>
+<li>vg_Canvas_Image may discard an image that won't appear; return status</li>
+<li>PsDvNull caps must disable DvImgSrc or the image won't read
+(for skipping pages in the RIP)</li>
+</ul>
+</li>
+<li>Windows driver DvTextData could lose the encoding for next DvText
+in some circumstances</li>
+</ul>
+</dd>
+<dt><strong>#416</strong> PostScript several issues with example file</dt>
+<dd><ul class="first last simple">
+<li>The PostScript file keeps creating RLC filters on the base,
+which eventually exceeds the RefCount limit.  Fix closes the RLC and
+Discards the base file at EOD.  RefCount limit is now a warning instead
+of a fatal error.</li>
+<li>RLC change required PDF changes for compatibility (<strong>#459</strong>)</li>
+<li>bit by LZW not pre-reading EOD if base buffer aligns &quot;just right&quot;</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#417</strong> PDF WinAnsiEncoding characters less than space to be bullet.  PDF
+file uses character decimal 31 as bullet (real bullet is 149) Doesn't
+actually fix the problem if the font is emulated, because Acrobat will
+render unknown characters as bullet, and our emulation doesn't.  Also,
+fixed a separate bomb in charenc from this file.</p>
+<p><strong>#419 #460 #461</strong> PostScript local and global resources not working correctly -
+(Still possible issues with FontDictionary)</p>
+<p><strong>#422</strong> FreeType hack to allow a broken glyph in a PDF embedded font</p>
+<p><strong>#423</strong> PDF Text placement problem - r6437 broke GFX SetTextMatrix</p>
+<dl class="docutils">
+<dt><strong>#427</strong> PostScript CCITT End Of Data sync problems</dt>
+<dd><ul class="first last simple">
+<li>also: CCITT would process an entire input buffer, which forced the output buffer to resize often, unnecessarily</li>
+<li>for the sake of completeness, fixed potential flate buffer boundary glitch, never seen in the wild</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#433 #455</strong> DvCharEm and Text mode fixes</p>
+<p><strong>#437</strong> As requested, eliminate CMap symbol due to conflict with MFC
+(although CMap was PSI internal, and we don't use MFC).</p>
+<p><strong>#438</strong> PostScript signed/unsigned char bug in pstext wide conversion</p>
+<p><strong>#439</strong> PDF color problems caused by nasty glitch in str2double -
+parser got confused if given lots of significant digits.</p>
+<p><strong>#445</strong> PostScript - convert idiom resource names to strings</p>
+<p><strong>#446</strong> Windows Driver makeimage left nasty crumbs for releaseimage</p>
+<p><strong>#447</strong> Image Limits and CMYK 1 bit per component (4 bits per pixel) handling</p>
+<blockquote>
+<ul>
+<li><p class="first">Example PDF has large CMYK-1 image (21819 x 27373) -</p>
+</li>
+<li><p class="first">Added filter that converts CMYK-1 to RGB Indexed - speeds up ICC conversion</p>
+</li>
+<li><p class="first">Installed Image Resizer to resample large images to improve performance</p>
+</li>
+<li><p class="first">Here are the image resizer defaults:</p>
+<pre class="literal-block">
+#define MAX_IMAGE_SIZE  (512*1024*1024)
+#define MAX_IMAGE_OVERSAMPLE (8)
+#define MAX_IMAGE_RESOLUTION (720)
+</pre>
+</li>
+<li><p class="first">disable any of the defines by setting them to 0 on compile command or in rt_config.h</p>
+</li>
+</ul>
+</blockquote>
+<p><strong>#451</strong> Changes for image floating point (r6945) had unexpected consequences
+(naturally). The &lt;1 checks for delta mean something different if the deltas are float.
+there are still cases where the images will be filtered out, but they will be the same as before (6.1)</p>
+<p><strong>#454</strong> PDF AI Layer names not handling Unicode correctly</p>
+<p><strong>#456</strong> FreeType bomb - ttgload.c had a problem in the incremental
+interface with composite glyphs.  Save and restore the loader-&gt;stream in
+load_truetype_glyph.</p>
+<p><strong>#458</strong> Windows Preview SDK EMF failure - EMFReserveVM=MEG configuration workaround.
+This reserves address space in LS_EWMF for the metafile close,
+because the close remaps the file into contiguous address space,
+and it will fail if there isn't enough contiguous space available.
+(Needed for very large EMF file output).</p>
+<dl class="docutils">
+<dt><strong>#463</strong> Radial shading extend lockup in line clipper</dt>
+<dd><ul class="first last simple">
+<li>don't divide by zero when calculating tangents</li>
+<li>added a safety check to the line clipper</li>
+</ul>
+</dd>
+<dt><strong>#474</strong> Color Manager Fixes</dt>
+<dd><ul class="first last simple">
+<li>nasty typo in clrmgr: Intent = Absolute would break transform creation
+(because flags picked up from intent array)</li>
+<li>RIP specifically clarifies which color manager output model is active
+RIP might have multiple output models configured in config.
+Other drivers might also want to do this to prevent possible confusion
+Color Manager needs a specific output model to work correctly, so
+if driver doesn't explicitly specify output model and multiple output models
+are configured, default is RGB.</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#476</strong> add ini_AppendGlobalFile as an alternative approach to reloading ini settings</p>
+<dl class="docutils">
+<dt><strong>#477</strong> RIP re-enabled AGG image resampler to fix some image clarity problems</dt>
+<dd><ul class="first last simple">
+<li>also start CMYKA target output as white w/100% alpha</li>
+<li><strong>#484</strong> RIP AGG resample goes out to lunch if target for image is too small</li>
+</ul>
+</dd>
+<dt><strong>#480 #487</strong></dt>
+<dd><ul class="first last">
+<li><p class="first">Overprint issues and RIP AGG clipping fix - increase simple rectangle clip
+width and height by 1</p>
+</li>
+<li><p class="first">Add ini control over RIP AGG gamma setting.  Default was 0 which is flat,
+now the default is 0.75:</p>
+<pre class="literal-block">
+AggDefaultGamma=0.75
+AggFillGamma=
+AggStrokeGamma=
+AggImageGamma=
+AggDraftMode=N
+</pre>
+</li>
+<li><p class="first">For Gamma=, -1 and -2 are special values for aliasing, which are both similar to AggDraftMode=Y</p>
+</li>
+</ul>
+</dd>
+<dt><strong>#483</strong> PostScript issues with example file</dt>
+<dd><ul class="first last simple">
+<li>flushfile shouldn't choke if the file is already closed</li>
+<li>detect CRD staleness in cached CIE color spaces avoiding bomb</li>
+<li>fix memory leaks in CIE matrix clone</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#485</strong> RIP AGG fix emulation of dashed lines
+(non-AGG stroke emulation still has some odd placements of dashes)</p>
+<p><strong>#486</strong> PostScript example file invalidfont error - type 1 font has hstem and vstem
+operators with no parameters</p>
+<p><strong>#493</strong> PDF DvClip: fixup clip segment points if dropping rectangles.
+Also GetSpotColorCMYK fix for stencil masks.</p>
+<dl class="docutils">
+<dt><strong>#494</strong> PostScript Type 1 external fonts left file open after load.  Also, some error handling issues:</dt>
+<dd><ul class="first last simple">
+<li>errors signalled directly in psldsysd ipc code don't go through the exception handler</li>
+<li>signalerror wasn't passing anything up to the application</li>
+<li>now it does, but we're still missing details, like file offset and other useful stuff</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#496</strong> PostScript SubFileDecode not seeking correctly at end in some circumstances</p>
+<dl class="docutils">
+<dt><strong>#498</strong> Several RIP issues:</dt>
+<dd><ul class="first last simple">
+<li>Turn off overprint if overprintmode and shading</li>
+<li>Enable overprintmode for stencil masks</li>
+<li>RIP &quot;totally clips&quot; mode didn't clip out images</li>
+<li>RIP Clip now uses gamma -2 (&quot;greedy&quot;) for drawing the alpha mask</li>
+<li>Path rectangle detection a little more forgiving (clipping fix)</li>
+</ul>
+</dd>
+</dl>
+<p><strong>#500</strong> PostScript Type 0 font with FMapType 6 and driver grabs subfont,
+passed wide text to the driver even if the subfont wasn't wide (Wide data but dbcs==0).</p>
+<p><strong>#501</strong> Windows Driver font name matcher made smarter to deal with common
+PDF spellings of common Windows fonts, like Arial-Black, ArialBoldMT, etc..</p>
+<p><strong>#502</strong> Work around for a problem with DvFontEm/DvCharEm if similar fonts
+share the same name and the same font descriptor but different encoding.
+The driver would mistake them for the same font.</p>
+</div>
+<div class="section">
+<h2><a id="some-unticketed-issues" name="some-unticketed-issues">Some unticketed issues</a></h2>
+<blockquote>
+<ul class="simple">
+<li>rt_utils.h no longer deprecates strcpy and sprintf by default;
+this is too intrusive and too much burden on clients.
+(Pass -deprecate to builder to turn deprecation back on).</li>
+<li>Profiler module: if running the profiler, stick to a single processor;
+this fixes some weird timer issues on some multiprocessor machines.</li>
+<li>riptest: don't turn on the profiler unless <tt class="docutils literal"><span class="pre">NDEBUG</span></tt> mode</li>
+<li>Reenable JasPer I/O for temporary files (PDF JPEG2000)</li>
+<li>Preview SDK minor optimization of JPEG write: don't modify the DIB</li>
+<li>make <tt class="docutils literal"><span class="pre">FILE</span> <span class="pre">*gGcoReportFile</span></tt> public for debugging purposes</li>
+</ul>
+</blockquote>
+</div>
+<div class="section">
+<h2><a id="references" name="references">References</a></h2>
+<ul class="simple">
+<li><a class="reference" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference" href="http://www.FreeType.org/">The FreeType Project</a></li>
+<li><a class="reference" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference" href="http://www.zlib.net/">zlib compression library</a></li>
+<li><a class="reference" href="&lt;http://www.adobe.com/products/PostScript/pdfs/PLRM.PDF&gt;`_">Adobe PostScript Language Reference</a></li>
+<li><a class="reference" href="http://www.adobe.com/devnet/acrobat/pdfs/pdf_reference.PDF">Adobe PDF Reference, Sixth Edition, version 1.7</a></li>
+<li>The <a class="reference" href="http://www.aiim.org/documents/standards/19005-1_FAQ.PDF">PDF/A FAQ</a></li>
+<li>The <a class="reference" href="https://committees.standards.org.au/COMMITTEES/IT-021/N0001/ISO_19005-1-2005.PDF">PDF/A Specification</a> (ISO 19005-1-2005)</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.10: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.1 - Summary of Changes</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-1-summary-of-changes">
+<h1 class="title">CentraDoc 6.1 - Summary of Changes</h1>
+<div class="contents topic">
+<p class="topic-title first"><a id="table-of-contents" name="table-of-contents">Table Of Contents</a></p>
+<ul class="simple">
+<li><a class="reference" href="#introduction" id="id1" name="id1">Introduction</a></li>
+<li><a class="reference" href="#build-changes" id="id2" name="id2">Build Changes</a></li>
+<li><a class="reference" href="#general" id="id3" name="id3">General</a></li>
+<li><a class="reference" href="#pdf-read" id="id4" name="id4">PDF Read</a></li>
+<li><a class="reference" href="#pdf-write" id="id5" name="id5">PDF Write</a></li>
+<li><a class="reference" href="#postscript" id="id6" name="id6">Postscript</a></li>
+<li><a class="reference" href="#windows-and-preview-sdk" id="id7" name="id7">Windows and Preview SDK</a></li>
+<li><a class="reference" href="#anti-grain" id="id8" name="id8">Anti-Grain</a></li>
+<li><a class="reference" href="#other" id="id9" name="id9">Other</a></li>
+<li><a class="reference" href="#driver-interface" id="id10" name="id10">Driver Interface</a><ul>
+<li><a class="reference" href="#changes-in-ps-config-psc-psi-psi-h" id="id11" name="id11">Changes in PS_CONFIG (psc) (psi/psi.h)</a></li>
+<li><a class="reference" href="#changes-in-psgxstat-gxs-psi-psgxs-h" id="id12" name="id12">Changes in PSGXSTAT (gxs) (psi/psgxs.h)</a></li>
+<li><a class="reference" href="#changes-in-psdevcap-gxc-psi-psgxs-h" id="id13" name="id13">Changes in PSDEVCAP (gxc) (psi/psgxs.h)</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#references" id="id14" name="id14">References</a></li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id1" id="introduction" name="introduction">Introduction</a></h2>
+<p>CentraDoc 6.1 contains a variety of fixes and enhancements since the
+6.0 release.</p>
+<p>Here are the highlights:</p>
+<ul class="simple">
+<li>Configurable and programmable Color Management has been fully integrated.
+The Color profiles can be set up from the ini configuration, or controlled
+through the ColorMgr API (see gfx/clrmgr.d and pvsdkini.txt)</li>
+<li>The Windows and Unix builds have been re-organized and simplified.</li>
+<li>The Anti-Grain rasterizing driver has been wrapped up in a simplified RIP kit,
+including support for native CMYK rendering.</li>
+<li>Full read / write support for all documented PDF encryption models,
+from Acrobat 3 to Acrobat 7.</li>
+<li>Many additions to PDF creation and update API.</li>
+<li>The <a class="reference" href="#driver-interface">Driver Interface</a> has been enhanced to support floating point coordinates.</li>
+<li>Be sure to read the <strong>Important</strong> note in the <a class="reference" href="#driver-interface">Driver Interface</a> section.</li>
+<li>Be sure to read the discussion about PSSTDIO in the <a class="reference" href="#build-changes">Build Changes</a> section.</li>
+</ul>
+<p><em>This document is current as of the 6.1.4 Release</em></p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id2" id="build-changes" name="build-changes">Build Changes</a></h2>
+<ul class="simple">
+<li>Build configuration cleanup: psplat.h tossed completely.  Correct
+configuration should detect on-the-fly.  Any necessary configuration
+settings are now in gco/syscfg.h.</li>
+<li>PSSTDIO is no longer needed - stdio is on by default.  Call
+FFsStd_DisableStdIO or (preferably) FFsStd_SetIOProc to capture normal
+stdio files (stdin, stdout, stderr).  See ffs/ffsstd.d for more
+information.  Note that the ffsstd globals affected by these calls are
+thread globals in multithreaded mode (_MT).  Thread globals go away at
+every psiend (GCO_Done), and must be reset after every psibegin
+(GCO_Init).  Manually calling GCO_Init and GCO_Done outside the psibegin
+and psiend calls can extend the scope of thread globals.  Alternatively,
+you may <tt class="docutils literal"><span class="pre">#define</span> <span class="pre">NOSTDIO</span></tt> in gco/syscfg.h, or at compile time.</li>
+<li>Instead of compile time defines for PSI options, all optional elements
+are determined at link time, by including the stub or real modules for
+optional components.</li>
+<li>sys.h was renamed syscore.h to avoid conflicts with platform &lt;sys.h&gt;</li>
+<li>There is a known potential conflict with Mac CodeWarrior.
+<tt class="docutils literal"><span class="pre">#define</span> <span class="pre">NO_UINTS</span></tt> in gco/syscfg.h to prevent UInt16/UInt32 defs.</li>
+<li>All include directories flattened, including JasPer and FreeType,
+so a single <tt class="docutils literal"><span class="pre">-I</span></tt> option for the compiler, pointing at the include
+stub directory, should be sufficient for all compiles.  (This assumes
+the same relative placement of all other component directories).</li>
+<li>For consistency, please compile with signed char (<tt class="docutils literal"><span class="pre">gcc</span> <span class="pre">-fsigned-char</span></tt>).
+At least one bug has been traced to default unsigned char, and there
+could be others.</li>
+<li>The builds are now broken into PS, PSPDF, and PSPDFUPD.
+Use the kit appropriate for your license and needs.
+See ps/unix and ps/win32.</li>
+<li>The Windows dsp and Unix make builds are generated from build.py
+recipes.  build.py is Liberty's portable make substitute.</li>
+<li>These extensive build and configuration changes may result in build
+problems on some platforms.  Please contact Liberty if you run into
+difficulties.</li>
+<li>Here are some specific details about the configuration symbols that
+were in psplat.h, and have been eliminated:<ul>
+<li>CDPDF - link with pdfdoc/* or stubs/pdfdoc.c and stubs/pdfthumb.c</li>
+<li>DISTILL - link with pdfupd/* and optional/psdvpdf.c or
+with stubs/pdfrw.c and stubs/psdvpdf.c</li>
+<li>PSDVDUMP - link with optional/psdvdump.c or stubs/psdvdump.c</li>
+<li>HPGL2 - link with optional/psdvhpgl.c or stubs/psdvhpgl.c</li>
+<li>PSSTDIO - details above</li>
+<li>PSJPEGCODE - JPEG support is always required.</li>
+<li>PSFLATECODE - Flate support (zlib) is always required.</li>
+<li>PSTYPE42 - FreeType is always required.</li>
+<li>PSDEBUGGER - the psdebug module is currently not supported.
+(exec.c has a TRACE mechanism that can be very useful; see below).</li>
+<li>PSPERFORM - the tmr module has been removed.  Other tools can
+be used for profiling (like gco/profiler.c), if necessary.</li>
+<li>PSLZWCODE &amp; PDFLZWCODE - these were previously removed when the
+LZW patent expired.  LZW support is always required.</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id3" id="general" name="general">General</a></h2>
+<ul class="simple">
+<li>The simple ini config file processing had some not-so-simple bugs that
+could cause it to go out-to-lunch with specific uses.</li>
+<li>Ability to pass PS and PDF files via buffer with psisetbuffersource.
+PS files can be passed via an FFS implementation and psisetsource.</li>
+<li>Cleaned up the image trap model and the PSPATFILL model.</li>
+<li>Fixed some general End-Of-Data detection problems with FFS filters:
+FFs85 (ASCII85Decode), FFsCCITT (CCITTFaxDecode), FFsLZW (LZWDecode),
+FFsJPX, PNG, Tiff, Sub, other...</li>
+<li>CCITTDecode had problems decoding mixed mode (K &gt; 0) data if EndOfLine
+parameter was false but EOL markers were present.</li>
+<li>Fix for some cases of Axial and Radial shading with extend.</li>
+<li>Gradient fills (shaders) had an inherent RGB bias that would cause
+artifacts when the fill operated in non-RGB colorspaces.</li>
+<li>When converting floating point color values to integer components,
+round instead of truncate.</li>
+<li>Unified Path and Pth objects, enabling Pth objects to be passed
+to the driver for the floating point interface; use PTH_GetNPoints.
+(see gfx/pth.d)</li>
+<li>Using floor instead of round in Path float to int conversion fixes a
+variety of pixel placement issues.</li>
+<li>Corrected several general problems with line_width based emulations.
+More correctly detecting the cases that actually need to be emulated.
+Added a switch <tt class="docutils literal"><span class="pre">gxc-&gt;smart_line_width</span></tt> to disable emulation triggered
+by matrix transforms.</li>
+<li>Run image emulation if drawing a pattern over an image mask.
+(potentially slow if the mask is large or complicated).</li>
+<li>Some general automatic support for file name path separators.
+Previously, any configuration paths required the trailing separator.
+Path separator is best-guess by compiler detection, but should work
+most of the time.  The guess can be overridden by explicitly defining
+PATH_SEPARATOR at compile time.  (Only referenced in ffs/ffs.c)</li>
+<li>Allow EtcPath= in pvsdk.ini file, as a convenience.
+Can be overridden by PSI_PATH= environment variable.</li>
+<li>PDF and PS image clipping fixed for cliplvl &lt; 3.  This uses image
+emulation, which isn't optimal.  Drivers should always strive for
+cliplvl==3 for best results.</li>
+<li>Fix for cliplvl &lt; 3 causing lockup with specific clip regions.</li>
+<li>Can now query ClrDev (/DeviceN) for colorant names, if needed.</li>
+<li>Locale specific settings for decimal point could cause headaches in
+several places, notably in PDF Update.  No longer relies on sprintf of
+sscanf for predictable floating point behavior (PDF and Postscript
+always use '.' for decimal regardless of locale or platform).</li>
+<li>Fixes for PSDVTEXT adjust and char_adjust values.  Added dadjust_xy and
+dchar_adjust_xy in device units for clarity.  PDF can now pass multiple
+character strings to driver if adjust detected (and multichar is set).
+CID fonts had several problems with Tw space adjustment -
+CID spaces are a little slippery.</li>
+<li>Fix in FreeType to ignore slightly buggy TrueType font hinting.</li>
+<li>Dropped uchar typedef from JBig2 and PSI due to platform related conflicts.</li>
+<li>Reading from stdin would never exit.</li>
+<li>When Image mask and Image are of differing sizes, resize the smaller
+to match the larger, instead of always resizing the mask.
+This preserves higher resolution mask data.</li>
+<li>Don't offer DvImgGrab for an image that has an explicit or soft mask</li>
+<li>Detect single bit soft masks and convert to explicit mask or 8 bit
+as appropriate (depends on Decode setting).</li>
+<li>Numerous fixes to image resizer - significant image stretching didn't work.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id4" id="pdf-read" name="pdf-read">PDF Read</a></h2>
+<ul class="simple">
+<li>Full read support for all documented PDF encryption modes, including AES.</li>
+<li>PDF enforce the open password even if no permissions password, to
+match Acrobat behaviour.  This is by convention only; if there is no
+permissions password, the file is still programmatically accessible.</li>
+<li>Fixed PDF type 3 functions.</li>
+<li>Several clipping related issues.  In PDF, &quot;newpath moveto clip&quot; means
+&quot;clip out everything&quot;, as does &quot;newpath closepath clip&quot;.</li>
+<li>Fix problems specific to PDF shader (gradient) bounding box -
+fixes leakage in qa/shade6.pdf</li>
+<li>CCITT fax decode now works correctly if parameter dictionary is missing.
+(assuming the data uses all the default settings).</li>
+<li>Allow for funky parameter count for BMC operator instead of failing.</li>
+<li>PDF save/restore (q/Q) isn't supposed to restore the path state.
+Some pdf files don't work correctly if it does.</li>
+<li>Implement Tiff Predictor 2 for 16 bits per component image streams.</li>
+<li>Bumped the layer depth nesting allowed; also, now continues silently
+if exceeded, instead of failing.</li>
+<li>Fixing path flattening parameters for special case matrix -
+example PDF file had the whole page defined as 1 user unit.</li>
+<li>Fixes for special case mask emulation - always emulate for height==1,
+regardless.  This fixes some pathological PDF files that do strange
+draw-then-erase operations before drawing text.</li>
+<li>Fix for pathological pdf patterns, where XStep &amp;&amp; YStep == 1.
+runs the pattern once to grab a likely color, and fills with that color.
+Some pdf files use solid image masks in patterns to render, causing
+serious performance issues for pattern execution.</li>
+<li>Cache PDF colorspaces on the fly.  Can improve performance for
+ICCBased color spaces, especially if they're used in pattern definitions.</li>
+<li>PDF could have some serious problems if the default CMYK profile was missing.
+This is fixed as part of the general Color Management cleanup.  A default
+CMYK profile is no longer necessary in most configurations.</li>
+<li>Correctly handling more odd cases of PDF string escapes.</li>
+<li>More fixes for detecting and handling funky / bogus ToUnicode maps.</li>
+<li>Many fixes for TrueType character encoding issues.  A new approach to PDF
+encoding ignores encoding for TrueType fonts (based on the PDF specification).
+There are potential problems with data extraction, but rendering correctly
+should be the general preference.  Some special handling for embedded
+subsets of the Symbol font.</li>
+<li>Several fixes for alternate character mapping for glyph names not
+found in target font.  Added some alternate mappings for emdash and endash.</li>
+<li>Fixes for some cases of vertical fonts.</li>
+<li>Encoding fix for handling PDF fonts that change encoding on different pages.</li>
+<li>Fix for DvCharEm and unknown DBCS character set (16384)</li>
+<li>Switch to character emulation if text drawn using a pattern fill</li>
+<li>Allow driver to fail DvText operation for grabbed Type 3 font -
+revert to embedded type 3 rendering</li>
+<li>DvTextData is blocked if DvCharEm is active.</li>
+<li>DvFontEm/DvCharEm had a nasty problem when there are different subsets
+of the same font using different encodings.  In the normal case, the
+SUBSET+fontname key is stripped.  For DvFontEm, we now generate a new
+SUBSET+ key and tack it back on.</li>
+<li>Separate CID from Unicode value added DvCharEmStart.  Funky ToUnicode maps
+can cause unpleasant results.</li>
+<li>Text Rendering Mode 7 glitch - text rendered as a clipping path didn't
+reset the clip appropriately.</li>
+<li>PDF PSDVTEXT endpt incorrectly included character and word space; the intent
+is for endpt to always be &quot;right after the last character&quot;.</li>
+<li>Support for PSDVTEXT text_mode, see the <a class="reference" href="#driver-interface">Driver Interface</a> discussion.</li>
+<li>If driver fails DvText call, go ahead and emulate the text.</li>
+<li>For /Identity CID fonts, use GID_CHARSET instead of assuming JAPANESE_CHARSET.
+(GID_CHARSET requires the driver to have the exact font to work correctly).</li>
+<li>PDF now tolerates a lineto with missing moveto, because Acrobat does,
+even though this is clearly an error and is documented by Adobe as an error.</li>
+<li>Fixed shading (gradients) in PDF annotations coordinate system issues.</li>
+<li>Fixed JBig2 problem related to c compiler using unsigned char as default.
+Using signed char as the default is recommended, there could be other issues.</li>
+<li>Fixed some other JBig2 decoding bugs.</li>
+<li>Parser now allows '--' in numbers - for buggy pdf files tolerated by Acrobat.</li>
+<li>Fixed bomb reading invalid annotation structure.</li>
+<li>Fixed some minor problems in the built-in encoding tables, which can cause
+problems with some PDF embedded fonts.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id5" id="pdf-write" name="pdf-write">PDF Write</a></h2>
+<ul class="simple">
+<li>Full write support for all documented PDF encryption modes, including AES</li>
+<li>Numerous additions to the high-level API (see pdfdoc/pdf.d)</li>
+<li>Support for creating bookmarks via PdfOutline.</li>
+<li>Support for creating hyperlinks and targets via PdfAnnot.</li>
+<li>Support for creating pop-up annotations.</li>
+<li>Fix for writing Pdf Names that contain delimiter characters.</li>
+<li>The Pdf page cache didn't work correctly on page append.</li>
+<li>PDF Distiller now attempts to build Type3 fonts when emulating,
+this can produce more appealing results.  It also tries to force
+WinAnsi encoding for these generated fonts, to support some
+third-party text extraction tools that don't handle encoding correctly.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id6" id="postscript" name="postscript">Postscript</a></h2>
+<ul class="simple">
+<li>Implemented IdiomRecognition.  Installed a default idiom to detect a
+special case of QuarkXPress image encoding.  This makes the decode
+roughly 100 times faster.</li>
+<li>Custom Error handling (errordict /handleerror) in PS files has been
+shortcircuited .  Having the PS file print an error on page 2 is
+generally not helpful to an application running an import.</li>
+<li>Added a pseudo-idiom for charpath stroke, using PSDVTEXT text_mode.</li>
+<li>Some PS files are very picky about what operators are defined as
+procs.  PLRM indicates very few are allowed to be defined as procs.
+Special handling added to PSI executive to make all proc implemented
+operators (except those few) behave like operators, in regards to the
+<tt class="docutils literal"><span class="pre">/name</span> <span class="pre">load</span></tt> operation.  (PLRM defines findfont, =, ==, stack, and
+pstack as built-in procs.)</li>
+<li>Numerous fixes for PS CID handling.  Better driver integration for CID
+font substitution.  Special handling of WinCharSetFFFF and similar CID
+issues coming from the Windows Postscript driver internals.  This
+includes the GID_CHARSET definition, which requires special handling
+in the driver.  Handling for CID vertical fonts, include GID_CHARSET
+based.  GID_CHARSET handling in a Windows driver requires the exact
+font, and passing the ETO_GLYPH_INDEX flag to ExtTextOutW.</li>
+<li>CID FDArray subfont FontMatrix handled.</li>
+<li>Provide more info to FtCheck and FtLoad where possible.</li>
+<li>PS canned execution bomb fixed.</li>
+<li>PS gstate copy charmap bomb fixed</li>
+<li>PS DSC parser bomb if BoundingBox: field empty</li>
+<li>PS type42 bomb if glyph index is too large.</li>
+<li>PS GetSpotColorCMYK fixed (separation color value was overwritten)</li>
+<li>Several attempts to fix problems with font matrix defaults and
+assumptions.  In general, font matrices are .001 based, but in some cases
+they are 1 based.  Drivers may need to take a closer look at PSDVFONT
+values.  Getting the 2 cases mixed up can cause tiny or huge fonts.  Huge
+fonts can cause performance problems and memory exhaustion failures.  This
+is still a sticky gray area in Postscript font handling.  There are
+&quot;sanity checks&quot; in a couple of specific places to try to detect when
+it goes wrong.  The origmtx/scalemtx additions to PSDVFONT are supposed
+to help.  See also the <a class="reference" href="#driver-interface">Driver Interface</a> discussion.</li>
+<li>The <tt class="docutils literal"><span class="pre">currentfile</span></tt> operator had a problem if a string is being executed.
+Though execution from a string is implemented as a file, it's not
+a real file as far as Postscript is concerned.</li>
+<li>The Postscript executive (exec.c) has some new trace and debugging
+tools.  <tt class="docutils literal"><span class="pre">#define</span> <span class="pre">TRACE</span> <span class="pre">1</span></tt> always print a trace, and <tt class="docutils literal"><span class="pre">#define</span> <span class="pre">TRACE</span> <span class="pre">2</span></tt>
+prints a trace controlled by the <tt class="docutils literal"><span class="pre">bool</span> <span class="pre">errortrap</span></tt> operator.</li>
+<li>Packed array: <tt class="docutils literal"><span class="pre">setpacking</span></tt> and <tt class="docutils literal"><span class="pre">currentpacking</span></tt> implemented
+(for compatibility only).</li>
+<li>Allow CCITT data to overrun without failing.</li>
+<li>Trapped bogus otherSubrs calls in some embedded fonts.</li>
+<li>userparams will now save and restore correctly</li>
+<li>Reinstalled psht halftone object support (for client use, not used by PSI code).</li>
+<li>Several dead fields dropped from PS_CONFIG</li>
+<li>PS colorspace validation fixes - correctly detect cases where special
+colorspaces aren't allowed.</li>
+<li>When defining a character via DvCharEm, unplugged the high level clipping
+the could break the character definition.</li>
+<li>DvCharEm didn't advance the character position for driver-handled glyphs</li>
+<li>want_unicode would break text measurement / placement in some cases</li>
+<li>Make sure the FreeType related ini settings get loaded for PS.
+(for FreeTypeHinting=Y)</li>
+<li>PS error handling when running from a buffer would get stuck due
+to a semantic problem with the reset operator.</li>
+<li>PS comments weren't properly null terminated on read.</li>
+<li><tt class="docutils literal"><span class="pre">AutoPageTranslate=Y</span></tt> and <tt class="docutils literal"><span class="pre">gxc-&gt;auto_page_translate=1</span></tt> improved
+by basing the initial matrix on configurable parameters in PS_CONFIG,
+instead of performing a translate on the initial matrix after-the-fact.</li>
+<li>PS parser changed to recognize <tt class="docutils literal"><span class="pre">&lt;&lt;</span> <span class="pre">&gt;&gt;</span> <span class="pre">[</span> <span class="pre">]</span></tt> as names instead of mark
+objects; this fixes some special-case Postscript code.</li>
+<li>Added CharStrings to dummy font dictionaries created for driver
+font handling.  Some PS files use CharStrings to make encoding decisions.</li>
+<li>psimon wouldn't necessarily exit on showpage.  It just happened to work
+correctly most of the time.  This is important for correct page handling
+in the driver and upper level.</li>
+<li>Allow xshow/yshow position arrays to be too short without complaining.</li>
+<li>Can't have pdfmark without currentdistillerparams, setdistillerparams
+and at least /CoreDistVersion in the parameter dictionary.</li>
+<li>Handle special case where PS file starts with &#64;PJL instead of the
+appropriate PJL &lt;ESC&gt;ape sequence.</li>
+<li>/DeviceN was missing from the /ColorSpaceFamily resource category.</li>
+<li>Throw an invalid font error if glyph lookup fails.</li>
+<li>Ignore gxc-&gt;want_unicode when running embedded fonts.  Caused
+some problems with type 3 fonts, could have caused other problems.</li>
+<li>Transfer procs for images re-installed.  These were dropped in 6.0 as
+part of image unification.  Transfer procs are very rarely used except
+for some special purposes; In the example case, it was a shortcut for
+rendering separations, removing page elements by changing the transfer
+proc instead of <em>just leaving them out of the page definition</em>.</li>
+<li>File delete now follows the search path.  This fixes a problem with
+postscript files that create and delete temporary form sub-files.
+It's also a good idea to have a tmp directory in your etc / search path
+in order for these files to work.</li>
+<li>The Postscript parser had problems with very large tokens.
+Specifically, eexec input typically ends with a long string of 0's
+that parse to a single token, which is then ignored.  A string longer
+than 255 0's would cause an error.  The parser can now read an
+arbitrarily long string of 0's without choking.</li>
+<li>Arrays explicitly initialized with null objects didn't save and
+restore correctly.  Symptoms could be arbitrary - in the specific example,
+the color space was not restoring correctly.</li>
+<li>Changed the PS color cache mechanism slightly as a preventative - no symptoms.</li>
+<li>HSB to RGB conversion could exceed RGB limits, corrupting color values.</li>
+<li>Particular file with Separation color space bombed with color_space == 0
+due to reentrancy sequence.</li>
+<li>The dictionary stack limit has been raised, and the limit in the error
+handler removed, in order to handle buggy postscript files that leak onto
+the dictionary stack.</li>
+<li>Postscript will no longer stroke emulated characters on top of the fill.
+For most drivers, this degrades the results.  This can be made optional
+if necessary.</li>
+<li>Fixed some problems with glyph measurement if want_unicode and
+the driver is overriding embedded fonts.</li>
+<li>More advanced parsing of %%Title comment, to deal with character escapes</li>
+<li>Detect PFB font header when loading external Type 1 font.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id7" id="windows-and-preview-sdk" name="windows-and-preview-sdk">Windows and Preview SDK</a></h2>
+<ul class="simple">
+<li>Added Preview SDK function LS_SetStatisticCB</li>
+<li>Preview SDK rotation, orientation and scaling was broken.</li>
+<li>LS_Print and related fixes.</li>
+<li>LS_Postscript, LS_OpenPSBuffer fixed.</li>
+<li>LS_OpenPSBuffer now also works for PDF buffers.</li>
+<li>Margin clipping left up to the printer device when appropriate.</li>
+<li>Distiller (LS_CreatePDF/LS_AppendPDF) will now pick up AutoPageTranslate=Y
+from pvsdk.ini</li>
+<li>Windows driver had a problem with explicit mask followed by soft mask -
+soft mask would be corrupted.</li>
+<li>Preview SDK didn't correctly detect end of page for postscript.
+Special handling required to detect a trailing page (or eps) that is
+drawn on, but doesn't end with a showpage operator.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id8" id="anti-grain" name="anti-grain">Anti-Grain</a></h2>
+<ul class="simple">
+<li>Anti-Grain is the core of the new RIP toolkit.</li>
+<li>Anti-Grain has been broken out into templates, so 8 or 16 bit, RGB or CMYK
+can be selected at runtime instead of compile time.</li>
+<li>The Native Anti-Grain shaders had problems, and have been removed for now.</li>
+<li>Bumping the width and height of the clip rect helps clipping and gap issues</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id9" id="other" name="other">Other</a></h2>
+<ul class="simple">
+<li>The reference postscript driver (psdvps2.c) now generates type 3 fonts
+from DvFontEm/DvCharEm signals</li>
+<li>Hooks available in the top level PSI and Preview SDK to transparently
+support image files via FreeImage, as a convenience only.</li>
+<li>psdvinfo driver is the core of LS_SetStatisticCB, and can be used
+to get page information from Postscript files.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id10" id="driver-interface" name="driver-interface">Driver Interface</a></h2>
+<p><strong>IMPORTANT</strong></p>
+<p><em>One consequence of the Pth/Path unification is that PS_PTHTYP
+(the t_pts field in PSDVCLIP, PSDVLINE and PSDVPOLY) can now
+contain a Close directive.  This could cause problems in
+drivers that don't handle it explicitly.  Close can be treated
+as a Draw command, although Close for Polylines should control
+how the lines are joined.</em></p>
+<div class="section">
+<h3><a class="toc-backref" href="#id11" id="changes-in-ps-config-psc-psi-psi-h" name="changes-in-ps-config-psc-psi-psi-h">Changes in PS_CONFIG (psc) (psi/psi.h)</a></h3>
+<ul>
+<li><p class="first">The include file psplat.h has gone away; there are no more compile-time
+configuration defines.  This eliminates any &quot;motion&quot; in the PS_CONFIG
+definitions at compile-time, which could cause arbitrary bombs.</p>
+</li>
+<li><p class="first">It is still possible to cause arbitrary bombs by mixing DEBUG and NDEBUG
+compiled objects in the same link.  This may be addressed in future releases.</p>
+</li>
+<li><p class="first">Several fields have been dropped; some that were no longer in use,
+and the PSPATFILL mechanism has been completely replaced and
+mostly migrated out to client-specific code.</p>
+</li>
+<li><p class="first">These fields are the replacement for the PSPATFILL mechanism:</p>
+<pre class="literal-block">
+ImageTrapProc   img_trap;       /*  return 0 = don't trap, !0 = trap  */
+void           *img_trap_parm;  /*  arbitrary parameter 1 */
+</pre>
+</li>
+<li><p class="first">These fields add support for page-based rotation and scaling.
+They are used by the PvSDK interface to support orientation parameters,
+and by the auto_page_translate mechanism:</p>
+<pre class="literal-block">
+float        transx;
+float        transy;
+int          rotation;          /* 90 degree increments counterclockwise */
+float        pagetransx;        /* auto_page_translate */
+float        pagetransy;
+int          pagetranslated;    /* flag */
+</pre>
+</li>
+<li><p class="first">It is best to use convenience calls instead of accessing these fields
+directly:</p>
+<pre class="literal-block">
+void psisetupxform(PS_CONFIG *psc,
+                   float scalex, float scaley,
+                   int rotation,
+                   int width, int height,
+                   int xdpi, int ydpi);
+
+void psitranslate(PS_CONFIG *psc, float dx, float dy);
+</pre>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id12" id="changes-in-psgxstat-gxs-psi-psgxs-h" name="changes-in-psgxstat-gxs-psi-psgxs-h">Changes in PSGXSTAT (gxs) (psi/psgxs.h)</a></h3>
+<ul>
+<li><p class="first">The PsHt object has been re-introduced to the gxs after being dropped.
+This is solely for the use of the driver (cast to PsHtPtr, see psht.d):</p>
+<pre class="literal-block">
+void *       halftone_object;       /*  Pointer to the halftone PSI object */
+</pre>
+</li>
+<li><p class="first">These fields have also been added, though it is unlikely the driver
+will need to look at them:</p>
+<pre class="literal-block">
+int          text_mode;             /*  optional: PDFREF 5.2.5 */
+int          has_transfer;          /* do we have transfer procs/tables? */
+unsigned char transtab[4][256];     /*  Current transfer tables */
+</pre>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id13" id="changes-in-psdevcap-gxc-psi-psgxs-h" name="changes-in-psdevcap-gxc-psi-psgxs-h">Changes in PSDEVCAP (gxc) (psi/psgxs.h)</a></h3>
+<ul>
+<li><p class="first">These fields enable new driver signals:</p>
+<pre class="literal-block">
+int          want_comments;         /*  sends DvComments */
+int          want_finetext;         /*  send DvBegin/EndFineText */
+int          want_pdfmark;          /*  send DvPdfMark for pdfmark pseudo-op */
+int          want_runfile;          /*  send DvBeginRunFile &amp; DvEndRunFile w/FileName */
+int          want_gstate;           /*  send DvGState init, save, restore */
+</pre>
+</li>
+<li><p class="first">DvComment sends Postscript comments via PSDVCOMMENT struct,
+which contains a char pointer with explicit length.</p>
+</li>
+<li><p class="first">DvBegin/EndFineText are signals to mark start and end of the PDF TJ operator.
+PSDVFINETEXT contains the fine text parameter information.</p>
+</li>
+<li><p class="first">DvPdfMark sends the Postscript pdfmark operator to the driver passing a
+PS_OBJECT containing the array of parameters from the operand stack.</p>
+</li>
+<li><p class="first">DvBeginRunFile and DvEndRunFile are executed at run or exec file time.
+The intent is to allow the driver to capture &quot;forms-based&quot; postscript
+subfiles.  The DvBeginRunFile can return 0 to block execution of the
+subfile.  Since the behavior of a subfile will depend a lot on context,
+it's not clear yet how useful these calls will be.  The file name
+is passed as a parameter.  Note that the initial file run is also
+included in the DvBeginRunFile and DvEndRunFile calls.</p>
+</li>
+<li><p class="first">DvGState sends signals at graphics state maintenance times:
+kGStateInit, kGStateSave, and kGStateRestore.  PDF distiller drivers
+may need these signals to maintain transparency contexts correctly.
+The PSDVGSTATESIG parameter contains the state signal.</p>
+</li>
+<li><p class="first">The want_textmode flag specifies that the driver handles text_mode in
+PSDVTEXT.  Test rendering mode values come from the Pdf Reference.
+The supported modes are:</p>
+<pre class="literal-block">
+0 == Fill
+1 == Stroke
+2 == Fill then stroke
+3 == Hidden
+</pre>
+<p>The clip based modes are not currently supported.  Text mode
+can come from PDF files (Tr) as well as PS files (charpath stroke):</p>
+<pre class="literal-block">
+int          want_textmode;         /*  supports text rendering mode  */
+</pre>
+</li>
+<li><p class="first">The smart_line_width field disabled the line emulation based on how the
+current transformation matrix affects line width artifacts.
+The affects of transformations on wide lines can be subtle:</p>
+<pre class="literal-block">
+int          smart_line_width;      /* don't emulate stroke based on
+                                       transformed line_width x/y ratio */
+</pre>
+</li>
+<li><p class="first">This sets the default value for overprint mode in the graphics state:</p>
+<pre class="literal-block">
+int          default_overprintmode; /* inital gxs-&gt;overprintmode */
+</pre>
+</li>
+<li><p class="first">In order to support floating point, the relevant driver parameter
+structs have a PthPtr added.  The Pth object contains the floating
+point data for the current path for line and stroke operations.  Also,
+the clipping stack is passed as a stack of Pth objects.  See pth.d for
+the Pth interface.</p>
+</li>
+<li><p class="first">Other fields have been added to supplement existing integer fields,
+instead of replacing them, for compatibility.  For example,
+PSDVLINE still contains INT4 width, but float line_width has been
+added.  PSDVTEXT has fpt and fendpt to supplement pt and endpt.</p>
+</li>
+<li><p class="first">Due to some confusion over the adjust parameters in PSDVTEXT, supplemental
+parameters d_adjust_xy and d_char_adjust_xy have been added.  These
+contain values in device space, instead of character space, which make
+them much easier to deal with.</p>
+</li>
+<li><p class="first">PSDVFONT has additional fields, origmtx and scalemtx.  These are intended
+to help detect and deal with the occasional off-by-1000 matrix problems.
+Even though the drivers generally deal with a font matrix of .001, some
+Postscript constructs assume or set the font matrix to be 1.0, which
+can cause surprising results.  The psdvwin windows driver has an
+example sanity check in the FtSet handling.</p>
+</li>
+<li><p class="first">The in_gradient field has been added to the PSDVPOLY to clarify the
+shading state.  This is a duplicate of the grad_fill value in gxs, but
+drivers should avoid looking at PSI internal variables (psc/gxs/gxc)
+as much as possible.</p>
+</li>
+<li><p class="first">PSDVCHAREM has an additional unicode value to clarify the character
+being emulated, if the unicode value (instead of CID) is known.</p>
+</li>
+<li><p class="first">The PDF convention of <tt class="docutils literal"><span class="pre">fnt-&gt;embedded_font</span> <span class="pre">=</span> <span class="pre">(PS_DICT</span> <span class="pre">*)1</span></tt> has been
+removed.  This was ugly and error prone.  If the driver needs to know
+if the font is embedded, the correct test for PDF is to call
+FNT_IsEmbedded(fnt-&gt;fntptr), if fnt-&gt;fntptr != 0.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id14" id="references" name="references">References</a></h2>
+<ul class="simple">
+<li><a class="reference" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference" href="http://www.freetype.org/">The FreeType Project</a></li>
+<li><a class="reference" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference" href="http://www.zlib.net/">zlib compression library</a></li>
+</ul>
+<!-- This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information. -->
+</div>
+</div>
+</body>
+</html>

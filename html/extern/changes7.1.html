@@ -1,0 +1,1011 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<title>CentraDoc 7.1 - Summary of Changes since 6.13</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #f8f8f8 }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #f8f8f8 }
+pre.code .comment, code .comment { color: #008000 }
+pre.code .keyword, code .keyword { color: #4040D0; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #D04040 }
+pre.code .name.builtin, code .name.builtin { color: #4040D0 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 65em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #BBBBEE;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #7777CC;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-7-1-summary-of-changes-since-6-13">
+<h1 class="title">CentraDoc 7.1 - Summary of Changes since 6.13</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a><ul>
+<li><a class="reference internal" href="#highlights" id="id2">Highlights</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pdf" id="id3">PDF</a><ul>
+<li><a class="reference internal" href="#pdf-reader" id="id4">PDF Reader</a></li>
+<li><a class="reference internal" href="#pdf-jbig2-reader" id="id5">PDF JBIG2 Reader</a></li>
+<li><a class="reference internal" href="#pdf-writer" id="id6">PDF Writer</a></li>
+<li><a class="reference internal" href="#distiller" id="id7">Distiller</a></li>
+<li><a class="reference internal" href="#pdf-enhancements" id="id8">PDF Enhancements</a></li>
+<li><a class="reference internal" href="#xfa" id="id9">XFA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c" id="id10">C#</a></li>
+<li><a class="reference internal" href="#preview-sdk" id="id11">Preview SDK</a></li>
+<li><a class="reference internal" href="#miscellaneous" id="id12">Miscellaneous</a></li>
+<li><a class="reference internal" href="#multithreaded-rip" id="id13">MultiThreaded RIP</a></li>
+<li><a class="reference internal" href="#references" id="id14">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes since 843fa115, 2018-10-04) -->
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a></h2>
+<p>These are the changes to CentraDoc since the initial 6.13 release up to Version 7.1.3 2022-03-01</p>
+<p>This includes 6.13.5 through 6.13.14, and 7.0.0, 7.0.1, 7.0.7, 7.1.1, 7.1.2, and related changes.</p>
+<div class="section" id="highlights">
+<h3><a class="toc-backref" href="#id2">Highlights</a></h3>
+<ul class="simple">
+<li>Multithreaded RIP engine, with example integrated into RIP tester</li>
+<li>Full support for PDF output embedded &amp; reference fonts using Unicode encodings</li>
+<li>C# wrapper for parts of the CentraDoc API</li>
+<li>PDF annotation import/export/round trip engine: &quot;PDF Marks&quot;</li>
+<li>Improved support for import/export of the PDF Structure Tree (&quot;Tags&quot;)</li>
+<li><dl class="first docutils">
+<dt>GCO/GCOM updates for improved C++/COM compatibility</dt>
+<dd><ul class="first last">
+<li>renamed all .d files as .lidl files to avoid confusion with <a class="reference external" href="https://dlang.org">the D language</a></li>
+<li>Potential conflicts with <tt class="docutils literal">&lt;windows.h&gt;</tt>; <tt class="docutils literal">#include</tt> it before CentraDoc includes</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Moved all third party libraries out of cdoc into vendor folder</li>
+<li><dl class="first docutils">
+<dt>Updated third party libraries:</dt>
+<dd><ul class="first last">
+<li>libpng 1.6.37</li>
+<li>IJG JPEG-9e (with patched jdapimin.c, from JPEG-9, plus)</li>
+<li>Little CMS 2.12 (current is 2.13.1)</li>
+<li>ZLib 1.2.11</li>
+<li>FreeType 2.10.4 (current is 2.11.1)</li>
+<li>OpenJPEG (JPEG2000) 2.4.0</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="pdf">
+<h2><a class="toc-backref" href="#id3">PDF</a></h2>
+<div class="section" id="pdf-reader">
+<h3><a class="toc-backref" href="#id4">PDF Reader</a></h3>
+<ul class="simple">
+<li><strong>#2372</strong> PDF degenerate structure tree entries caused object management error on page unload</li>
+<li><strong>#2369</strong> PDF detect some bad ToUnicode maps in fonts; <tt class="docutils literal"><span class="pre">gxc-&gt;pdf_substitute_all</span></tt> didn't always pass fonts to the driver</li>
+<li><strong>#2366</strong> PDF Marks API no longer exports push buttons</li>
+<li><strong>#2365</strong> XFA Fixed oddities with Linux build of V8 XFA engine</li>
+<li><strong>#2360</strong> PDF Improved reading PDF Structure (Tags) elements, added support for MCR and OBJR</li>
+<li><strong>#2356</strong> PDF Marks API fixed some cases of rotated page exports</li>
+<li><strong>#2354</strong> PDF fixed null pointer crash on invalid PDF layers input</li>
+<li><strong>#2352</strong> PDF relax parsing of numbers slightly to handle an invalid input</li>
+<li><strong>#2348</strong> Reduce accidental oversample of Axial sampled functions</li>
+<li><strong>#2346</strong> &amp; <strong>#2345</strong> &amp; <strong>#2251</strong> improve processing of stroked type 3 fonts, scaling &amp; line widths</li>
+<li><dl class="first docutils">
+<dt><strong>#2338</strong> &amp; <strong>#2132</strong> PDF improved unload logic for PDF reading structure (Tags) out of memory issue</dt>
+<dd><ul class="first last">
+<li>also: don't load structure if it's not in requested by the driver</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2332</strong> PDF fix parsing of CMaps for PDF with unusual CMap syntax</li>
+<li><strong>#2328</strong> PDF structure (tags) missing type name for some cases</li>
+<li><strong>#2324</strong> PDF shader do smarter clipping to reduce excessive processing</li>
+<li><strong>#2323</strong> PDF Marks import will no longer set NeedAppearances True, so Acrobat won't want to save changes</li>
+<li><strong>#2322</strong> PDF encoding: fixes for cmap selection for embedded TrueTye font</li>
+<li><strong>#2319</strong> PDF RIP support for filtering/reading simplified combined layers (OCMD, e.g. &quot;LayerOne|LayerTwo&quot;)</li>
+<li><strong>#2318</strong> PDF parser got stuck (out to lunch) on some specific syntax errors</li>
+<li><strong>#2318</strong> the PsDvText driver was not reading to end of grabbed images, which is a problem for inline images</li>
+<li><strong>#2314</strong> PDF remove old PDF specification limit on number of indirect objects</li>
+<li><strong>#2307</strong> PDF soft mask transparency requires special handling of color spaces, switches to vanilla color spaces</li>
+<li><strong>#2304</strong> PDF track bounding rectangle for structure Tag content, pass to DvEndMarker</li>
+<li><strong>#2284</strong> PDF crash from pages using the same resource dictionary, invalid object management</li>
+<li><strong>#2275</strong> PDF some improvement of error handling when requested output image size is unreasonable</li>
+<li><strong>#2270</strong> PDF null pointer from missing DA entry in annotation, parse DS entry</li>
+<li><strong>#2265</strong> PDF shortcut transparency group rendering when alpha is 0</li>
+<li><strong>#2262</strong> PDF set italic flag for fonts with italic angle != 0</li>
+<li><strong>#2246</strong> PDF advanced modification checking for signed PDF files (examples added DSS to Catalog)</li>
+<li><strong>#2241</strong> PDF text handle rendering up to 1024 characters</li>
+<li><strong>#2240</strong> PDF generating annotation appearance, DS default style overrides DA default appearance</li>
+<li><strong>#2226</strong> PDF handling corrupted page stream producing unexpected output (ref <strong>#1534</strong>)</li>
+<li><strong>#2220</strong> PDF improved recovery logic for example corrupted file</li>
+<li><strong>#2218</strong> PDF unexpected Failure reading PDF file with invalid object reference</li>
+<li><strong>#2216</strong> PDF signatures, ignore specified signature handler, only sub type is relevant</li>
+<li><strong>#2211</strong> PDF improved recovery logic for example corrupted file</li>
+<li><strong>#2208</strong> PDF improve handling for very large pathological pattern</li>
+<li><strong>#2204</strong> PDF PDFPage_GetRotatedSpace to help resolve rotated extents issues</li>
+<li><strong>#2199</strong> PDF generate appearances for Ink annotations</li>
+<li><strong>#2197</strong> PDF crashing checking for empty appearance</li>
+<li><strong>#2193</strong> PDF issues using external Symbol font</li>
+<li><strong>#2189</strong> PDF Axial rendering requires more function points if input color model is different from output</li>
+<li><strong>#2187</strong> PDF reading combined layer specification (OCMD) with only one layer in it, treat as single layer</li>
+<li><strong>#2186</strong> PDF exception verifying signature</li>
+<li><strong>#2182</strong> PDF signature annotation appearance misidentified as empty</li>
+<li><strong>#2183</strong> PDF not handling symbolic truetype encoding for Wingdings font</li>
+<li><strong>#2179</strong> PDF replace annotation highlight for cases where Acrobat will do so</li>
+<li><strong>#2167</strong> PDF add sanity checks to pdf color operator parameters</li>
+<li><strong>#2164</strong> PDF allow substitution for non-embedded (reference) Type 1 font, fixes encoding issue</li>
+<li><strong>#2162</strong> PDF Marks add support for layers</li>
+<li><strong>#2153</strong> PDF reader problems with matrix sanity checks for specific case</li>
+<li><strong>#2151</strong> PDF handle empty annotation rectangle</li>
+<li><strong>#2150</strong> PDF clip check error in get outer clip</li>
+<li><strong>#2139</strong> PDF handle bogus name tree entries in structure tree</li>
+<li><dl class="first docutils">
+<dt><strong>#2135</strong> PDF HAVE_OPENSSL #ifdef test was backward, needed for signature code</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>NOSSL is the default in the shipping builds.  For PDF Signature support:</dt>
+<dd><ul class="first last">
+<li>define HAVE_OPENSSL</li>
+<li>add OpenSSL include path to build.</li>
+<li>link with libeay32.lib</li>
+<li>CentraDoc builds with OpenSSL 1.0.2l</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2134</strong> PDF don't load default encoding for symbolic TrueType fonts</li>
+<li><strong>#2131</strong> PDF allow bogus /DefaultRGB entry without complaint</li>
+<li><strong>#2129</strong> PDF allow empty clip path without complaint &amp; minor fix for PDF file recovery</li>
+<li><strong>#2128</strong> &amp; <strong>#2126</strong> PDF handle Unicode BOM in hex string and in empty strings</li>
+<li><strong>#2127</strong> PDF increase limit on dash segments to 64, ignore excess in the future</li>
+<li><strong>#2122</strong> PDF add support for 4 bits per component Flate image with TIFF predictor 2 (PNG)</li>
+<li><strong>#2119</strong> PDF reset alpha when generating pattern template, don't stomp stroke alpha when filling pattern</li>
+<li><strong>#2118</strong> PDF trap exceptions during rendering, stops current page only</li>
+<li><strong>#2117</strong> PDF Marks, don't export signed signatures</li>
+<li><strong>#2106</strong> PDF improve Image Matte handling for white Mattes</li>
+<li><strong>#2104</strong> PDF ToUnicode CMap loader better handling of narrow entries listed as wide</li>
+<li><strong>#2092</strong> PDF View API for determining (or setting) page mode/layout defaults, see pdfdoc/pdfview.h</li>
+<li><strong>#2090</strong> PDF file has extreme pattern intended for drawing once, failed size check - fixed</li>
+<li><strong>#2089</strong> PDF Image Matte implementation</li>
+<li><strong>#2086</strong> PDF added FRECT to PSDXCLIP to handle some extreme cases - very small clip areas</li>
+<li><strong>#2085</strong> PDF with 0 sized font causes problems</li>
+<li><strong>#2081</strong> PDF fix resource management bug in appearance generation</li>
+<li><strong>#2067</strong> PDF allow external mapping for standard fonts</li>
+<li><strong>#2066</strong> PDF JPX (JPEG2000) stream didn't signal EOF correctly; pass image_source to DvImgGrab</li>
+<li><strong>#2058</strong> PDF FAILURE when approximating explicit mask from 16 bit mask</li>
+<li><strong>#2049</strong> PDF mismatched encoding names caused repeated loading of encoding file</li>
+<li><strong>#2046</strong> PDF PdfBlockAllText=Y to remove all text from a rendering</li>
+<li><strong>#2041</strong> PDF add sanity checks on input path coordinates, examples caused integer overflow (&gt;2**31)</li>
+<li><strong>#2036</strong> PDF ToUnicode map glitch with narrow input, multiple wide output</li>
+<li><strong>#2031</strong> PDF high level clip check for XObjects speeds rendering for some cases</li>
+<li><strong>#2029</strong> PDF add official support for reading PDF 2.0 files</li>
+<li><strong>#2028</strong> PDF Wingdings and Webdings fonts encoding glitches</li>
+<li><strong>#2024</strong> PDF trap and ignore syntax errors during pattern rendering</li>
+<li><strong>#2023</strong> PDF ignore font all caps flag for embedded fonts</li>
+<li><strong>#2020</strong> PDF make graphics state stroke adjust flag (&quot;SA&quot;) available as <tt class="docutils literal"><span class="pre">gxs-&gt;stroke_adjust</span></tt></li>
+<li><strong>#2018</strong> PDF export PDF font dictionaries and FreeType face from font objects for driver's use</li>
+</ul>
+<pre class="code c literal-block">
+<span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name function">FntPT0_Dictionary</span><span class="punctuation">(</span><span class="name">FntPtr</span> <span class="name">fnt</span><span class="punctuation">);</span>
+<span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name function">FntPT1_Dictionary</span><span class="punctuation">(</span><span class="name">FntPtr</span> <span class="name">fnt</span><span class="punctuation">);</span>
+<span class="keyword">struct</span> <span class="name">FT_FaceRec_</span><span class="operator">*</span> <span class="name function">FntFT_GetFace</span><span class="punctuation">(</span><span class="name">FntPtr</span> <span class="name">f</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2017</strong> PDF Internals, making smart objects type safe</li>
+<li><strong>#2016</strong> PDF error in color state maintenance across gfx/dv layers</li>
+<li><strong>#2006</strong> PDF driver work around: set <tt class="docutils literal"><span class="pre">cap-&gt;image_ignoresoftmask</span></tt> to ignore soft masks, otherwise converts to 1 bit explicit mask</li>
+<li><strong>#2005</strong> PDF Don't call DvCharEm when fully clipped</li>
+<li><strong>#2001</strong> PDF fix problems with implementation of <strong>#1499</strong> pass through alpha for drivers without group support</li>
+<li><strong>#1990</strong> PDF remove limits on number of parameters to PDF fine text operator</li>
+<li><strong>#1984</strong> PDF Type 0 font with 0 default width caused the Widths array to be ignored</li>
+<li><strong>#1981</strong> PDF create Signature appearance if blank</li>
+<li><strong>#1977</strong> PDF initial ticket regarding vanilla color management for soft masks, speeds up rendering considerably</li>
+<li><strong>#1972</strong> PDF/RIP fix issues in CMK implementation of Luminosity blend mode</li>
+<li><strong>#1953</strong> PDF add PdfAnnot_GetUIFieldName</li>
+<li><em>unticketed</em> PDF disable AES warnings nobody cares about</li>
+<li><em>unticketed</em> PDF better synthesis of missing fonts, scaling individual glyph widths according to PDF widths</li>
+</ul>
+</div>
+<div class="section" id="pdf-jbig2-reader">
+<h3><a class="toc-backref" href="#id5">PDF JBIG2 Reader</a></h3>
+<ul class="simple">
+<li><strong>#2282</strong> PDF JBIG2 invalid access crash</li>
+<li><strong>#2279</strong> PDF JBIG2 issues with fixes for <strong>#2249</strong></li>
+<li><strong>#2272</strong> PDF JBIG2 reader additional unfortunate problems from <strong>#1973</strong></li>
+<li><strong>#2249</strong> PDF JBIG2 reader issues</li>
+<li><strong>#2154</strong> PDF JBIG2 handle extra noise at end of stream and missing endstream</li>
+<li><strong>#2013</strong> PDF JBIG2 add <tt class="docutils literal">FFsJBig2_GetPageInfoOnly(in, &amp;width, &amp;height)</tt> info call</li>
+<li><strong>#2004</strong> PDF JBIG2 increase image limits, esp. 64 bit builds</li>
+<li><strong>#1987</strong> PDF JBIG2 fix glitch in <strong>#1973</strong>: 0xffffffff allowed for header length</li>
+<li><strong>#1973</strong> PDF JBIG2 example file contains degenerate symbols tables</li>
+</ul>
+</div>
+<div class="section" id="pdf-writer">
+<h3><a class="toc-backref" href="#id6">PDF Writer</a></h3>
+<ul class="simple">
+<li><strong>#2327</strong> PDF marking PDF/A-1a output, don't overwrite existing StructTreeRoot for exported tags</li>
+<li><strong>#2325</strong> PDF Virtual Unicode Font output requires ToUnicode for copy/paste out of Acrobat</li>
+<li><strong>#2321</strong> PDF Output, PdfAnnot_SetRichText for setting rich text content on an annotation</li>
+<li><strong>#2306</strong> PDF high level copier, output PDF/A if input is PDF?A</li>
+<li><dl class="first docutils">
+<dt><strong>#2300</strong> PDF output PDF/A requires Type 1 font subsets have FontDescriptor/Charset entry</dt>
+<dd><ul class="first last">
+<li>repaired off-by-one error writing Type 1 fonts; font couldn't contain 256 characters</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2294</strong> PDF output PDF/A issues with fractional time zone</li>
+<li><strong>#2290</strong> PDF output improved mechanisms for creating masked images:</li>
+</ul>
+<pre class="code c literal-block">
+<span class="comment single">//  added mask helpers:
+</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJBIG2AsMask</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJBIG2Masked</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">maskImage</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJPXMasked</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span>  <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">maskImage</span><span class="punctuation">,</span><span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+
+<span class="keyword type">void</span> <span class="operator">*</span> <span class="name function">Pdf_NewIndexedImageMasked</span><span class="punctuation">(</span>
+    <span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span>   <span class="comment multiline">/**&lt; Pdf */</span>
+    <span class="keyword type">void</span> <span class="operator">*</span><span class="name">maskImage</span><span class="punctuation">,</span>
+    <span class="keyword type">int</span> <span class="name">width</span><span class="punctuation">,</span>       <span class="comment multiline">/**&lt; width of image in pixels */</span>
+    <span class="keyword type">int</span> <span class="name">height</span><span class="punctuation">,</span>      <span class="comment multiline">/**&lt; height of image in rows */</span>
+    <span class="keyword type">int</span> <span class="name">bitsPerIndex</span><span class="punctuation">,</span><span class="comment multiline">/**&lt; size of the index value */</span>
+    <span class="keyword type">int</span> <span class="name">nComponents</span><span class="punctuation">,</span> <span class="comment multiline">/**&lt; number of components in the index table */</span>
+    <span class="keyword">const</span> <span class="keyword type">unsigned</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">table</span><span class="punctuation">,</span>  <span class="comment multiline">/**&lt; color table, 8 bits per component */</span>
+    <span class="keyword type">int</span> <span class="name">tableSize</span>    <span class="comment multiline">/**&lt; number of bytes in color table (must be == nComponents * 2^bitsPerIndex)</span><span class="error">*/</span>
+<span class="punctuation">);</span>
+
+<span class="comment single">//  modified this method::
+</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJBIG2</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">optIntoImage</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+
+<span class="comment single">// by removing the optional parameter:
+</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJBIG2</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+
+<span class="comment single">//  added these methods instead, for consistency
+</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJpegInto</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="comment multiline">/**&lt; Pdf */</span>
+    <span class="keyword type">void</span> <span class="operator">*</span><span class="name">optIntoImage</span><span class="punctuation">,</span>
+    <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">fileName</span><span class="punctuation">,</span> <span class="comment multiline">/**&lt; jpeg file to open */</span>
+    <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="comment multiline">/**&lt; returns Width of jpeg file */</span>
+    <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span> <span class="comment multiline">/**&lt; returns Height of jpeg file */</span>
+<span class="punctuation">);</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJPXInto</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">optIntoImage</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name function">Pdf_LoadJBIG2Into</span><span class="punctuation">(</span><span class="name">Instance</span> <span class="name">self</span><span class="punctuation">,</span> <span class="keyword type">void</span> <span class="operator">*</span><span class="name">optIntoImage</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oWidth</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oHeight</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2289</strong> PDF output fixed multiple issues with Virtual Unicode Fonts</li>
+<li><strong>#2274</strong> PDF output APIs for SetOpenAction and ParseOpenAction</li>
+<li><dl class="first docutils">
+<dt><strong>#2239</strong> &amp; <strong>#2237</strong> PDF virtual unicode output, embedding &amp; reference extensions.</dt>
+<dd>This is principally throught the <tt class="docutils literal">Pdf_EmbedFont</tt> API.  This allows font referencing,
+full font embedding, and embedded subsets.  Embedded subsets are converted
+to Type 1.  Use of the sfntly library to embed TrueType subsets is not currently supported,
+sfntly doesn't build with the current MS C++ compilers.</dd>
+</dl>
+</li>
+</ul>
+<pre class="code c literal-block">
+<span class="keyword type">void</span> <span class="operator">*</span> <span class="name function">Pdf_EmbedFont</span><span class="punctuation">(</span>
+    <span class="name">Pdf</span><span class="operator">*</span> <span class="name">self</span><span class="punctuation">,</span>          <span class="comment multiline">/**&lt; Pdf (PdfRW)</span> <span class="error">*/</span>
+    <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span>   <span class="comment multiline">/**&lt; font file path OR WINDOWS FONT NAME (from registry) */</span>
+    <span class="keyword type">int</span> <span class="name">faceNumber</span><span class="punctuation">,</span>     <span class="comment multiline">/**&lt; index into TTC font, or 0 */</span>
+    <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">fontNameOverride</span><span class="punctuation">,</span> <span class="comment multiline">/**&lt; optional override for fontName */</span>
+    <span class="keyword type">int</span> <span class="name">usageFlags</span><span class="punctuation">,</span>     <span class="comment multiline">/**&lt; see PdfFontEmbeddingFlags */</span>
+    <span class="keyword type">int</span> <span class="operator">*</span><span class="name">oStatus</span>        <span class="comment multiline">/**&lt; ESimpleError more info if something goes wrong */</span>
+<span class="punctuation">);</span>
+
+<span class="keyword">typedef</span> <span class="keyword">enum</span>
+<span class="punctuation">{</span>
+    <span class="name">kEmbedFontForceEmbed</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">,</span>     <span class="comment multiline">/**&lt; ignore font license flags */</span>
+    <span class="name">kEmbedFontSubset</span><span class="operator">=</span><span class="literal number integer">2</span><span class="punctuation">,</span>         <span class="comment multiline">/**&lt; embed a (Type1!) font subset only (otherwise whole font) */</span>
+    <span class="comment single">// ...
+</span>    <span class="name">kEmbedFontReferenceOnly</span><span class="operator">=</span><span class="literal number integer">32</span><span class="punctuation">,</span>     <span class="comment multiline">/**&lt; Don't actually embed the font, just reference it */</span>
+    <span class="name">kEmbedFontPostscriptName</span><span class="operator">=</span><span class="literal number integer">64</span><span class="punctuation">,</span>    <span class="comment multiline">/**&lt; fetch the Postscript name, and use that */</span>
+    <span class="name">kEmbedFontNarrowIsUTF8</span><span class="operator">=</span><span class="literal number integer">128</span><span class="punctuation">,</span>   <span class="comment multiline">/**&lt; use UTF-8 in the ShowText call */</span>
+    <span class="comment single">// ...
+</span><span class="punctuation">}</span> <span class="name">PdfFontEmbeddingFlags</span><span class="punctuation">;</span>
+
+<span class="comment single">// e.g.
+</span>
+<span class="keyword type">void</span> <span class="operator">*</span><span class="name">font</span> <span class="operator">=</span> <span class="name">Pdf_EmbedFont</span><span class="punctuation">(</span><span class="name">pdf</span><span class="punctuation">,</span> <span class="literal string">&quot;Arial&quot;</span><span class="punctuation">,</span> <span class="literal number integer">0</span><span class="punctuation">,</span> <span class="literal number integer">0</span><span class="punctuation">,</span> <span class="name">kEmbedFontReferenceOnly</span><span class="punctuation">,</span> <span class="literal number integer">0</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2214</strong> PDF/A-3u output, file attachments require AF entry and MIME type</li>
+<li><strong>#2201</strong> PDF/A output add support for embedding CMYK profiles</li>
+<li><strong>#2198</strong> PDF/A output compatibility push button requires empty appearances to satisfy Acrobat</li>
+<li><strong>#2176</strong> PDF Marks import/export incorrect check box font and button state</li>
+<li><strong>#2170</strong> PDF embed reference font option re <strong>#2237</strong></li>
+<li><strong>#2165</strong> PDF Marks import/export on rotated pages</li>
+<li><strong>#2161</strong> PDF/A output fixes, missing rdf wrapper and handle XML escapes</li>
+<li><strong>#2113</strong> PDF added some support for creating FDF files</li>
+<li><strong>#2109</strong> PDF Marks export with matrix</li>
+<li><strong>#2105</strong> PDF handle alpha when generating free text annotation appearance</li>
+<li><strong>#2095</strong> PDF option to generate free text annotation background or default to transparent</li>
+<li><strong>#2094</strong> PDF add annotation In Reply To API:</li>
+</ul>
+<pre class="code c literal-block">
+<span class="comment multiline">/* replies must be on the same page as the in-reply-to annot
+*/</span>
+<span class="keyword type">void</span> <span class="name function">PdfAnnot_SetInReplyTo</span><span class="punctuation">(</span><span class="name">PdfAnnotPtr</span> <span class="name">reply</span><span class="punctuation">,</span> <span class="name">PdfAnnotPtr</span> <span class="name">irt</span><span class="punctuation">);</span>
+<span class="keyword type">void</span> <span class="name function">PdfAnnot_SetInReplyToD</span><span class="punctuation">(</span><span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name">reply</span><span class="punctuation">,</span> <span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name">irt</span><span class="punctuation">);</span>
+<span class="name">PdfAnnot</span> <span class="operator">*</span><span class="name function">PdfAnnot_GetInReplyTo</span><span class="punctuation">(</span><span class="name">PdfAnnotPtr</span> <span class="name">reply</span><span class="punctuation">);</span>
+<span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name function">PdfAnnot_GetInReplyToD</span><span class="punctuation">(</span><span class="name">PdfDictionary</span> <span class="operator">*</span><span class="name">reply</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2075</strong> PDF Marks add support for radio buttons</li>
+<li><strong>#2072</strong> PDF Marks example XFAF file Acroform/Fields is a tree instead of an array</li>
+<li><strong>#2062</strong> PDF added Pdf_CreateLinkType</li>
+<li><strong>#2060</strong> PDF Marks adapted for round trip annotations</li>
+<li><strong>#2040</strong> PDF workaround for generating free text appearance streams with Unicode</li>
+<li><strong>#2034</strong> PDF create mask work around methods for JBIG2 images</li>
+</ul>
+<pre class="code c literal-block">
+<span class="name">rt_Bool</span> <span class="name function">Pdf_SetImageMask</span><span class="punctuation">(</span><span class="keyword type">void</span> <span class="operator">*</span><span class="name">image</span><span class="punctuation">);</span>
+<span class="name">rt_Bool</span> <span class="name function">Pdf_InvertImageMask</span><span class="punctuation">(</span><span class="keyword type">void</span> <span class="operator">*</span><span class="name">image</span><span class="punctuation">);</span>
+</pre>
+</div>
+<div class="section" id="distiller">
+<h3><a class="toc-backref" href="#id7">Distiller</a></h3>
+<ul class="simple">
+<li><strong>#2242</strong> PDF distiller reduce output size by cleaning up font leakage</li>
+<li><strong>#2230</strong> PDF distiller font state tracking error</li>
+<li><strong>#2203</strong> PDF distiller errors with glyph capture</li>
+</ul>
+</div>
+<div class="section" id="pdf-enhancements">
+<h3><a class="toc-backref" href="#id8">PDF Enhancements</a></h3>
+<ul class="simple">
+<li><strong>#2038</strong> PDF Geo modules: pdfgeo and pdfterra - read and write GeoSpatial PDFs, read TerraGo Geo PDFs</li>
+<li><strong>#2195</strong>, <strong>#2019</strong> PDF Marks and BlueBeam interoperability: pdfmarks</li>
+<li><strong>#1955</strong> PDF 3D annotation I/O modules: pdf3da pdf3dio</li>
+</ul>
+</div>
+<div class="section" id="xfa">
+<h3><a class="toc-backref" href="#id9">XFA</a></h3>
+<p>XFA is a very slippery spec and rendering is constantly improved to handle example files.</p>
+<p>Some of the <em>many</em> issues addressed:</p>
+<ul class="simple">
+<li><strong>#2349</strong> XFA handle item named 'all', and missing script references for Time, Num2Time</li>
+<li><strong>#2303</strong> XFA exception in old UTF-8 conversion function</li>
+<li><strong>#2266</strong> XFA runaway bind logic, out to lunch</li>
+<li><strong>#2261</strong> XFA file caused load error</li>
+<li><strong>#2252</strong> XFA phone number picture with ()</li>
+<li><strong>#2247</strong> XFA missing dates, same file as #1877</li>
+<li><strong>#2236</strong> &amp; <strong>#2159</strong> XFA missing dingbats</li>
+<li><strong>#2235</strong> XFA redundant % in picture format</li>
+<li><strong>#2234</strong> &amp; <strong>#2232</strong> XFA more text picture format issues</li>
+<li><strong>#2219</strong> XFA misc</li>
+<li><strong>#2215</strong> XFA field font autosizing is difficult</li>
+<li><strong>#2213</strong> XFA footer issues with example file (from <strong>#2084</strong>)</li>
+<li><strong>#2212</strong> XFA change reported version to circumvent scripting error in file</li>
+<li><strong>#2210</strong> XFA choking on Webdings font usage</li>
+<li><strong>#2207</strong> XFA added PdfXfaAcroformFontScale= to tweak generated widget appearances from PdfXfaToAcroform=Y</li>
+<li><dl class="first docutils">
+<dt><strong>#2200</strong> XFA DIB image handling corrupting memory</dt>
+<dd><ul class="first last">
+<li>improved DEBUG heap to better catch prefix corruption</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2184</strong> XFAF file with missing elements on page 7</li>
+<li><strong>#2178</strong> XFA file from #1932 footer alignment</li>
+<li><strong>#2173</strong> XFA mmisc</li>
+<li><strong>#2172</strong> XFA more picture format issues</li>
+<li><strong>#2168</strong> XFA multiple</li>
+<li><strong>#2157</strong> XFA vertical placement problems</li>
+<li><strong>#2156</strong> XFA PdfXfaToAcroform=Y fields require multiline flag</li>
+<li><strong>#2152</strong> XFA vertical layout</li>
+<li><strong>#2145</strong> XFA add support for &lt;div&gt;</li>
+<li><dl class="first docutils">
+<dt><strong>#2138</strong> rename the v8 bin files according to build type</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>32 bit release:</dt>
+<dd><ul class="first last">
+<li>snapshot_blob.bin</li>
+<li>natives_blob.bin</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>64 bit release:</dt>
+<dd><ul class="first last">
+<li>snapshot_blob.64.bin</li>
+<li>natives_blob.64.bin</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>32 bit debug:</dt>
+<dd><ul class="first last">
+<li>snapshot_blob.d32.bin</li>
+<li>natives_blob.d32.bin</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>64 bit debug:</dt>
+<dd><ul class="first last">
+<li>snapshot_blob.d64.bin</li>
+<li>natives_blob.d64.bin</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2137</strong> XFA XML parser allow symbol to start with high bit character</li>
+<li><strong>#2133</strong> XFA PdfXfaToAcroform=Y multiple fixes, radio groups, wrong constant for red</li>
+<li><strong>#2123</strong> XFA handle overlapping contentAreas in page definition</li>
+<li><strong>#2101</strong> XFA multiple issues</li>
+<li><strong>#2100</strong> XFA multiple issues</li>
+<li><strong>#2084</strong> XFA handle child named 'name'</li>
+<li><strong>#2082</strong> XFA XML parser allow symbol to start with underscore</li>
+<li><strong>#2080</strong> XFA PdfXfaToAcroform=Y font issues generating Japanese fields</li>
+<li><strong>#2042</strong> XFA badly formed XML input overflowed parser stack</li>
+<li><strong>#2037</strong> XFA binding issues</li>
+<li><strong>#1992</strong> XFA V8 build upgraded to 7.2.505</li>
+<li><strong>#1970</strong> XFA files auto-detect CJK text and override font selection</li>
+<li><strong>#1937</strong> XFA lots of improvements to PdfXfaToAcroform=Y</li>
+<li><strong>#1810</strong> XFA default number format with commas, and fracDigits</li>
+<li><strong>#1666</strong> XFA fracDigits behavior in Acrobat doesn't match XFA specification</li>
+</ul>
+</div>
+</div>
+<div class="section" id="c">
+<h2><a class="toc-backref" href="#id10">C#</a></h2>
+<ul class="simple">
+<li><strong>#2209</strong> C# PDF text output</li>
+<li><strong>#2108</strong> C# API elements for detecting PDF page images, and if the page is only a single image</li>
+<li><strong>#2050</strong> C# PDF Copy and encrypt APIs</li>
+<li><strong>#1993</strong> C# basic PDF API, plus new PdfPageLabels class</li>
+</ul>
+</div>
+<div class="section" id="preview-sdk">
+<h2><a class="toc-backref" href="#id11">Preview SDK</a></h2>
+<ul class="simple">
+<li><strong>#2138</strong> Add LS_XFA, LS_XFAF, LSXFAPR to enum returned from LS_FileType</li>
+<li><strong>#2124</strong> GDI driver text output, improve x placement by tracking cumulative error</li>
+<li><strong>#2047</strong> PDF add layer filters __ALL__ and __NONE__</li>
+<li><strong>unticketed</strong> automatically add the PVSDK.DLL folder to the search path, required for the V8 .bin files</li>
+</ul>
+</div>
+<div class="section" id="miscellaneous">
+<h2><a class="toc-backref" href="#id12">Miscellaneous</a></h2>
+<ul class="simple">
+<li><strong>#2373</strong> Updated JPEG library to JPEG-9e still requires patching for Adobe compatibility</li>
+<li><strong>#2343</strong> Added EMF image output wrapper to standard RIP tester</li>
+<li><strong>#2336</strong> fix issues building &amp; running with _MT not defined (no multithreading)</li>
+<li><strong>#2334</strong> fix example psdvdump driver, required settings not up to date</li>
+<li><strong>#2309</strong> Issues with Mac build and Mac Fonts configuration</li>
+<li><strong>#2299</strong> GCO/GCOM change had compatibility issues using methods as callbacks</li>
+<li><strong>#2286</strong> GCO changes require some care when using &lt;windows.h&gt; or independently defining some relevant structs</li>
+<li><strong>#2276</strong> Better handling of Postscript file with Orientation: Landscape directive</li>
+<li><strong>#2190</strong> Postscript read didn't support &quot;BOM+UTF-16&quot; filename in args</li>
+<li><strong>#2136</strong> Significant repair to color management, ref <strong>#2074</strong>, <strong>#1977</strong></li>
+<li><strong>#2083</strong> Postscript bugs in BoundingBox scanner, returned bogus page extents</li>
+<li><strong>#2057</strong> Split mtoq module from mthread to allow for Windows XP compatible build, although it's unlikely that XP builds will continue to work.</li>
+<li><strong>#2045</strong> Postscript output driver remove clipping for -&#64; placement and fix -r rotate issue for PDF input</li>
+<li><strong>#2035</strong> Text capture driver disable outer page clip to handle arbitrarily sized inputs</li>
+<li><strong>#2030</strong> PostScript: don't send DvTextData if DvCharEm; bogus encoding on CID in DvCharEm; expose FntFT_CharToIndex</li>
+<li><dl class="first docutils">
+<dt><strong>#1986</strong> Fixed Symbol and ZapfDingbats font issues rendering from RIP or GDI.</dt>
+<dd>These fonts are somewhat obscure but part of the PS &amp; PDF standards.
+Windows has a standard Symbol font but no ZapfDingbats,
+which is now mapped to Segoe UI Symbol, but requires <tt class="docutils literal">WantUnicode=Y</tt>
+and <tt class="docutils literal">UnicodeDingbats=Y</tt> to work.  These now default to Y.
+<tt class="docutils literal">UnicodeDingbats</tt> should be a gxc-&gt;option (<tt class="docutils literal">WantUnicode</tt> is <tt class="docutils literal"><span class="pre">gxc-&gt;want_unicode</span></tt>),
+but this hasn't been implemented.
+Other platforms may have other requirements.</dd>
+</dl>
+</li>
+</ul>
+</div>
+<div class="section" id="multithreaded-rip">
+<h2><a class="toc-backref" href="#id13">MultiThreaded RIP</a></h2>
+<p>Multithreaded RIP and additional riptest crop options</p>
+<pre class="code c literal-block">
+<span class="comment multiline">/* MULTI-THREADED OPEN */</span>
+<span class="name">CDocRIPPtr</span> <span class="name function">CDocRIP_MTOpenFile</span><span class="punctuation">(</span><span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">fileName</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">etcPath</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">nThreads</span><span class="punctuation">);</span>
+<span class="name">CDocRIPPtr</span> <span class="name function">CDocRIP_MTOpenFFs</span><span class="punctuation">(</span><span class="name">FFs</span> <span class="operator">*</span><span class="name">ffs</span><span class="punctuation">,</span> <span class="keyword">const</span> <span class="keyword type">char</span> <span class="operator">*</span><span class="name">etcPath</span><span class="punctuation">,</span> <span class="keyword type">int</span> <span class="name">nThreads</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><tt class="docutils literal">riptest <span class="pre">-m</span> #</tt> for multithreaded rip</li>
+<li><tt class="docutils literal">riptest <span class="pre">-r</span></tt> rectangle crop option</li>
+<li><tt class="docutils literal"><span class="pre">-ri</span> <span class="pre">-si</span> <span class="pre">-ci</span></tt> alternative options use inches instead of pixels</li>
+<li>Note that <tt class="docutils literal"><span class="pre">-s</span></tt> (scale) and <tt class="docutils literal"><span class="pre">-c</span></tt> (clip) are bottom up but <tt class="docutils literal"><span class="pre">-r</span></tt> is top down</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id14">References</a></h2>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.littlecms.com/">Little cms</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.openjpeg.org/">OpenJPEG / OpenJP2</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.libpng.org/">libng Portable Network Graphics library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.openssl.org/">OpenSSL Cryptography Toolkit</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/PLRM.pdf">Adobe PostScript language specifications</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.adobe.com/devnet/pdf/pdf_reference.edu.html">Adobe PDF Reference and Adobe Extensions to the PDF Specification</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/51502.html">ISO 32000-1:2008</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/63534.html">ISO 32000-2:2017</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.doxygen.org">Doxygen</a></p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+   See http://docutils.sourceforge.net/rst.html for more information.)
+
+**Copyright (c) 2021 Liberty Technology Systems, Inc.  All Rights Reserved.** -->
+</div>
+</div>
+</body>
+</html>

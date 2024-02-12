@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.7: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.5 - Summary of Changes since 6.3.3</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date$
+:Revision: $Revision$
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-5-summary-of-changes-since-6-3-3">
+<h1 class="title">CentraDoc 6.5 - Summary of Changes since 6.3.3</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id1">Introduction</a></li>
+<li><a class="reference internal" href="#enhancements-and-upgrades" id="id2">Enhancements and Upgrades</a></li>
+<li><a class="reference internal" href="#repairs-and-enhancements-by-ticket" id="id3">Repairs and Enhancements by Ticket #</a></li>
+<li><a class="reference internal" href="#some-unticketed-issues" id="id4">Some Unticketed Issues</a></li>
+<li><a class="reference internal" href="#some-known-issues" id="id5">Some Known Issues</a></li>
+<li><a class="reference internal" href="#references" id="id6">References</a></li>
+</ul>
+</div>
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id1">Introduction</a></h2>
+<!-- (This document covers changes to the Liberty CentraDoc trunk,
+revision r8545 through r9885.  Changes since r9700/#961 are in 6.5.2+.) -->
+<p>CentraDoc 6.5 is the first system-wide release since 6.3.3.
+Several versions of 6.4 were delivered to different clients with
+different development schedules and needs, so many of the features
+here are already in use and may be familiar.</p>
+<p>This document is intentionally brief and not comprehensive.  Other useful
+documents are the pvsdkini.txt present in the <tt class="docutils literal">src/pvsdk</tt> directory, and
+the riptest.txt in the <tt class="docutils literal">src/ut</tt> directory.</p>
+<p>Most of the issues are listed here by ticket number.  If you have any
+questions about a specific ticket or issue, please contact <a class="reference external" href="http://www.lib-sys.com">Liberty
+Technology Systems</a>.  Liberty can provide any additional information or
+assistance you may need.</p>
+</div>
+<div class="section" id="enhancements-and-upgrades">
+<h2><a class="toc-backref" href="#id2">Enhancements and Upgrades</a></h2>
+<ul class="simple">
+<li>The 6.5 RIP is built on a variable channel color model, so it will
+support RGB, CMYK and DeviceN color models without rebuilding.</li>
+<li>The RIP now has very good support for the PDF transparency model.
+Many problem areas were fixed, and many advanced use cases are now correct.</li>
+<li>The RIP now has cdocrip.dll and riptestd.exe projects as an alternative to the Preview SDK.</li>
+<li>The Color Manager has extensive enhancements, including:<ul>
+<li>Separate profile settings for color modes (Fill, Stroke, Image, Text).</li>
+<li>Separate blocking of PDF ICC input by color mode (Fill, Stroke, Image, Text).</li>
+<li>Color Ink manager for named DeviceN color output.</li>
+<li>Color Separation database for mapping named input colors to output colorants.</li>
+</ul>
+</li>
+<li>Preview SDK and the CDocRIP API have functions to open arbitrary FFs objects</li>
+<li>OS/X XCode projects are now provided - just like the dsp and mak files,
+these are automatically built from the core .bld files.</li>
+<li>CDoc 6.5 uses Little cms 1.19 plus a number of security &amp; safety patches.</li>
+<li>CDoc 6.5.2 has been updated to use FreeType 2.4.2, plus a few minor patches</li>
+<li>CDoc 6.5.2 has been updated to use ZLib 1.2.5</li>
+</ul>
+</div>
+<div class="section" id="repairs-and-enhancements-by-ticket">
+<h2><a class="toc-backref" href="#id3">Repairs and Enhancements by Ticket #</a></h2>
+<ul>
+<li><p class="first"><strong>#987</strong> gxc-&gt;image_explicit4stencil bomb in cleaning up color spaces.</p>
+</li>
+<li><p class="first"><strong>#987</strong> PDF output library, allow for very large type 1 glyph definitions.</p>
+</li>
+<li><p class="first"><strong>#987</strong> GhostScript distiller pathological pattern trap extended to
+handle stencil (colorless) patterns.</p>
+</li>
+<li><p class="first"><strong>#986</strong> Handle nested soft masks in PDF transparency.</p>
+</li>
+<li><p class="first"><strong>#985</strong> Sometimes PDF transparency requires CMYK rendering (as does overprint).
+Added -cmyk2rgb option to riptest: render as CMYK but write RGB.  Only
+works for JPEG &amp; TIFF.  CDocRIP.c has the implementation details.</p>
+</li>
+<li><p class="first"><strong>#984</strong> DvCharEm Type 3 was blocking colored characters.
+Pass glyph name down to driver for data collection.
+Clean up d0 / d1 issue in PS output driver.</p>
+</li>
+<li><p class="first"><strong>#981</strong> Handle Kyocera PRESCRIBE directives in PostScript files.
+Detect and ignore ridiculous BoundingBox.</p>
+</li>
+<li><p class="first"><strong>#979</strong> Allow PDF images to have invalid mask entries, without error.</p>
+</li>
+<li><p class="first"><strong>#973</strong> Enhancements to the page count &amp; statistics driver module.
+Added to shipping kit.</p>
+</li>
+<li><p class="first"><strong>#972</strong> Workaround for PostScript invalidrestore caused by
+findcolorrendering failure.</p>
+</li>
+<li><p class="first"><strong>#971</strong> Image emulation made assumptions about color space depth causing
+coloring issues in the RIP.</p>
+</li>
+<li><p class="first"><strong>#970</strong> Allow for Resource dictionary XRef Range error accepted by Acrobat.</p>
+</li>
+<li><p class="first"><strong>#967</strong> DvCharEm ligatures converted to character sequences are
+converted back to the Unicode ligature character.</p>
+</li>
+<li><p class="first"><strong>#966</strong> Several PreviewSDK enhancements
+* LS_OpenFFs API call
+* LS_OpenPSBuffer better support for PDF
+* Support for GCO class inheritance across DLL boundaries (IMPORT_PARENT)
+* Additional symbols exported from the PvSDK dll
+* pvsdk64.dll and pvsdk64.lib
+* pvsdkl.h dynamic link stubs automatically generated from pvsdkl.d</p>
+</li>
+<li><p class="first"><strong>#965</strong> Automatically turn on FreeTypeHinting for a set of &quot;Tricky&quot;
+Chinese TrueType fonts that will not render correctly with hinting off.</p>
+</li>
+<li><p class="first"><strong>#963</strong> A minor syntax change in the RIP for gcc 3.2 C++ compatiblity.</p>
+</li>
+<li><p class="first"><strong>#962</strong> A <tt class="docutils literal"><span class="pre">-text</span> file</tt> option has been added to the riptest program,
+as an example of unicode text extraction via the CDocRIP API.</p>
+</li>
+<li><p class="first"><strong>#961</strong> PostScript driver will attempt to use meaningful glyph names
+when capturing fonts.  This enables character data recovery later.</p>
+</li>
+<li><p class="first"><strong>#959</strong>, <strong>#937</strong> Ignore wide (multitarget) ToUnicode mappings for fonts with
+narrow input encoding.  This is a Snow Leopard bug; both ToUnicode
+mappings are valid, but using both is not.  (Other bad ToUnicode mappings
+have been found with dozens of target characters for one input character.)
+Also added default external font mappings for standard fonts on Mac OS/X.</p>
+</li>
+<li><p class="first"><strong>#958</strong> Fixed PostScript output driver polarity issue with grabbed
+CCITT image where BlackIs1 is False.</p>
+</li>
+<li><p class="first"><strong>#957</strong>, <strong>#955</strong> Ignore unknown layer names in optional content stream directives.
+Also, form XObjects may now reference resources from the page (old style).</p>
+</li>
+<li><p class="first"><strong>#956</strong>, <strong>#906</strong> DvImgGrab received wrong size information if
+automatic image resize triggered.  Added ini switches for controlling
+image resizer at runtime.</p>
+</li>
+<li><p class="first"><strong>#954</strong> Fixed issues with capturing PDF Type 3 fonts with DvCharEm mechanism.</p>
+</li>
+<li><p class="first"><strong>#950</strong> The rgn clipper would choke on a single point path.</p>
+</li>
+<li><p class="first"><strong>#949</strong> riptest required a CMYK ICC profile if using -cmyk color model;
+it rendered images incorrectly if no CMYK profile was found; the color
+manager will now use the default RGB profile with internal conversion to
+CMYK if a CMYK ICC profile is not available.</p>
+</li>
+<li><p class="first"><strong>#948</strong>, <strong>#931</strong>, <strong>#870</strong>, <strong>#789</strong>, <strong>#741</strong> Improve handling of PDF files
+with trailing garbage and other broken PDF recovery strategy improvements.</p>
+</li>
+<li><p class="first"><strong>#945</strong> Added Preview SDK APIs for image extraction.</p>
+</li>
+<li><p class="first"><strong>#943</strong> Many updates to the symbol-utf16 mapping Unicode to narrow.</p>
+</li>
+<li><p class="first"><strong>#941</strong> More PDF and PostScript embedded ICC profiles</p>
+<ul class="simple">
+<li>Handled additional case of DefaultRGB and DefaultCMYK style PDF colorspaces</li>
+<li>Implemented undocumented PostScript DSC wrapper for ICC profile</li>
+</ul>
+</li>
+<li><p class="first"><strong>#940</strong> Added PDF soft mask caching for some performance improvements
+of files that reuse the same softmasks repeatedly.  This is configurable;
+see pvsdkini.txt <tt class="docutils literal">PdfSMaskCacheMaxK</tt> and <tt class="docutils literal">PdfSMaskCacheMaxN</tt>
+<strong>REMOVED</strong> r9865: false positive cache hits in some cases.</p>
+</li>
+<li><p class="first"><strong>#939</strong> riptest now supports -monotext and -polytext in addition to
+-aliased flag, to control how text is rendered.  Default is antialiased (8
+bit) glyphs; -monotext uses single bit glyphs, -polytext uses paths.</p>
+</li>
+<li><p class="first"><strong>#936</strong>, <strong>#892</strong> Attempts to reduce GC memory leakage for special case PostScript.
+(The GC build is not the normal build, this is for extreme cases).</p>
+</li>
+<li><p class="first"><strong>#935</strong> <strong>#911</strong> and <strong>#856</strong> Draw the &quot;.notdef&quot; character (usually a box)
+instead of ignoring it.</p>
+</li>
+<li><p class="first"><strong>#933</strong> More color related enhancements</p>
+<ul class="simple">
+<li><tt class="docutils literal">riptest <span class="pre">-scan</span></tt> mode reports colorants in use</li>
+<li><tt class="docutils literal">SmarterTransform=Y</tt> now preserves CMYK 1/1/1/1</li>
+<li>Added ini settings to block color manager <tt class="docutils literal"><span class="pre">PdfBlockICC[MODEL][MODE]=Y</span></tt> where<ul>
+<li>MODEL is one of Gray, RGB, CMYK, and All</li>
+<li>MODE is one of Fill, Stroke, Image, Text, and All</li>
+</ul>
+</li>
+<li>Added ini option AggNativeGradients=Y or N to enable/disable RIP axial &amp; gouraud shaders</li>
+<li>Added uni option AggGradientDiffusion=Y or N to help smooth out native RIP axial</li>
+<li>Note that DeviceN may not mix Real separations with colorant DB separations.
+If any colors in a DeviceN colors are not in the colorant db, then the
+ones that are will be ignored.  This is a function of how DeviceN
+alternate colors can be specified in input - there may not be a clear
+relationship between inputs and outputs.  The Altona PDF test file has
+relevant test cases.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#932</strong> Reduced resolution of PDF output coordinates to save space.</p>
+</li>
+<li><p class="first"><strong>#927</strong> The magic Windows EMF DPI resolution for text etc is 96.
+This is now the default DPI for PreviewSDK, and the EMF header rewrite.</p>
+</li>
+<li><p class="first"><strong>#926</strong> Several PostScript Idiom and Shader issues:</p>
+<ul class="simple">
+<li>Convert FreeHand EPS PostScript linear shading idioms to &quot;real&quot; shaders.</li>
+<li>PostScript idioms were broken in <strong>#445</strong>, repaired.</li>
+<li>Fixed PostScript shfill clipping glitch.</li>
+<li>Shading RGB doesn't produce the same results as Shading CMYK.  If the
+end points are converted, colors in between may not interpolate the same.
+If source color model is different from the device color model, the fix
+creates more in between points to get better interpolation.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#924</strong>, <strong>#920</strong> Various security checks:</p>
+<ul class="simple">
+<li>PDF reader checking for ftell errors.</li>
+<li>More careful string and allocation math, checking for overflows and sign errors.</li>
+<li>Added additional checks for run away recursion.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#922</strong> Some color management fixes:</p>
+<ul class="simple">
+<li>Skip Color Manager transforms between ICC profiles with the same description.</li>
+<li>SmarterTransform was not plugged in correctly for some common cases.</li>
+<li>Fix SmarterTransform preserve K mode.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#921</strong> Heuristic checks for Snow Leopard PDF bogus ToUnicode font bug.</p>
+</li>
+<li><p class="first"><strong>#918</strong> PostScript DSC BoundingBox parsing error if missing space after <tt class="docutils literal">':'</tt>.</p>
+</li>
+<li><p class="first"><strong>#917</strong> Trapping additional weird unicode values in override-utf16.</p>
+</li>
+<li><p class="first"><strong>#915</strong> Fixed some problems with PDF Type 3 fonts with Unicode encodings.</p>
+</li>
+<li><p class="first"><strong>#912</strong> Added <tt class="docutils literal"><span class="pre">gxc-&gt;pdf_substitute_all</span></tt> to disable encoding checks -
+forces all embedded fonts to be offered to the driver.</p>
+</li>
+<li><p class="first"><strong>#910</strong> Work around for PDF lying about Symbol font using ANSI encoding.</p>
+</li>
+<li><p class="first"><strong>#909</strong> Adding additional smarts to the Axial rendering function
+processing to reduce the number of Axial slices.  Includes some related
+changes to PDF output of triangle shaders.</p>
+</li>
+<li><p class="first"><strong>#907</strong> Fixed some incorrect pattern checks from the file fuzzing fixes.</p>
+</li>
+<li><p class="first"><strong>#903</strong> Some riptest color manager setup fixes.</p>
+</li>
+<li><p class="first"><strong>#902</strong>, <strong>#879</strong> PostScript <tt class="docutils literal">currentcmykcolor</tt> must return the last
+<tt class="docutils literal">setcmykcolor</tt>, not anything calculated from the color manager, otherwise
+some PostScript files get confused and disable CMYK processing.</p>
+</li>
+<li><p class="first"><strong>902</strong> Several fixes to RIP PDF soft mask implementation.</p>
+</li>
+<li><p class="first"><strong>#899</strong> Fixed invalid matrix checks in PDF pattern drawing.</p>
+</li>
+<li><p class="first"><strong>#898</strong>, <strong>#888</strong> Handle PDF Axial shading with matrix offsets (matrix [4] &amp; [5]).</p>
+</li>
+<li><p class="first"><strong>#896</strong> Removed the code from <strong>#597</strong> that &quot;squares&quot; images that are &quot;nearly square&quot;.</p>
+</li>
+<li><p class="first"><strong>#887</strong> More confusion over &quot;Symbol&quot; font (PSDVFONT) and symbolic font.
+PSDVFONT symbol == 2 now means &quot;ZapfDingbats&quot; encoding.</p>
+</li>
+<li><p class="first"><strong>#885</strong> PDF excessive pattern trap didn't clean up correctly, causing incorrect output.</p>
+</li>
+<li><p class="first"><strong>#884</strong>, <strong>#882</strong> Font mapper repairs, fixes for autostyle code.</p>
+</li>
+<li><p class="first"><strong>#881</strong> Added some clipping smarts to Radial shader for pathologically excessive files.</p>
+</li>
+<li><p class="first"><strong>#878</strong> and <strong>#855</strong> Handle Undocumented (wrong) PDF ToUnicode syntax.</p>
+</li>
+<li><p class="first"><strong>#875</strong> Fixed some subtle bugs in the 64 bit build of the PostScript engine.</p>
+</li>
+<li><p class="first"><strong>#872</strong>, <strong>#860</strong> Handle PDF /Rotate 360 and other odd values.</p>
+</li>
+<li><p class="first"><strong>#868</strong> Fixed problem with JasPer (PDF JPX Image Decoder) caused by temporary
+file name buffer being far too small.</p>
+</li>
+<li><p class="first"><strong>#861</strong> Trap single bit chroma key image and convert to simple stencil mask image.</p>
+</li>
+<li><p class="first"><strong>#859</strong> Various RIP &amp; gradient fixes:</p>
+<ul class="simple">
+<li>Flush alpha before beginning any native shader.</li>
+<li>Pick up overprint settings for RIP native axial shader.</li>
+<li>Repair bomb with CMYK colorspace &amp; RIP native axial shader.</li>
+<li>Added new log utilities, useful for tracking ini and color manager settings.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#857</strong> Fix nocurrentpoint error in rgn clipping code for example PDF file.</p>
+</li>
+<li><p class="first"><strong>#853</strong> Handle PostScript TBCP file with extra leading whitespace.</p>
+</li>
+<li><p class="first"><strong>#852</strong> Fixes for Color Mode issues with Separation colors.</p>
+</li>
+<li><p class="first"><strong>#851</strong> Allow PDF ToUnicode to be Identity-H instead of stream.</p>
+</li>
+<li><p class="first"><strong>#850</strong> Fix PostScript issues with proc style files.</p>
+</li>
+<li><p class="first"><strong>#849</strong> Implement Color Separation DB - see riptest.txt for more info.</p>
+</li>
+<li><p class="first"><strong>#847</strong> Fix CCITT decoder bad cleanup case.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#845</strong> DvImgGrab for JPX to sidestep JasPer for client specific handler.</dt>
+<dd><p class="first last">Call <tt class="docutils literal">FFsJpx_SetGrabbing(TRUE);</tt> or DvImgGrab for JPX won't work.</p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#840</strong> Another fix for <tt class="docutils literal">LS_TextExtract()</tt> (from <strong>#757</strong>).</p>
+</li>
+<li><p class="first"><strong>#839</strong> Consolidate PostScript special file handling for utilities like <tt class="docutils literal">psbbox()</tt>.</p>
+</li>
+<li><p class="first"><strong>#837</strong> Ignore PDF syntax error for names that are too long, truncate and continue.</p>
+</li>
+<li><p class="first"><strong>#835</strong> Implemented RIP native Axial (linear) and Gouraud (triangle) gradients.</p>
+</li>
+<li><p class="first"><strong>#831</strong> Use <tt class="docutils literal"><span class="pre">gxc-&gt;emulate_winding_threshold</span></tt> to disable fill rule repair for large polygons.</p>
+</li>
+<li><p class="first"><strong>#830</strong> Added option for riptest -cfg filename for specific ini settings file.</p>
+</li>
+<li><p class="first"><strong>#828</strong> Fixed font mapping issues related to Wide character capture in psdvps2.</p>
+</li>
+<li><p class="first"><strong>#824</strong> Handle EPS header in <tt class="docutils literal">psisetbuffersource()</tt>.</p>
+</li>
+<li><p class="first"><strong>#823</strong> More fixes for fuzzed PDF files.</p>
+</li>
+<li><p class="first"><strong>#822</strong> Implement Color Manager object modes (Fill, Stroke, Image, Text).</p>
+</li>
+<li><p class="first"><strong>#819</strong> Preview SDK <tt class="docutils literal">LS_TextExtract()</tt> wasn't handling multiple pages correctly.</p>
+</li>
+<li><p class="first"><strong>#816</strong> Attempt to continue drawing PDF page after syntax error in PDF input.</p>
+</li>
+<li><p class="first"><strong>#814</strong> PDF Output incremental Type 1 fonts.</p>
+</li>
+<li><p class="first"><strong>#812</strong> More fixes for fuzzed PDF files.</p>
+</li>
+<li><p class="first"><strong>#809</strong> More PDF annotation highlight appearance and placement fixes.</p>
+</li>
+<li><p class="first"><strong>#808</strong> More fixes for vertical alignment &amp; placement of CJK-V text.</p>
+</li>
+<li><p class="first"><strong>#807</strong> Fix for PostScript chunk size oddities in embedded Type42 font fragments.</p>
+</li>
+<li><p class="first"><strong>#803</strong> Various fixes for fuzzed PDF files.</p>
+</li>
+<li><p class="first"><strong>#802</strong> Added missing DvFontEm signal in Type 3 font change.</p>
+</li>
+<li><p class="first"><strong>#797</strong> Fix for PDF IccBased Lab profile.</p>
+</li>
+<li><p class="first"><strong>#796</strong> Various font &amp; encoding issues:</p>
+<ul class="simple">
+<li>Improved support for PDF Unicode Wingdings font.</li>
+<li>Use <tt class="docutils literal">AlphaBlend</tt> instead of <tt class="docutils literal">PATMASK</tt> for <tt class="docutils literal">DvGlyph</tt> operations to Windows EMF file.</li>
+<li>Added <tt class="docutils literal"><span class="pre">etc/encoding/zapfdingbats-utf16</span></tt> for conversion from Unicode ZapfDingbats to narrow
+(when using Monotype Sorts or similar font).</li>
+<li>... and <tt class="docutils literal">UnicodeDingbats=Y</tt> enhancement to avoid converting ZapfDingbats to narrow
+(when NOT using Monotype Sorts or similar font, and using comprehensive Unicode font instead).</li>
+<li>Support for synthetic Bold font display on Windows.</li>
+<li>Use FreeType to synthesize Bold and Outline font glyphs
+(Improves stroked &amp; filled character rendering).</li>
+<li>Smarter Unicode language character set detection.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#793</strong> FreeType patch for font with bad upm setting causing tiny font output.</p>
+</li>
+<li><p class="first"><strong>#792</strong> Fix for incorrect color mode state processing.</p>
+</li>
+<li><p class="first"><strong>#790</strong> Fixed another PDF annotation placement issue.</p>
+</li>
+<li><p class="first"><strong>#788</strong> PSDVFONT symbol field not initialized (and is not generally useful).</p>
+</li>
+<li><p class="first"><strong>#787</strong> Preview SDK pvsdk.dll wasn't calling cleanup function, causing leaks.</p>
+</li>
+<li><p class="first"><strong>#783</strong> Handle unusual font names when generating Type 1 fonts for PDF output.</p>
+</li>
+<li><p class="first"><strong>#781</strong> Fix for Windows image with alpha.</p>
+</li>
+<li><p class="first"><strong>#780</strong> Some fixes for Windows font name processing.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#778</strong> Implement profiler module on Mac OS X.</dt>
+<dd><p class="first last">Also some performance improvments for embedded CMYK -&gt; RGB profile FastCMYK=N</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#777</strong> Implement PDF annotation driver signaling via</dt>
+<dd><p class="first last"><tt class="docutils literal">gxc_&gt;want_DvAnnot</tt>, <tt class="docutils literal">DvBeginAnnot</tt>, <tt class="docutils literal">DvEndAnnot</tt></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#776</strong> Handle PostScript Type 2 function with single item instead of array.</p>
+</li>
+<li><p class="first"><strong>#773</strong> Fix for function logic (affecting shader results).</p>
+</li>
+<li><p class="first"><strong>#771</strong> Added Windows EMF header rewrite for predictable DPI settings.</p>
+</li>
+<li><p class="first"><strong>#770</strong> Fixed soft mask save/restore/reset issues.</p>
+</li>
+<li><p class="first"><strong>#769</strong> RGB overprint emulation blend modes:
+<tt class="docutils literal">OverprintDarken=Y</tt> uses Darken, N uses Multiply; Multiply can be a problem
+if drawn areas overlap and are redrawn.</p>
+</li>
+<li><p class="first"><strong>#768</strong> Add riptest -page all option.</p>
+</li>
+<li><p class="first"><strong>#767</strong> Install dummy procs for Xerox style PostScript issues.</p>
+</li>
+<li><p class="first"><strong>#766</strong> Improvements for Preview SDK PostScript performance.</p>
+</li>
+<li><p class="first"><strong>#763</strong> Allow EPS file boundaries to be short without comment or error.</p>
+</li>
+<li><p class="first"><strong>#760</strong> Allow PDF image with too many decode elements without comment or error.</p>
+</li>
+<li><p class="first"><strong>#759</strong> Fix Preview SDK <tt class="docutils literal">LS_PostScript()</tt> encoding issues.</p>
+</li>
+<li><p class="first"><strong>#758</strong> Fixes for PDF ToUnicode oddities with Unicode Surrogates.</p>
+</li>
+<li><p class="first"><strong>#757</strong> Fix Preview SDK <tt class="docutils literal">LS_TextFile()</tt> implementation.</p>
+</li>
+<li><p class="first"><strong>#754</strong> Fixes for PDF annotation placement.</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>#752</strong> Support PostScript DSC %AI5_ArtSize via</dt>
+<dd><p class="first last"><tt class="docutils literal">int psaiartsize(char * fname, float <span class="pre">oWH[2]);</span></tt></p>
+</dd>
+</dl>
+</li>
+<li><p class="first"><strong>#751</strong> Fixes for vertical alignment &amp; placement of CJK-V text.</p>
+</li>
+<li><p class="first"><strong>#748</strong> Improve detection and handling of disk full condition.</p>
+</li>
+<li><p class="first"><strong>#746</strong> Handle odd case of PDF Encrypt settings (EncryptMetaData false &amp; R &lt; 3)</p>
+</li>
+<li><p class="first"><strong>#745</strong> Handle external TrueType font with missing glyph names.</p>
+</li>
+<li><p class="first"><strong>#739</strong> Fixes for PDF clipping optimization logic.</p>
+</li>
+<li><p class="first"><strong>#736</strong> PDF API enhancement Pdf_GetDcFormat (for checking AI compatibility)</p>
+</li>
+<li><p class="first"><strong>#732</strong> Fixed many issues with the text driver.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="some-unticketed-issues">
+<h2><a class="toc-backref" href="#id4">Some Unticketed Issues</a></h2>
+<ul class="simple">
+<li>Added alternative GCO class import mechanism for dlls,
+using #define IMPORT_ClassName instead of existing declspec mechanism.
+The riptestd project and prebind4dll.c / prebind2dll.c modules use this.</li>
+<li>Added <tt class="docutils literal"><span class="pre">etc/encoding/symbol-utf16</span></tt> for converting Unicode Symbol encoding
+to narrow for Windows Symbol font which doesn't support Unicode.</li>
+<li>Added <tt class="docutils literal"><span class="pre">etc/encoding/override-utf16</span></tt> for catching common problematic
+Unicode characters.</li>
+</ul>
+</div>
+<div class="section" id="some-known-issues">
+<h2><a class="toc-backref" href="#id5">Some Known Issues</a></h2>
+<ul class="simple">
+<li>Overprint is no longer the default in the RIP.
+Correct overprinting is device specific - RGB can emulate somewhat,
+CMYK can overprint correctly if there are no separation colors,
+otherwise DeviceN printing is required.  Refer to the riptest options
+for more information.</li>
+<li>The RIP does not currently support 16 bit pixels components.</li>
+<li>CDoc does not support Color Rendering Intents embedded in PDF file graphic states.</li>
+<li>ZLib 1.2.5 is available but has not been integrated.</li>
+<li>FreeType 2.4.0 is available but has not been integrated.</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id6">References</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference external" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></li>
+<li><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference external" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></li>
+<li><a class="reference external" href="http://www.adobe.com/products/PostScript/pdfs/PLRM.PDF">Adobe PostScript Language Reference</a></li>
+<li><a class="reference external" href="http://www.adobe.com/devnet/Acrobat/pdfs/pdf_reference.PDF">Adobe PDF Reference, Sixth Edition, version 1.7</a></li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

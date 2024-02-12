@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<title>CentraDoc 7.2.4 - Summary of Changes since 7.1.3</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #f8f8f8 }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #f8f8f8 }
+pre.code .comment, code .comment { color: #008000 }
+pre.code .keyword, code .keyword { color: #4040D0; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #D04040 }
+pre.code .name.builtin, code .name.builtin { color: #4040D0 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 65em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #BBBBEE;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #7777CC;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-7-2-4-summary-of-changes-since-7-1-3">
+<h1 class="title">CentraDoc 7.2.4 - Summary of Changes since 7.1.3</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="toc-entry-1">Introduction</a><ul>
+<li><a class="reference internal" href="#highlights" id="toc-entry-2">Highlights</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gyp" id="toc-entry-3">GYP</a></li>
+<li><a class="reference internal" href="#pdf" id="toc-entry-4">PDF</a><ul>
+<li><a class="reference internal" href="#pdf-signature-support-improvements" id="toc-entry-5">PDF Signature support improvements</a></li>
+<li><a class="reference internal" href="#openssl-builds" id="toc-entry-6">OpenSSL builds</a></li>
+<li><a class="reference internal" href="#pdf-reader" id="toc-entry-7">PDF Reader</a></li>
+<li><a class="reference internal" href="#pdf-writer" id="toc-entry-8">PDF Writer</a></li>
+<li><a class="reference internal" href="#pdf-marks" id="toc-entry-9">PDF Marks</a></li>
+<li><a class="reference internal" href="#distiller" id="toc-entry-10">Distiller</a></li>
+<li><a class="reference internal" href="#pdf-enhancements" id="toc-entry-11">PDF Enhancements</a></li>
+<li><a class="reference internal" href="#xfa" id="toc-entry-12">XFA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#c" id="toc-entry-13">C#</a></li>
+<li><a class="reference internal" href="#preview-sdk" id="toc-entry-14">Preview SDK</a></li>
+<li><a class="reference internal" href="#rip-enhancements" id="toc-entry-15">RIP enhancements</a></li>
+<li><a class="reference internal" href="#rip-multiple-threads-and-examples" id="toc-entry-16">RIP multiple threads and examples</a></li>
+<li><a class="reference internal" href="#multithreading-stability" id="toc-entry-17">Multithreading &amp; Stability</a></li>
+<li><a class="reference internal" href="#miscellaneous" id="toc-entry-18">Miscellaneous</a></li>
+<li><a class="reference internal" href="#third-party-libraries" id="toc-entry-19">Third-party libraries</a></li>
+<li><a class="reference internal" href="#references" id="toc-entry-20">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes since e102203956a, 2022-03-01) -->
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#toc-entry-1">Introduction</a></h2>
+<p>These are the changes to CentraDoc since the Version 7.1.3 release 2022-03-01.</p>
+<div class="section" id="highlights">
+<h3><a class="toc-backref" href="#toc-entry-2">Highlights</a></h3>
+<ul class="simple">
+<li>Alternate multithreaded RIP - thread per page v thread per band</li>
+<li>GYP - Generate Your Projects - improved cross platform builds</li>
+<li>Cython - added support for building Python extensions</li>
+<li>Doxygen rebuilds - doxygen html in separate packaging</li>
+<li>Third party library updates</li>
+<li><strong>#2444</strong> RIP changes for PostScript page handling</li>
+<li><strong>#2432</strong> more RIP examples &amp; distribution includes more code examples</li>
+<li><strong>#2412</strong> Generic Logger mechanism</li>
+</ul>
+</div>
+</div>
+<div class="section" id="gyp">
+<h2><a class="toc-backref" href="#toc-entry-3">GYP</a></h2>
+<p>Generate-Your-Projects is a build system originally used for Chromium and V8
+(which has moved on to GN - Generate Ninja).  GYP is still in use
+by the node.js project, as gyp-next: <a class="reference external" href="https://github.com/nodejs/gyp-next">https://github.com/nodejs/gyp-next</a></p>
+<p>GYP can be used to build Visual Studio projects for Windows and
+XCode projects for Mac, as well as Makefiles for Linux.  GYP can
+also generate CMake and Ninja build files, although this doesn't work
+on all platforms.  FYI, the Ninja build on Linux is <em>very</em> fast.</p>
+<p>This makes it easier to produce the build you need, e.g.:</p>
+<ul class="simple">
+<li>Which version of Visual Studio?</li>
+<li>Static or Dynamic Runtime library?</li>
+<li>OpenSSL included or not?</li>
+</ul>
+<p>etc.</p>
+<p>Prebuilt projects are available in cdoc/build.  The older builds in cdoc/ps
+will go away.  The scripts that use GYP to build are in cdoc/src:</p>
+<ul class="simple">
+<li>gyp-linux</li>
+<li>gyp-macos</li>
+<li>gyp-win.cmd</li>
+</ul>
+<p>as are most of the .gyp files.  The gyp files use a Python program to
+expand wildcards (cdoc/src/tools/exp.py) which isn't built in to gyp.
+GYP is not used to compile the .lidl IDL files, which are shipped precompiled.
+The various lidl tools are in cdoc/src/tools, including the Liberty
+cross platform build engine (build.py), which can be used to run lidl.
+The cdoc/src/tools folder wasn't previously included in the drop.</p>
+</div>
+<div class="section" id="pdf">
+<h2><a class="toc-backref" href="#toc-entry-4">PDF</a></h2>
+<div class="section" id="pdf-signature-support-improvements">
+<h3><a class="toc-backref" href="#toc-entry-5">PDF Signature support improvements</a></h3>
+<ul class="simple">
+<li><strong>#2433</strong> C# OcspSignature.IsTrusted property &amp; SSL reference count fixes</li>
+<li><strong>#2375</strong> Now requires OpenSSL 1.1.1m and later - 1.0.2 no longer supported</li>
+<li><strong>#2394</strong> Improved support for signed-and-modified PDFs.  Includes:<ul>
+<li>Better support for change detection and Signature permissions</li>
+<li>Fix memory leaks and object ownership issues with SSL related objects,
+including bomb when parsing OCSP trust chain.</li>
+<li>PDF reader supports explicitly numbered revisions of a file (these are
+not the same revision numbers that Acrobat displays in the Signature panel).</li>
+<li>no longer autoloading cacert.pem in default trust store, all trust stores
+must be explicit.</li>
+<li>some changes and additions to the Signature API for clarity</li>
+<li>Certificate_GetFingerprint method for tracking multiple references</li>
+</ul>
+</li>
+</ul>
+<p>Signatures are a complex topic and will require additional reading.
+The PdfSignatures.pdf document provides a basic overview of the feature and the available API.
+Sample programs for validating signatures are available for C and C#.</p>
+</div>
+<div class="section" id="openssl-builds">
+<h3><a class="toc-backref" href="#toc-entry-6">OpenSSL builds</a></h3>
+<p>The CentraDoc build typically uses a static link of OpenSSL, built with the same
+compiler and runtime library options.  DLL linkage requires use of the openssl
+applink.c stub to work around some compatibility issues.</p>
+<p>The relevant OpenSSL 1.1.1 library is libcrypto.  Due to its size and complexity,
+OpenSSL source isn't provided in vendor, but the ideally OpenSSL is installed in
+vendor/openssl111 with libraries in vendor/openssl111/lib
+or vendor/openssl111/lib64, with includes in vendor/openssl111/include.
+Support for OpenSSL 3 is still pending.</p>
+<p>Depending on the options used building OpenSSL, the WS2_32.lib may be
+required.  CentraDoc does not require these features at this time,
+OpenSSL may be built with no-sock to avoid this linkage.</p>
+</div>
+<div class="section" id="pdf-reader">
+<h3><a class="toc-backref" href="#toc-entry-7">PDF Reader</a></h3>
+<ul class="simple">
+<li><strong>#2473</strong> PDF Structure reader bombed when unloading MCID entries</li>
+<li><strong>#2459</strong> PDF with degenerate JBIG2 image caused a 0 byte alloc</li>
+<li><strong>#2456</strong> PDFs with nested softmasks losing intermediate softmask state</li>
+<li><strong>#2450</strong> PDF transparency group clip checking glitch</li>
+<li><strong>#2445</strong> PDF driver may need to know if the JPEG2000 image is indexed,
+because Acrobat doesn't handle indexed JPEG2000 images correctly.
+This required a hack fo the openjp2 API via openjp2_hack.h.</li>
+<li><strong>#2443</strong> PDF utlayer example didn't handle AI layers correctly (crashing).</li>
+<li><strong>#2421</strong> PDF pathological pattern trap didn't handle some common image formats</li>
+<li><strong>#2419</strong> Make <cite>cap-&gt;multichar</cite> logic slightly less obscure</li>
+<li><strong>#2418</strong> Handle bogus encoding in Type 3 font</li>
+<li><strong>#2414</strong> For colorspace Separation /None, don't draw anything.
+* also fix for bug in Type 4 function roll operator</li>
+<li><strong>#2395</strong> ignore abandoned layers and layer structure in optional content</li>
+<li><strong>#2391</strong> handle bogus object number &lt;= 0 in a reference without choking</li>
+<li><strong>#2385</strong> handle rotation (MK/R) when generating annotation appearances;
+also, text widget annotations should default to a single line unless
+multiline is explicitly set.</li>
+<li><strong>#2377</strong> DvImgGrab didn't provide information about JBIG2 global stream,
+which is needed to prevent grabbing the JBIG2 without the globals.</li>
+<li><strong>#2359</strong> pass the correct page extents to PDI BeginPage</li>
+<li><strong>#2267</strong> Transfer function affects soft mask scope</li>
+</ul>
+</div>
+<div class="section" id="pdf-writer">
+<h3><a class="toc-backref" href="#toc-entry-8">PDF Writer</a></h3>
+<ul class="simple">
+<li><strong>#2480</strong> PDF marks not handling extended characters in annotation names correctly</li>
+<li><strong>#2477</strong> PDF marks merge annotations now handles field name collision.
+This helps for the case of merging multiple copies of the same form,
+but would be problematic for PDFs that actually use duplicate names (rare).</li>
+<li><strong>no ticket</strong> embedding or referencing fonts, using the PostScript version of
+the font name in the PDF file is now the default.  This makes Acrobat happier.</li>
+<li><strong>#2398</strong> <cite>noAppearance</cite> flag for <cite>PdfFreeTextParms</cite> (<cite>PdfAnnot_CreateFreeText</cite>)</li>
+</ul>
+</div>
+<div class="section" id="pdf-marks">
+<h3><a class="toc-backref" href="#toc-entry-9">PDF Marks</a></h3>
+<ul class="simple">
+<li><strong>#2376</strong> PDF export unrotate didn't handle annotation origins correctly</li>
+</ul>
+</div>
+<div class="section" id="distiller">
+<h3><a class="toc-backref" href="#toc-entry-10">Distiller</a></h3>
+<ul class="simple">
+<li><strong>#2485</strong> Character capture issues with PDF Type 3 fonts</li>
+<li><strong>#2468</strong> improved font glyph capture for Distiller (ps2pdf) (qa/FontTest2.ps)</li>
+<li><strong>#2390</strong> Distiller glyph capture didn't track matrix correctly,
+causing OVERSIZE glyphs when the font size (but not font) changes.</li>
+<li><strong>#2389</strong> Distiller didn't preserve character encoding when capturing glyphs.
+When capturing glyphs, don't render one character at a time, batch up
+into strings.</li>
+<li><strong>#2377</strong> improved driver DvImgGrab example in distiller</li>
+<li><strong>#2376</strong> distiller set pdfCropped for correct origin reading PDFs</li>
+</ul>
+</div>
+<div class="section" id="pdf-enhancements">
+<h3><a class="toc-backref" href="#toc-entry-11">PDF Enhancements</a></h3>
+<ul class="simple">
+<li><strong>#2378</strong> PDF-on-PDF placement and JSON stamp definitions</li>
+<li><strong>#2400</strong> Improved PDF merging API, additional support pending</li>
+</ul>
+</div>
+<div class="section" id="xfa">
+<h3><a class="toc-backref" href="#toc-entry-12">XFA</a></h3>
+<ul class="simple">
+<li><strong>#2483</strong> XFA issue with numeric picture format containing spaces (credit card)</li>
+<li><strong>#2481</strong> XFA not cleaned up correctly causing crash in pvsdk usage</li>
+<li><strong>#2479</strong> XFA handle right to left subform layout</li>
+<li><strong>#2478</strong> XFAF file confused by embedded Calibri fragment, causing crash
+* No longer loads Type 0 fonts from the PDF
+* No longer loads page fonts from the PDF, unless XFAEmbedPageFonts=Y
+* Fixed object leak if XFAEmbedFonts=N</li>
+<li><strong>#2458</strong> Fixed case of infinite loop in HTML layout</li>
+<li><strong>#2452</strong> changes from <strong>#2378</strong> broke gray JPEGs</li>
+<li><strong>#2449</strong> V8 glue updated for 10.8.168.22 for security enhancements</li>
+<li><strong>#2447</strong> &quot;Missing font&quot; crashing on Linux.  Font issues need revisiting.</li>
+<li><strong>#2442</strong> V8 build enhancements
+* build and test V8 on Linux, both embedded and as jsvm.so
+* build is based on monolithic V8 library
+* FFS search path is used to load jsvm.dll and jsvm.so
+* V8 libraries are not distributed by default, contact Liberty for binaries</li>
+<li><strong>#2424</strong> XFA/XFAF fixes
+* <cite>XFAF=N</cite> disables XFAF processing, for testing
+* CurrentDate() handle time zone
+* some locale support for date and number parsing, german ('de') picture</li>
+<li><strong>#2409</strong> issues with AcroForm/DR usage on export/import of annotation blob</li>
+<li><strong>#2404</strong> fixed some XFA regressions</li>
+<li><strong>#2399</strong> some XFA fixes
+* fix for <strong>#2384</strong> accidentally centered text fields (<cite>PdfXfaToAcroform=Y</cite>)
+* enhance <strong>#1268</strong> to use specified justification of text fields (<cite>PdfXfaToAcroform=Y</cite>)
+* fix for <strong>#2303</strong> caused missing data in <strong>#2129</strong></li>
+</ul>
+</div>
+</div>
+<div class="section" id="c">
+<h2><a class="toc-backref" href="#toc-entry-13">C#</a></h2>
+<p>C# wrappers updated for signatures and the PDF-on-PDF / JSON stamp logic</p>
+<ul class="simple">
+<li><strong>#2471</strong> JSG stroke &amp; fill objects didn't register in stamp bounds</li>
+<li><strong>#2455</strong> Add GCO.IsDebugBuild &amp; explorer version debug &amp; assemblyinfo debug markers</li>
+<li><strong>#2431</strong> change signature API for consistency and thread safe trust store</li>
+<li><strong>#2411</strong> Improved out of memory handling, other miscellaneous fixes; BestPPI API</li>
+<li><strong>#2410</strong> Improved exception handling, fix for FirstAndLastPage API</li>
+<li><strong>#2407</strong>
+* C# API requires clarifying semantics of Close operations for Pdf, PdfDoc, and PdfUpd classes in C API
+* C# API PdfStampPages::AllPages didn't work
+* C# API add GCO FailureHandler, WarningHandler</li>
+</ul>
+</div>
+<div class="section" id="preview-sdk">
+<h2><a class="toc-backref" href="#toc-entry-14">Preview SDK</a></h2>
+<ul class="simple">
+<li><strong>no ticket</strong> Added VERSIONINFO resource to Preview SDK DLL.</li>
+</ul>
+</div>
+<div class="section" id="rip-enhancements">
+<h2><a class="toc-backref" href="#toc-entry-15">RIP enhancements</a></h2>
+<ul class="simple">
+<li><strong>#2444</strong> RIP changes for PostScript page handling</li>
+</ul>
+<p>Knowing the PostScript page size requires executing the PostScript code.
+PostScript can set the page size while executing, and change it for later pages.
+This led to some issues when using the RIP.  There are some new workarounds for this.</p>
+<p>First:</p>
+<pre class="code c literal-block">
+<span class="comment single">// Query if source is PostScript, if we need special handling
+// returns TRUE or FALSE
+</span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">CDocRIP_IsPostScript</span><span class="punctuation">(</span><span class="name">CDocRIPPtr</span><span class="whitespace"> </span><span class="name">self</span><span class="punctuation">)</span>
+</pre>
+<p>And:</p>
+<pre class="code c literal-block">
+<span class="comment single">// get the page size for the next page
+// returns ESimpleError
+</span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">CDocRIP_GetNextPageBBox</span><span class="punctuation">(</span><span class="name">CDocRIPPtr</span><span class="whitespace"> </span><span class="name">self</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword type">double</span><span class="whitespace"> </span><span class="name">oBBox</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">])</span>
+</pre>
+<p><cite>CDocRIP_GetNextPageBBox</cite> will run the PostScript from it's current location
+until it gets a setpagedevice specifying the actual page size (which may
+or may not be there).  PDF sources have direct access to this information.</p>
+<p>Also:</p>
+<pre class="code c literal-block">
+<span class="comment single">// turn on auto targeting
+</span><span class="keyword type">void</span><span class="whitespace"> </span><span class="name function">CDocRIP_AutoTarget</span><span class="punctuation">(</span><span class="name">CDocRIPPtr</span><span class="whitespace"> </span><span class="name">self</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword">const</span><span class="whitespace"> </span><span class="keyword type">char</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">name</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword">const</span><span class="whitespace"> </span><span class="name">RIPTargetSpec</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">spec</span><span class="punctuation">);</span>
+</pre>
+<p>The RIP can automatically create the appropriate sized page buffer based
+on the input page size and requested PPI.  This is especially helpful when
+running <cite>CDocRIP_MTAutoRun</cite>, the thread-per-page RIP. See the <cite>threadrip.cpp</cite> example.</p>
+</div>
+<div class="section" id="rip-multiple-threads-and-examples">
+<h2><a class="toc-backref" href="#toc-entry-16">RIP multiple threads and examples</a></h2>
+<ul class="simple">
+<li>Added <cite>-mp #</cite> option for multithreaded RIP by page instead of by band,
+only works for PDF files with multiple pages.  <cite>threadrip.cpp</cite> example.</li>
+<li>RIP example <cite>minirip.cpp</cite>, much simpler than riptest.cpp, which has
+examples of lots of features, including the multithreaded band approach.</li>
+</ul>
+</div>
+<div class="section" id="multithreading-stability">
+<h2><a class="toc-backref" href="#toc-entry-17">Multithreading &amp; Stability</a></h2>
+<ul class="simple">
+<li><strong>#2441</strong> requesting too large an image buffer should fail more cleanly.
+Previous (intermediate) error logic for other cases was incorrect.</li>
+<li><strong>#2439</strong> SSL_SetPersistence for testing.  The OpenSSL library
+will not start up again if shut down, this enables repeated shutdown
+testing that leaves the OpenSSL library up and running.</li>
+<li><strong>#2434</strong> Threads created outside of the CentraDoc library that call
+CentraDoc must call the Thread_Cleanup function to free thread local
+storage before exiting.</li>
+<li><strong>#2422</strong> S_PdfRW_LoadJBIG2Into Return from inside ERR_TRY block, linux crash</li>
+<li><strong>#2412</strong> Generic logging engine.  See rt_log.lidl &amp; updated examples.</li>
+<li><strong>#2408</strong> Exceptions bypassing critical section unlocks in some cases
+could leave locks permanently locked, leaving multithreaded program hung</li>
+<li><strong>#2402</strong> Multithreaded RIP fixes and enhancement
+Some unsafe global accesses broke multithreading safety, fixed.
+GCO object reference counts used Atomic Increment/Decrement for Safety.</li>
+<li><strong>#2386</strong> More safety checks in the <cite>setjmp</cite> based ERR/exception module.
+By default, Windows uses SEH instead of setjmp, and Linux/other builds
+use <cite>setjmp</cite>, which has restrictions on what's allowed inside the <cite>ERR_TRY</cite>
+block.  It's possible to test the setjmp logic on Windows by changing
+<cite>rt_except.h</cite> and commenting out the logic that turns on SEH, here:</li>
+</ul>
+<pre class="code c literal-block">
+<span class="comment preproc">#if defined(_MSC_VER) || defined(__BORLANDC__)
+</span><span class="whitespace">    </span><span class="comment preproc">#define USE_SEH     </span><span class="comment multiline">/* Structured Exception Handling */</span><span class="comment preproc">
+#endif</span>
+</pre>
+</div>
+<div class="section" id="miscellaneous">
+<h2><a class="toc-backref" href="#toc-entry-18">Miscellaneous</a></h2>
+<ul class="simple">
+<li>Support for GYP builds</li>
+<li><strong>#2470</strong> <cite>FFS_IsUnbounded(ffs)</cite> provides better detection of unbounded PostScript data sources for <cite>DvImgGrab</cite></li>
+<li><strong>#2461</strong> Automatically generated Cython interface definitions,
+provides substrate for building Python extensions.</li>
+<li><strong>#2453</strong> Axial shader divide by zero on &quot;difficult&quot; inputs</li>
+<li><strong>#2451</strong> Improved axial function digest, affects RIP rendering and
+custom driver implementations of gradients.  Integrated Type 4 via resampling.</li>
+<li><strong>#2427</strong> <cite>ImageResizerMaxWH=#</cite> to automatically downscale large images</li>
+<li><strong>#2316</strong> More cleanup of compiler warnings &amp; odd constructs</li>
+<li><strong>#1631</strong> Add Windows default mapping for Helvetica-Narrow font as Arial Narrow.</li>
+<li>GCO C+++ HClass wrappers removed in preference for the GCO COM wrappers.
+Here is an example accessing FFs classes using the GCO COM wrappers:</li>
+</ul>
+<pre class="code cpp literal-block">
+<span class="comment preproc">#include</span><span class="whitespace"> </span><span class="comment preprocfile">&quot;ffsstd.h&quot;</span><span class="comment preproc">
+</span><span class="whitespace">
+</span><span class="keyword type">void</span><span class="whitespace"> </span><span class="name function">main</span><span class="punctuation">()</span><span class="whitespace"> </span><span class="punctuation">{</span><span class="whitespace">
+    </span><span class="name">IFFsStdFactory</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">ffsStdFactory</span><span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span><span class="name">GetIFFsStdFactory</span><span class="punctuation">();</span><span class="whitespace">
+    </span><span class="name">IFFs</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">out</span><span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span><span class="name">ffsStdFactory</span><span class="operator">-&gt;</span><span class="name">NewOut</span><span class="punctuation">();</span><span class="whitespace">
+    </span><span class="name">out</span><span class="operator">-&gt;</span><span class="name">WriteCStr</span><span class="punctuation">(</span><span class="literal string">&quot;Hello world</span><span class="literal string escape">\n</span><span class="literal string">&quot;</span><span class="punctuation">);</span><span class="whitespace">
+    </span><span class="name">out</span><span class="operator">-&gt;</span><span class="name">Release</span><span class="punctuation">();</span><span class="whitespace">
+
+    </span><span class="name">IFFsOSFactory</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">ffsOSFactory</span><span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span><span class="name">GetIFFsOSFactory</span><span class="punctuation">();</span><span class="whitespace">
+    </span><span class="name">out</span><span class="whitespace"> </span><span class="operator">=</span><span class="whitespace"> </span><span class="name">ffsOSFactory</span><span class="operator">-&gt;</span><span class="name">New</span><span class="punctuation">(</span><span class="literal string">&quot;TESTFILE.TXT&quot;</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="name">FFS_WRITE</span><span class="punctuation">);</span><span class="whitespace">
+    </span><span class="name">out</span><span class="operator">-&gt;</span><span class="name">WriteCStr</span><span class="punctuation">(</span><span class="literal string">&quot;Hello world</span><span class="literal string escape">\n</span><span class="literal string">&quot;</span><span class="punctuation">);</span><span class="whitespace">
+    </span><span class="name">out</span><span class="operator">-&gt;</span><span class="name">Release</span><span class="punctuation">();</span><span class="whitespace">
+</span><span class="punctuation">}</span>
+</pre>
+<ul class="simple">
+<li>Some of the code examples added to the distribution:<ul>
+<li>pdfdoc/ut<ul>
+<li>pdfobject.c   - for inspecting objects in a pdf file</li>
+<li>pdfstream.c   - for inspecting streams in a pdf file</li>
+</ul>
+</li>
+<li>pdfupd/examples   - various create examples<ul>
+<li>pdfcreate1.c</li>
+<li>pdfFormExample.c</li>
+<li>pdflayers.c</li>
+<li>pdftrimesh.c</li>
+<li>pdftype1font.c</li>
+<li>pdftype3font.c</li>
+</ul>
+</li>
+<li>pdfupd/examples/docs - pretty printed versions of above</li>
+<li>pdfupd/ut<ul>
+<li>pdfcp.c       - pdf file copy</li>
+<li>pdfmarkscmd.c - pdf marks command line utility</li>
+<li>pdfpgcpy.c    - pdf page copy</li>
+<li>pdfrestr.c    - pdf replace stream (re: pdfstream.c above)</li>
+<li>pdfupdobj.c   - pdf update object (re: pdfobject above)</li>
+<li>pdfxpc.c      - generate transparency example files</li>
+</ul>
+</li>
+<li>ut/<ul>
+<li>minirip.cpp     - tiny RIP</li>
+<li>riptest.cpp     - extensive RIP</li>
+<li>threadrip.cpp   - multithreaded RIP</li>
+<li>ps2pdf.c        - distiller</li>
+</ul>
+</li>
+<li>ut/docs - pretty printed versions of above</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="third-party-libraries">
+<h2><a class="toc-backref" href="#toc-entry-19">Third-party libraries</a></h2>
+<ul class="simple">
+<li>AntiGrain - 2.4</li>
+<li>FreeType - 2.12.1 <strong>UPDATED</strong></li>
+<li>JPEG - JPEG-9e</li>
+<li>LCMS - 2.12</li>
+<li>libdmtx - 0.7.7  <strong>UPDATED</strong></li>
+<li>libpng - 1.6.38  <strong>UPDATED</strong></li>
+<li>OpenJPEG - 2.5.0 <strong>UPDATED</strong></li>
+<li>QR-Code-generator-c - ~2018</li>
+<li>sha2 - 1.0.1</li>
+<li>YAJL - 2.0.1</li>
+<li>ZLib - 1.2.13 <strong>UPDATED</strong></li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#toc-entry-20">References</a></h2>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.littlecms.com/">Little cms</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.openjpeg.org/">OpenJPEG / OpenJP2</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.libpng.org/">libng Portable Network Graphics library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.openssl.org/">OpenSSL Cryptography Toolkit</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/PLRM.pdf">Adobe PostScript language specifications</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.adobe.com/devnet/pdf/pdf_reference.edu.html">Adobe PDF Reference and Adobe Extensions to the PDF Specification</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/51502.html">ISO 32000-1:2008</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/63534.html">ISO 32000-2:2017</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.doxygen.org">Doxygen</a></p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+   See http://docutils.sourceforge.net/rst.html for more information.)
+
+**Copyright (c) 2023 Liberty Technology Systems, Inc.  All Rights Reserved.** -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.3.10: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.2 - Summary of Changes</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-2-summary-of-changes">
+<h1 class="title">CentraDoc 6.2 - Summary of Changes</h1>
+<div class="contents topic">
+<p class="topic-title first"><a id="table-of-contents" name="table-of-contents">Table Of Contents</a></p>
+<ul class="simple">
+<li><a class="reference" href="#introduction" id="id10" name="id10">Introduction</a></li>
+<li><a class="reference" href="#build-changes" id="id11" name="id11">Build Changes</a></li>
+<li><a class="reference" href="#general" id="id12" name="id12">General</a></li>
+<li><a class="reference" href="#pdf-read" id="id13" name="id13">PDF Read</a></li>
+<li><a class="reference" href="#pdf-write" id="id14" name="id14">PDF Write</a></li>
+<li><a class="reference" href="#postscript" id="id15" name="id15">PostScript</a></li>
+<li><a class="reference" href="#windows-and-preview-sdk" id="id16" name="id16">Windows and Preview SDK</a></li>
+<li><a class="reference" href="#rip-and-antigrain" id="id17" name="id17">RIP and AntiGrain</a></li>
+<li><a class="reference" href="#other" id="id18" name="id18">Other</a></li>
+<li><a class="reference" href="#driver-interface" id="id19" name="id19">Driver Interface</a><ul>
+<li><a class="reference" href="#ps-config" id="id20" name="id20">PS_CONFIG</a></li>
+<li><a class="reference" href="#driver-caps" id="id21" name="id21">Driver Caps</a></li>
+<li><a class="reference" href="#graphic-state" id="id22" name="id22">Graphic State</a></li>
+<li><a class="reference" href="#additional-driver-signals" id="id23" name="id23">Additional driver signals</a></li>
+<li><a class="reference" href="#extended-font-operations" id="id24" name="id24">Extended font operations</a></li>
+<li><a class="reference" href="#changes-to-driver-parameter-structs" id="id25" name="id25">Changes to driver parameter structs</a></li>
+</ul>
+</li>
+<li><a class="reference" href="#references" id="id26" name="id26">References</a></li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id10" id="introduction" name="introduction">Introduction</a></h2>
+<p>This document discusses the CentraDoc changes since 6.1.
+If you haven't upgraded since 6.0, please read the 6.1
+changes document as well.</p>
+<p>Liberty has been using a ticketing system for issue tracking since before
+the 6.1 release.  This should help clients keep track of what specific
+issues have been addressed.  Most of these notes will be listed by ticket
+number.  (Liberty uses <a class="reference" href="http://subversion.tigris.org/">Subversion</a> and
+<a class="reference" href="http://trac.edgewall.com/">Trac</a>)</p>
+<p>Here are the highlights for CentraDoc 6.2:</p>
+<ul class="simple">
+<li>PDF Transparency<ul>
+<li>New <a class="reference" href="#driver-interface">Driver Interface</a> hooks for Transparency</li>
+<li>Transparency implementation using new <a class="reference" href="#rip">RIP</a> code</li>
+</ul>
+</li>
+<li>Safety and security improvements</li>
+<li>Symbol changes to clean up C name space</li>
+<li>Visual Studio 2005 compatibility</li>
+<li>PDF Distiller Improvements</li>
+<li>PDF/A-1b compatibility feature for Pdf Update library</li>
+<li>Enhanced support for native Windows fonts</li>
+<li>Error management improvements and simplified error reporting</li>
+<li>Thread Safety improvements</li>
+<li><tt class="docutils literal"><span class="pre">DvCharEm</span></tt> <a class="reference" href="#driver-interface">Driver Interface</a> for font capture now supports PostScript fonts</li>
+<li>A large number of general fixes and some client specific enhancements</li>
+<li>Be aware of some <strong>Important</strong> but subtle changes to the <a class="reference" href="#driver-interface">Driver Interface</a>;
+In particular, see ticket <a class="reference" href="#id1">#11</a>, ticket <a class="reference" href="#id7">#166</a>, and ticket <a class="reference" href="#id9">#316</a></li>
+</ul>
+<p><em>This document is current as of the 6.2.1 Release</em></p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id11" id="build-changes" name="build-changes">Build Changes</a></h2>
+<p><strong>#286</strong> Massive Safety / Security cleanup</p>
+<blockquote>
+<ul class="simple">
+<li>Handle all Visual Studio 2005 deprecations</li>
+<li>Fixed a variety of bugs found by cl /analyze</li>
+<li>Error-prone standard C functions like <tt class="docutils literal"><span class="pre">strcpy</span></tt> and <tt class="docutils literal"><span class="pre">sprintf</span></tt> have
+been completely removed and replaced with safe versions.</li>
+<li>Change temporary file mechanisms for Windows Vista compatibility</li>
+<li>Significant safety enhancements to runtime library use.</li>
+<li>Other safety patches for Jasper, Little cms, FreeType and JPEG libraries</li>
+<li>Extensive source changes to clean up symbol conflicts and
+other problems with includes.</li>
+<li>Standard fixed-size integer symbols (<tt class="docutils literal"><span class="pre">stdint.h</span></tt> style) are used for consistency</li>
+<li>Many include files and symbols in the gco core have been renamed with
+package prefix <tt class="docutils literal"><span class="pre">rt_</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rt_config.h</span></tt> is the include file to customize for any needed <tt class="docutils literal"><span class="pre">#defines</span></tt>
+This should not be necessary except in unusual circumstances</li>
+<li><tt class="docutils literal"><span class="pre">psi.h</span></tt> has been reorganized to resolve dependency loops and provide a
+narrower interface</li>
+</ul>
+</blockquote>
+<ul class="simple">
+<li>Include file C++ compatibility has been improved</li>
+<li>Microsoft Visual C++ 6 .dsw and .dsp file builds have been moved a bit for
+Visual Studio 2005 compatibility.
+The Visual Studio 2005 .vcproj files are not distributed, but the .dsw files
+can be opened and converted easily with Visual Studio 2005 .</li>
+<li>Microsoft output from .dsw builds has been split into bin and dbin for
+independent separate release and debug builds.</li>
+</ul>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id12" id="general" name="general">General</a></h2>
+<dl class="docutils" id="id1">
+<dt><strong>#11</strong> <tt class="docutils literal"><span class="pre">DvCharEmEnd</span></tt> must cache glyph widths for <tt class="docutils literal"><span class="pre">DvCharEmStart</span></tt></dt>
+<dd>An <strong>Important</strong> change to the <a class="reference" href="#driver-interface">Driver Interface</a>:
+<tt class="docutils literal"><span class="pre">DvCharEmStart</span></tt> must now return glyph widths for captured glyphs.
+The driver must cache widths from <tt class="docutils literal"><span class="pre">DvCharEmEnd</span></tt> for new glyphs,
+in order to return them later when it grabs the glyph rendering via
+<tt class="docutils literal"><span class="pre">DvCharEmStart</span></tt>.</dd>
+<dt><strong>#120</strong> Ignore empty images, width or height == 0</dt>
+<dd>Can prevent bombs in driver code</dd>
+</dl>
+<dl class="docutils" id="id2">
+<dt><strong>#126</strong> Monochrome FreeType Glyph map alignment problem fixed</dt>
+<dd>Makes <tt class="docutils literal"><span class="pre">BytesPerRow</span></tt> explicit in <tt class="docutils literal"><span class="pre">FntBitmapRec</span></tt>,
+and adds <tt class="docutils literal"><span class="pre">bytes_per_row</span></tt> to the <tt class="docutils literal"><span class="pre">PSDVGLYPH</span></tt> struct.</dd>
+<dt><strong>#178</strong> Axial shader changes to handle special cases of extreme input</dt>
+<dd>also <strong>#314</strong> more Axial changes for special cases;
+and <strong>#350</strong> Glitches in axial code for horribly small patches</dd>
+<dt><strong>#184</strong> Confusion over abort signal</dt>
+<dd>Efforts to clean up the signal abort condition,
+but this is superseded by the error cleanup <a class="reference" href="#id4">#248</a>:
+signal abort now returns the simplified error <tt class="docutils literal"><span class="pre">errorUserAborted</span></tt></dd>
+</dl>
+<dl class="docutils" id="id3">
+<dt><strong>#189</strong>, <strong>384</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;want_charem</span></tt> and <tt class="docutils literal"><span class="pre">gxc-&gt;want_textmode</span></tt> problems</dt>
+<dd>These didn't work, and in ticket <strong>#189</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;want_charem</span></tt> was ignored
+if <tt class="docutils literal"><span class="pre">gxs-&gt;text_mode</span></tt> was set, but ticket <strong>#354</strong> changes behavior to
+place responsibility on the driver;  if driver sets <tt class="docutils literal"><span class="pre">gxc-&gt;want_charem</span></tt>
+and <tt class="docutils literal"><span class="pre">gxc-&gt;want_textmode</span></tt>, it must check <tt class="docutils literal"><span class="pre">gxs-&gt;text_mode</span></tt> in
+<tt class="docutils literal"><span class="pre">DvCharEmStart</span></tt> calls.</dd>
+</dl>
+<p><strong>#204</strong> Fix handling of special conics when getting FreeType outlines for fonts</p>
+<p><strong>#206</strong> Shader artifacts from too-early parametric color convergence</p>
+<dl class="docutils">
+<dt><strong>#242</strong> Clean up JPEG error handling (<tt class="docutils literal"><span class="pre">longjmp</span></tt> to stale buffer!) and</dt>
+<dd>add ability strip leading crap from JPEG streams.</dd>
+</dl>
+<p id="id4"><strong>#248</strong> Error handling</p>
+<blockquote>
+<p><tt class="docutils literal"><span class="pre">gco/errmgr.d</span></tt> is now the root of all errors.</p>
+<p>There are two categories of error identifiers:
+simplified general errors and extended specific errors.</p>
+<p>The simplified errors are a small set of enum values
+that could be meaningful to a user in the most general sense.
+The extended errors use string atoms for short, meaningful error names
+that map readily to longer error definitions.  This removes the need to
+manage some large arbitrary &quot;error number&quot; space across subsystems.</p>
+<p>The PSI and PvSDK API interfaces were both inconsistent about error return
+values.  The PvSDK and PSI calls now return simplified error values,
+although a negative return may have special meaning for some calls (all
+the simplified errors are small positive integers).</p>
+<p>Extra TRY wrappers have been added around the main PSI functions:
+<tt class="docutils literal"><span class="pre">psiint</span></tt>, <tt class="docutils literal"><span class="pre">psimon</span></tt>, and <tt class="docutils literal"><span class="pre">psifin</span></tt>, to be sure exceptions don't escape
+to the application.</p>
+<p>Here is the enum for the simplified errors:</p>
+<pre class="literal-block">
+typedef enum etSimpleError
+{
+    errorNone=0,
+    errorFailure,         /* unexpected, assert, gpf, ... */
+    errorUndefinedResult, /* divide by 0 or other */
+
+    errorOutOfMemory,
+    errorDiskFull,
+
+    errorUserAborted,
+
+    errorFileNotFound,
+    errorFileExists,      /* if unexpected... */
+    errorAccessDenied,    /* Permission error */
+    errorPasswordRequired,/* try again with correct password */
+
+    errorInputOutput,     /* &quot;device failure&quot; */
+    errorInputSyntax,     /* data / syntax / encoding */
+
+    errorInitializing,
+
+    errorUnsupportedVersion,
+    errorUnsupportedFeature
+
+} ESimpleError;
+</pre>
+<p>The <tt class="docutils literal"><span class="pre">PS_CONFIG</span></tt> (psc) struct contains detailed information about
+what errors have occurred:</p>
+<pre class="literal-block">
+char *       error;       /*  Current error  */
+int          signalerr;   /*  cleaned and Signalled error value */
+struct
+{    char *raw;           /* thrown error */
+     char *PostScript;            /* in PostScript error space */
+     int   simple;        /* simple erorr space */
+} last_error;             /* most recent error being handled */
+</pre>
+</blockquote>
+<dl class="docutils">
+<dt><strong>#275</strong> Memory reading bug in rgn2poly.c:S_TraceSimpleRing</dt>
+<dd>(rgn code is for drivers that don't implement clip level 3).
+Was (potentially) walking each run twice its length into random memory.
+Bombing in release mode due to changes in memory allocation strategies.</dd>
+<dt><strong>#285</strong> Add Unicode support in API file names</dt>
+<dd><tt class="docutils literal"><span class="pre">psc-&gt;etc_path</span></tt>, <tt class="docutils literal"><span class="pre">psc-&gt;ps_write_path</span></tt>, and <tt class="docutils literal"><span class="pre">run</span></tt> arguments can be
+Unicode if they start with a byte order mark (BOM) (0xfeff).  Unicode byte
+order is assumed to be native (regardless of BOM).  The contents of the
+ini file is still narrow, so no Unicode paths can be set via the ini file.</dd>
+<dt><strong>#305</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;image_raw_data</span></tt> improvements</dt>
+<dd><p class="first">Normal image processing converts images to 8 bit driver native color.
+For <tt class="docutils literal"><span class="pre">gxc-&gt;image_raw_data</span></tt>, the image format will convert to
+non-indexed 8 bit but preserve the target color space.</p>
+<p class="last">If the driver fails the <tt class="docutils literal"><span class="pre">DvImgStr</span></tt> by returning non-zero, the image will
+finish cooking to driver native color and try again.  <a class="reference" href="#id5">#306</a> adds
+<tt class="docutils literal"><span class="pre">gxc-&gt;image_raw_indexed</span></tt>, which will first give the driver a shot at the
+indexed data; again, the driver can fail the <tt class="docutils literal"><span class="pre">DvImgStr</span></tt>, and the image
+data will be converted to non-index and <tt class="docutils literal"><span class="pre">DvImgStr</span></tt> tried again.</p>
+</dd>
+</dl>
+<p><strong>#311</strong> More rgn oddities: ClipPath not handling trailing move</p>
+<dl class="docutils">
+<dt><strong>#331</strong> Multithreading errors</dt>
+<dd>Clarify BIND and multithreading by adding another bind flag to
+the root class structure.</dd>
+<dt><strong>#333</strong> Cleanup of Copyright and licensing issues</dt>
+<dd>for some third-party modules</dd>
+<dt><strong>#342</strong> Improved fonts.dat handling</dt>
+<dd><ul class="first">
+<li><p class="first">fonts.dat was loaded in 2 different places - fntft.c and psfont.c -
+and psfont.c reparsed the file for every query.  Now only loaded once,
+in fntft.c</p>
+</li>
+<li><dl class="first docutils">
+<dt>fntft.c originally didn't support the alias syntax used by psfont.c:</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">alias</span> <span class="pre">/original</span></tt></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Support for one leading <tt class="docutils literal"><span class="pre">%environment%</span></tt> variable in font path,
+needed to support <tt class="docutils literal"><span class="pre">%SystemRoot%</span></tt> for default Windows fonts.</p>
+</li>
+<li><p class="first">The software now works under Windows without <tt class="docutils literal"><span class="pre">psc-&gt;etc_path</span></tt>
+or the etc Type 1 fonts</p>
+</li>
+<li><p class="first">The default font map under Windows is now:</p>
+<pre class="literal-block">
+% standard PDF (and PostScript) fonts
+
+Times-Roman         %SystemRoot%\FONTS\times.ttf
+Times-Italic        %SystemRoot%\FONTS\timesi.ttf
+Times-Bold          %SystemRoot%\FONTS\timesbd.ttf
+Times-BoldItalic    %SystemRoot%\FONTS\timesbi.ttf
+Helvetica           %SystemRoot%\FONTS\arial.ttf
+Helvetica-Oblique   %SystemRoot%\FONTS\ariali.ttf
+Helvetica-Bold      %SystemRoot%\FONTS\arialbd.ttf
+Helvetica-BoldOblique %SystemRoot%\FONTS\arialbi.ttf
+Courier             %SystemRoot%\FONTS\cour.ttf
+Courier-Oblique     %SystemRoot%\FONTS\couri.ttf
+Courier-Bold        %SystemRoot%\FONTS\courbd.ttf
+Courier-BoldOblique %SystemRoot%\FONTS\courbi.ttf
+Symbol              %SystemRoot%\FONTS\symbol.ttf
+ZapfDingbats        %SystemRoot%\FONTS\mtsorts.ttf
+
+% aliases for Windows standard, look out for spaces
+
+Arial               /Helvetica
+ArialBold           /Helvetica-Bold
+ArialItalic         /Helvetica-Oblique
+ArialBoldItalic     /Helvetica-BoldOblique
+TimesNewRoman       /Times-Roman
+TimesNewRomanItalic /Times-Italic
+TimesNewRomanBold   /Times-Bold
+TimesNewRomanBoldItalic /Times-BoldItalic
+CourierNew          /Courier
+CourierNewItalic    /Courier-Oblique
+CourierNewBold      /Courier-Bold
+CourierNewBoldItalic    /Courier-BoldOblique
+</pre>
+</li>
+</ul>
+<p class="last">The default font map for other platforms remains unchanged
+(uses the etc T1 fonts).</p>
+</dd>
+</dl>
+<p><strong>#355</strong> (part 2) SmarterTransform=Y color manager operations buggy</p>
+<p><strong>#355</strong> (part 3 and 4) Issues with image masks and image emulation</p>
+<p><strong>Ticket-less:</strong></p>
+<p>Fixed interesting nasty bug in FFsBase Create File.
+If create failed, it opened the output file in the etc_path directory.</p>
+<p>Fixed monochrome image resizer to work correctly when reading multiple rows</p>
+<p>Added polygon winding information to <tt class="docutils literal"><span class="pre">DvClip</span></tt></p>
+<p>Validate function Type 0 sample count
+and Validate get samples parameters</p>
+<p>Removed some unused FreeType driver modules.</p>
+<p>Updated FreeType to 2.2.1</p>
+<p>Updated Little cms to 1.15</p>
+<p>Updated zlib to 1.2.3</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id13" id="pdf-read" name="pdf-read">PDF Read</a></h2>
+<p><strong>#2</strong> PDF Transparency</p>
+<blockquote>
+<p>The new <a class="reference" href="#rip">RIP</a> implements PDF transparency</p>
+<p>High level transparency hooks have been added to the <a class="reference" href="#driver-interface">Driver Interface</a></p>
+<p>Alpha and Blend Mode values have been added to the <a class="reference" href="#graphic-state">Graphic State</a></p>
+<p>Note that the page-level blend mode hack from ticket <strong>#74</strong> has
+been disabled, because it interferes with correct transparency function.
+If this feature is still desired for some drivers, an option can
+be added to re-enable it.</p>
+</blockquote>
+<dl class="docutils">
+<dt><strong>#116</strong> Large black annotation rectangle in specific PDF file</dt>
+<dd>Check annotation for visibility flag - the PDF file had black rectangle
+displayed for printing only, to prevent printing.</dd>
+<dt><strong>#117</strong> Automatically close any open layers at end of PDF page</dt>
+<dd>To handle buggy PDF input files.</dd>
+</dl>
+<p><strong>#118</strong> More efforts to detect bogus PDF font encodings</p>
+<p><strong>#119</strong> Specific PDF file has overlapping characters due to incorrect default width for Type 0 fonts</p>
+<p><strong>#123</strong> <tt class="docutils literal"><span class="pre">DvImageGrab</span></tt> no longer allows grabbing JPEG with Lab color space</p>
+<p><strong>#136</strong> Improved handling of layer expressions</p>
+<dl class="docutils">
+<dt><strong>#137</strong> Apply <tt class="docutils literal"><span class="pre">ViewState</span></tt> to layers; background missing, defaults to <tt class="docutils literal"><span class="pre">OFF</span></tt></dt>
+<dd>(PDF /OCG &lt;&lt; /Usage &lt;&lt; /View &lt;&lt; /ViewState ... &gt;&gt; &gt;&gt; &gt;&gt;)</dd>
+</dl>
+<p><strong>#139</strong> Unicode strings in PDF file structure calculated length incorrectly</p>
+<p><strong>#144</strong> External fonts pretend to be embedded to avoid forced driver substitution</p>
+<p><strong>#146</strong> Choose correct encoding for <tt class="docutils literal"><span class="pre">Symbol,Italic</span></tt> and other <tt class="docutils literal"><span class="pre">Symbol</span></tt> related fonts</p>
+<p><strong>#147</strong> JBIG2 potential crash reading past end of buffer</p>
+<dl class="docutils">
+<dt><strong>#149</strong> Acrobat allows for reading short color index tables (unfortunately)</dt>
+<dd>Initialize table to 0 and ignore the error, like Acrobat</dd>
+</dl>
+<p><strong>#150</strong>, <strong>#154</strong> Gradient clip rectangle could get stuck</p>
+<p><strong>#156</strong>, <strong>#107</strong> Correctly handle pathological dithering patterns</p>
+<p><strong>#168</strong> Handling broken XRef counts in some defective input files</p>
+<p><strong>#169</strong> Make sure dash segments are at least 1 pixel long</p>
+<p><strong>#173</strong> Ignore ToUnicode map if low ASCII duplicates found in map</p>
+<p><strong>#177</strong> Pattern fill of empty path caused <tt class="docutils literal"><span class="pre">nocurrentpoint</span></tt> exception</p>
+<dl class="docutils">
+<dt><strong>#176</strong> PDF Read and Write Font Names for Type 3 fonts</dt>
+<dd>Type 3 font names is an undocumented Acrobat extension</dd>
+<dt><strong>#182</strong> Missing lines in specific PDF file</dt>
+<dd><a class="reference" href="#rip">RIP</a> replaced, and uses floating point API</dd>
+</dl>
+<p><strong>#183</strong> Create on-the-fly appearances for fill-in form fields</p>
+<p><strong>#188</strong> Image mask emulation and character emulation conflicts</p>
+<p><strong>#194</strong> Outline reader chokes if pages haven't been referenced yet</p>
+<p><strong>#196</strong> Dashed styles lost if matrix is whacky (whole page == 1. x 1.)</p>
+<dl class="docutils">
+<dt><strong>#198</strong> Ignore <tt class="docutils literal"><span class="pre">/ToUnicode</span></tt> if <tt class="docutils literal"><span class="pre">/Encoding</span></tt> has <tt class="docutils literal"><span class="pre">/Differences</span></tt></dt>
+<dd>Assuming this signals a bogus <tt class="docutils literal"><span class="pre">ToUnicode</span></tt> map;
+another PDF encoding heuristic (guess)</dd>
+<dt><strong>#199</strong> Fix <tt class="docutils literal"><span class="pre">DvCharEm</span></tt> of Type 3 font with nested embedded font</dt>
+<dd>Turns off DvCharEm/DvFontEm signals if already in a DvCharEmStart/End</dd>
+</dl>
+<p><strong>#201</strong> Handle obscure FontDescriptor flag AllCap</p>
+<dl class="docutils">
+<dt><strong>#210</strong> Fix bomb on input text</dt>
+<dd>Nasty unterminated tables in lookup of character alternates</dd>
+<dt><strong>#212</strong> Another case of Acrobat opening broken file</dt>
+<dd>Specific PDF file has incomplete fonts; Acrobat complains but opens the file</dd>
+</dl>
+<p><strong>#217</strong> Make RLC decode more forgiving if end of input</p>
+<p><strong>#219</strong> Attempt to detect uniXXXX glyph names for generating an encoding</p>
+<dl class="docutils">
+<dt><strong>#220</strong> Ignore <tt class="docutils literal"><span class="pre">/Encoding</span></tt> if it's an array</dt>
+<dd>(Yet another case of a bogus PDF file that opens in Acrobat)</dd>
+<dt><strong>#222</strong> Provide automatic font uniquifier for Type 3 fonts, similar to Type 1</dt>
+<dd>for cases of <tt class="docutils literal"><span class="pre">DvFontEm</span></tt> with similar font names, which was causing confusion</dd>
+<dt><strong>#232</strong> Index color pin the index to table size instead of failing</dt>
+<dd>Specific PDF file contains image with index color with only one color in the table.</dd>
+<dt><strong>#234</strong> PDF support for Adobe Illustrator Layers</dt>
+<dd>Adobe Illustrator uses a different mechanism for writing layers to the PDF
+or AI file.  Also, <strong>#352</strong> Adobe Illustrator layer title use UTF-8 encoding,
+converting to Unicode</dd>
+<dt><strong>#240</strong> Fix misunderstanding about CID ranges in CMaps</dt>
+<dd>and handle UTF8 in PDF font encoding</dd>
+<dt><strong>#243</strong> Exception loading specific PDF file</dt>
+<dd>Encrypted object streams referenced before security loaded</dd>
+<dt><strong>#244</strong> Funky character placement in specific PDF file</dt>
+<dd>JBIG2 dsOffset value is signed</dd>
+</dl>
+<p><strong>#258</strong> PDF layer bombs for degenerate OCMD with no OCGs</p>
+<dl class="docutils">
+<dt><strong>#288</strong> Change <tt class="docutils literal"><span class="pre">psc-&gt;pdfCropped</span></tt> to be <tt class="docutils literal"><span class="pre">pdfdoc::PgExtType</span></tt> instead of boolean</dt>
+<dd><p class="first">Actual value is an <tt class="docutils literal"><span class="pre">int</span></tt>, and the enum is changed so 1 == CropBox.
+Sometimes client needs to use TrimBox or ArtBox.</p>
+<p class="last">Also, in <tt class="docutils literal"><span class="pre">psbbox</span></tt> check for %PDF header and skip the file
+(AI files have embedded PostScript producing false positive for %%BoundingBox)</p>
+</dd>
+<dt><strong>#291</strong> Look for more likely symbolic font names and mark them as symbolic</dt>
+<dd>(therefore, unless <tt class="docutils literal"><span class="pre">gxc-&gt;pdf_sub_uncsym</span></tt> is set,
+these fonts won't automatically substitute if unclaimed)</dd>
+<dt><strong>#302</strong> JPEG2000 Address some Jasper memory management issues</dt>
+<dd>and handle Jpx/JPEG2000 PDF images parameters:
+NComponents/BitsPerComponent/ColorSpace can all come from the JPX stream</dd>
+</dl>
+<p><strong>#325</strong> /XRef /Index not parsed correctly (PDF Object Streams)</p>
+<p><strong>#341</strong> Handle unbalanced q/Q on PDF input by flushing at end of page</p>
+<p><strong>#348</strong> Saturation blend mode mis-spelled, causing not found error</p>
+<dl class="docutils">
+<dt><strong>#351</strong> Part 2 - Pattern with alpha drawing outside pattern box</dt>
+<dd>Requires pattern draw clip to pattern box</dd>
+<dt><strong>#353</strong> More broken file testing</dt>
+<dd>Fixed some cases handling missing elements in PDF input</dd>
+<dt><strong>#355</strong> (part 5) Radial shader glitch</dt>
+<dd>Radial shader radius == 0 produced random results</dd>
+</dl>
+<p><strong>Ticket-less:</strong></p>
+<p>PSI API hooks for PDF passwords:</p>
+<pre class="literal-block">
+/* returns true if PDF file is encrypted */
+int psiispdfencrypted(PS_CONFIG *psc);
+
+/* this returns PDF permissions based on password - see PDF.d
+    0 means password failure
+*/
+int psipdfauthorize(PS_CONFIG *psc, char *pwd);
+</pre>
+<dl class="docutils">
+<dt>PDF <tt class="docutils literal"><span class="pre">DvClip</span></tt> didn't actually pass down the paths -</dt>
+<dd>missing elements of floating point interface.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id14" id="pdf-write" name="pdf-write">PDF Write</a></h2>
+<dl class="docutils">
+<dt><strong>#11</strong> Distiller create Type 3 fonts for emulation</dt>
+<dd><p class="first">via <tt class="docutils literal"><span class="pre">DvFontEm</span></tt> / <tt class="docutils literal"><span class="pre">DvCharEmStart</span></tt> / <tt class="docutils literal"><span class="pre">DvCharEmEnd</span></tt></p>
+<p class="last">See also <a class="reference" href="#id1">#11</a> above.</p>
+</dd>
+</dl>
+<p><strong>#115</strong> Distiller losing font if capturing emulated font</p>
+<p><strong>#133</strong> PDF Write sets /M (modification date) entry for all text annotations</p>
+<dl class="docutils">
+<dt><strong>#142</strong> PDF/A-1b compatibility mode</dt>
+<dd><p class="first">A new module in the PDF Update library, <tt class="docutils literal"><span class="pre">pdfupd/pdfa1b</span></tt>, has a function:</p>
+<pre class="literal-block">
+void Pdf_Make_PDFA1b(PdfDoc *doc);
+</pre>
+<p class="last">which will place an sRGB profile in the PDF file, and place XMP markers in
+the file for PDF/A-1b compatibility.  Note: <em>This does not mean the file will
+actually be PDF/A-1b compatible!</em> PDF/A has many restrictions that must be
+followed to produce a compatibile file.  Adobe Acrobat has an
+Advanced/Preflight tool that can be used to verify compliance with
+PDF/A-1b.  Please refer to the <cite>PDF/A Specification</cite>, or contact
+Liberty Systems for more information.</p>
+</dd>
+</dl>
+<p><strong>#155</strong> Fixed buffer overflow on CCITT compress</p>
+<p><strong>#197</strong> Correct measurement of text for PDF output annotation bounding box</p>
+<p><strong>#228</strong> Add PDF_ShowWideText to the PDF Output API</p>
+<dl class="docutils" id="id5">
+<dt><strong>#306</strong> Distiller enhancement PostScript Duotone Colorspace Detection</dt>
+<dd>Detects <tt class="docutils literal"><span class="pre">PhotoshopDuotoneColorSpace</span></tt> and <tt class="docutils literal"><span class="pre">PhotoshopDuotoneAltColorspace</span></tt>
+and produces a hybrid color space for storing in the PDF file,
+similar to what Acrobat Distiller does.  This is a rather obscure
+but extensive change - more information is available if needed
+for other drivers.</dd>
+</dl>
+<p><strong>#336</strong> Create encryption broken in revision 5349 (11/11/2005)</p>
+<dl class="docutils">
+<dt><strong>#337</strong> Enhancements for command line distillers psipdf and ps2pdf</dt>
+<dd><ul class="first last simple">
+<li>psipdf default pages to all</li>
+<li>progress reporting fixed</li>
+<li>-q for quiet option</li>
+<li>-w and -h width and height in inches, millimeters, or pixels</li>
+<li>-r Rotation parameter</li>
+</ul>
+</dd>
+<dt><strong>#347</strong> Fixing full adjust for text with external fonts</dt>
+<dd>integer math dropped the relevant data</dd>
+</dl>
+<p><strong>Ticket-less:</strong></p>
+<p>JPEG image target turn off any row padding or bad things happen</p>
+<p>For PDF write API BT and ET are automatic, so BT has
+to restore the current text matrix</p>
+<p>Do form wrote the do twice</p>
+<p>Begin form reset bbox to specified causing a problem</p>
+<p>Use any pattern referenced by shader, to avoid possible leakage</p>
+<p>Added PdfStreamDeferred for caching output instead of interrupting page contents</p>
+<p>Distiller fonts always need <tt class="docutils literal"><span class="pre">PSDVFONT</span></tt> <tt class="docutils literal"><span class="pre">origmtx</span></tt></p>
+<p>Distiller receiving <tt class="docutils literal"><span class="pre">DvChar</span></tt> if no Type 1 fonts available,
+return best-guess rectangle</p>
+<p>Orient wasn't plugged into the PvSDK <tt class="docutils literal"><span class="pre">LS_</span></tt> Distiller calls</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id15" id="postscript" name="postscript">PostScript</a></h2>
+<p><strong>#134</strong> <tt class="docutils literal"><span class="pre">makefont</span></tt> cache could mess up <tt class="docutils literal"><span class="pre">Encoding</span></tt> array</p>
+<dl class="docutils" id="id6">
+<dt><strong>#151</strong> <tt class="docutils literal"><span class="pre">DistillerParams</span></tt> configuration option, defaults to off</dt>
+<dd>some PostScript files won't interpret if they think they are being distilled</dd>
+<dt><strong>#162</strong> Hack to disable CIE colors</dt>
+<dd><tt class="docutils literal"><span class="pre">IgnoreCIEColors=Y</span></tt> or <tt class="docutils literal"><span class="pre">extern</span> <span class="pre">int</span> <span class="pre">gIgnoreCIEColors;</span> <span class="pre">gIgnoreCIEColors=1;</span></tt></dd>
+</dl>
+<dl class="docutils" id="id7">
+<dt><strong>#166</strong> <strong>Important</strong> PostScript now recognizes <tt class="docutils literal"><span class="pre">gxc-&gt;multichar</span> <span class="pre">==</span> <span class="pre">0</span></tt>.</dt>
+<dd>which causes text strings to break up into single characters.
+This moves text around subtly, sometimes not so subtly, beware.
+Please set <tt class="docutils literal"><span class="pre">gxc-&gt;multichar</span> <span class="pre">=</span> <span class="pre">1</span></tt> for the old behavior.</dd>
+<dt><strong>#170</strong> <tt class="docutils literal"><span class="pre">kExplicitMaskInterleave</span></tt> and <tt class="docutils literal"><span class="pre">Image_Copy2</span></tt></dt>
+<dd>added <tt class="docutils literal"><span class="pre">kExplicitMaskInterleave</span></tt> to imaging.d mask types,
+to deal with short term problem of interleaved mask and data;
+if Interleave, read 1 row of each at a time.
+Use <tt class="docutils literal"><span class="pre">Image_Copy2</span></tt> for copying interleaved source and target at once.</dd>
+</dl>
+<p id="id8"><strong>#174</strong> <tt class="docutils literal"><span class="pre">DistillerParams</span></tt> set <tt class="docutils literal"><span class="pre">/CoreDistVersion</span></tt> to 5000 (or <tt class="docutils literal"><span class="pre">pdfmark</span></tt> won't execute)</p>
+<dl class="docutils">
+<dt><strong>#185</strong> Fix special case problems of Type 3 character measurement</dt>
+<dd>the Type 3 / 203 bit is squirrely, includes a work around.
+See also <a class="reference" href="#id7">#166</a></dd>
+</dl>
+<p><strong>#187</strong> <tt class="docutils literal"><span class="pre">copypage</span></tt> operator wrote to random stack location (ouch)</p>
+<p><strong>#195</strong> Fix handling of degenerate arcs</p>
+<dl class="docutils">
+<dt><strong>#209</strong> Client specific PostScript enhancement AutoTiff=Y</dt>
+<dd>Handling PostScript files with external tiffs or JPEGs
+without explicit decoder in the PostScript file.
+If <tt class="docutils literal"><span class="pre">gcx-&gt;auto_tiff</span></tt>, checks FFsBase source for &quot;tiffness&quot;.
+Detects external CMYK JPEG and inverts (actual <strong>#209</strong>)</dd>
+<dt><strong>#216</strong> Disable <tt class="docutils literal"><span class="pre">DistillerParams</span></tt> by default</dt>
+<dd>Note that this is opposite of the previous, which
+provided a hook to turn it off; interested parties
+will need the hook to turn it back on.
+See also tickets <a class="reference" href="#id6">#151</a>, <a class="reference" href="#id8">#174</a></dd>
+<dt><strong>#218</strong> Clipping problem with specific EPS file</dt>
+<dd>Previous fix for clipping edge (6/30/2005) didn't check which edge;
+eps file flips the coordinate system</dd>
+<dt><strong>#221</strong> For performance, cache single component <tt class="docutils literal"><span class="pre">/DeviceN</span></tt> conversions</dt>
+<dd>Handles special case from specific PostScript file
+(pscript.dll version of standard altona.pdf test file).
+Won't help with <tt class="docutils literal"><span class="pre">/DeviceN</span></tt> with more than one component.
+General case is problematic.</dd>
+<dt><strong>#223</strong> PostScript force a font reset at beginning of page</dt>
+<dd>Can fix several oddities with different drivers capturing fonts</dd>
+</dl>
+<p><strong>#228</strong> PostScript some odd page sizes added for specific client</p>
+<dl class="docutils">
+<dt><strong>#233</strong> Specific PostScript file shows inverted monochrome image</dt>
+<dd>The file uses <tt class="docutils literal"><span class="pre">/Decode</span></tt> on an indexed color space,
+which wasn't handled correctly.</dd>
+<dt><strong>#245</strong> Specific PostScript file undefined result error</dt>
+<dd>assumed <tt class="docutils literal"><span class="pre">setscreen</span></tt> proc actually runs - <tt class="docutils literal"><span class="pre">setscreen</span></tt> now goes through the motions.</dd>
+<dt><strong>#250</strong> Random lines appearing emulating text in specific scenario</dt>
+<dd>fill was refactoring the path, so path size had to be re-established</dd>
+</dl>
+<p><strong>#251</strong> Infinite loop in <tt class="docutils literal"><span class="pre">pathforall</span></tt> operator (ouch)</p>
+<dl class="docutils">
+<dt><strong>#252</strong> Bad text placement in specific EPS file</dt>
+<dd>Relates to font matrix issues, dx and dy offsets != 0</dd>
+<dt><strong>#256</strong> Back out misguided type 3 optimization</dt>
+<dd>Came and went during 6.1 branch life cycle</dd>
+<dt><strong>#260</strong> Fix for a CIE bug</dt>
+<dd>Also came and went during 6.1 branch life cycle</dd>
+<dt><strong>#262 and #300</strong> Default PostScript font is now a null dictionary</dt>
+<dd>to avoid asking the driver for a font that isn't used (previously TimesRoman)
+and to avoid bombing in <tt class="docutils literal"><span class="pre">currentfont</span></tt> if the default font is undefined (<strong>#300</strong>)</dd>
+<dt><strong>#265</strong> Allow for character 0 in char adjust</dt>
+<dd>specific PostScript file has /space in encoding slot 0</dd>
+<dt><strong>#266</strong> <tt class="docutils literal"><span class="pre">setpageparams</span></tt> was unimplemented</dt>
+<dd>needed for odd-size pages in input</dd>
+</dl>
+<p><strong>#271</strong> Fixing special case of embedded Type 0 font</p>
+<dl class="docutils">
+<dt><strong>#277</strong> Spurious black line in specific PostScript file</dt>
+<dd>PostScript token reader was a little loose about end of line whitespace.
+Read an extra white space null after reading \r terminating <tt class="docutils literal"><span class="pre">beginimage</span></tt>
+which expected the null to be the first byte of the image data.
+Because of multiple source cmyk, all the colors were
+fine except k was out of sync, producing trailing black line.</dd>
+<dt><strong>#279</strong> PostScript file system security</dt>
+<dd><p class="first">PostScript allows write access to the file system;
+this could be a source of mischief.
+Most PostScript files don't do any writing, but some write
+out temporary files that contain PostScript sub-programs.</p>
+<p class="last"><tt class="docutils literal"><span class="pre">psc-&gt;ps_write_path</span></tt> now controls where PostScript can write to;
+any files created are created in this location.
+By default, <tt class="docutils literal"><span class="pre">psc-&gt;ps_write_path</span></tt> is set to <tt class="docutils literal"><span class="pre">psc-&gt;etc_path</span></tt> + &quot;tmp&quot;,
+although this is potentially a problem under Windows Vista.</p>
+</dd>
+<dt><strong>#281</strong> Error in <tt class="docutils literal"><span class="pre">eexec</span> <span class="pre">stopped</span></tt> handling</dt>
+<dd>The eexec cleanup ran deferred and didn't happen
+changed IPC <tt class="docutils literal"><span class="pre">if_</span></tt> to C <tt class="docutils literal"><span class="pre">if()</span></tt></dd>
+<dt><strong>#294</strong> Wrong font name passed to driver in specific PostScript file</dt>
+<dd>Make a copy of the font name string when defining a font,
+because PostScript code can whack the strings after the font is defined.</dd>
+<dt><strong>#298</strong> Character clipping glitch</dt>
+<dd>Overriding the polygon elimination for <tt class="docutils literal"><span class="pre">DvCharEm</span></tt> is a problem for drivers
+that can't do full clipping</dd>
+<dt><strong>#299</strong> Fix case of &quot;unfortunate file filter combination&quot; for specific file</dt>
+<dd>subfiledecode on top of proc file</dd>
+</dl>
+<p><strong>#306</strong> See <a class="reference" href="#id5">#306</a>, above</p>
+<p><strong>#315</strong> Work around for &quot;forgetting&quot; dbcs for driver override of embedded font</p>
+<dl class="docutils" id="id9">
+<dt><strong>#316</strong> Drivers implementing <tt class="docutils literal"><span class="pre">DvImgGrab</span></tt> watch for <tt class="docutils literal"><span class="pre">PSDVIMGRAB</span></tt> <tt class="docutils literal"><span class="pre">is_unbounded_WARNING</span></tt></dt>
+<dd>if this is set, they can't read the FFs to EOF;  either parse the structure
+and stop at EOF, or fail grabbing the image, and let PostScript parse it.</dd>
+</dl>
+<p><strong>#321</strong> Dummy <tt class="docutils literal"><span class="pre">/SpotFunction</span></tt> needs to at least behave properly.</p>
+<dl class="docutils">
+<dt><strong>#322</strong> PostScript shader bypassed regular fill logic</dt>
+<dd>making <tt class="docutils literal"><span class="pre">PSDVPOLY</span></tt> <tt class="docutils literal"><span class="pre">path</span></tt> null.</dd>
+<dt><strong>#323</strong> PostScript undefined behavior, possible bomb (ouch)</dt>
+<dd>not checking return from <tt class="docutils literal"><span class="pre">psdsrch</span></tt></dd>
+<dt><strong>#327</strong> PostScript crash for specific file</dt>
+<dd>Image with <tt class="docutils literal"><span class="pre">MultipleDataSources</span></tt>; if bits per component &lt; 8,
+the logic was completely wrong</dd>
+<dt><strong>#330</strong> PostScript Bold Proc idiom recognition</dt>
+<dd>Windows PostScript output often contains procs to generate bold
+characters by stroking the outline.  The common proc names are
+grabbed and use <tt class="docutils literal"><span class="pre">gxs-&gt;text_mode</span></tt> instead, if the driver is interested
+(<tt class="docutils literal"><span class="pre">gxc-&gt;want_text_mode</span></tt>)</dd>
+<dt><strong>#332</strong> Allow for <tt class="docutils literal"><span class="pre">ESC%-12345X</span></tt> and <tt class="docutils literal"><span class="pre">&#64;PJL</span></tt> commands without TBCP filter</dt>
+<dd>Also inspired some additional clean up of TBCP filter</dd>
+<dt><strong>#343</strong> <tt class="docutils literal"><span class="pre">rcurveto</span></tt> produced wild results</dt>
+<dd>typo dating back to 10/18/2005</dd>
+<dt><strong>#344</strong> Don't force Type 1 font data to be on integer boundaries</dt>
+<dd>fixes for the floating point interface, when running a low DPI</dd>
+<dt><strong>#353</strong> More broken file testing</dt>
+<dd><ul class="first last simple">
+<li>PostScript parser FFS_ReadUntil buffer overrun by 1 null byte</li>
+<li>PostScript parser chokes if expected system name not found in binary mode</li>
+</ul>
+</dd>
+</dl>
+<p><strong>Ticket-less:</strong></p>
+<p><tt class="docutils literal"><span class="pre">image_mask</span> <span class="pre">=</span> <span class="pre">0</span></tt> caused all PostScript images to emulate.</p>
+<p>Add <tt class="docutils literal"><span class="pre">RRCustomProcs</span></tt> <tt class="docutils literal"><span class="pre">setjobtype</span></tt> to handle Xerox document</p>
+<p>For <tt class="docutils literal"><span class="pre">ps_ispsfile</span></tt> 1024 bytes was not enough, increased to 4096</p>
+<p>Don't choke if <tt class="docutils literal"><span class="pre">/Decode</span></tt> is missing from image dictionary</p>
+<p>Changed default substitution font from <tt class="docutils literal"><span class="pre">Courier</span></tt> to <tt class="docutils literal"><span class="pre">Times-Roman</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">pstack</span></tt> and <tt class="docutils literal"><span class="pre">stack</span></tt> had stopped working</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id16" id="windows-and-preview-sdk" name="windows-and-preview-sdk">Windows and Preview SDK</a></h2>
+<dl class="docutils">
+<dt><strong>#108</strong> ini options to control image memory use</dt>
+<dd><dl class="first last docutils">
+<dt>ImageSegmentThreshold=64</dt>
+<dd>If an image is larger than this value (in megabytes), the Windows
+driver will make multiple calls to StretchDIBits, passing segments
+of the image smaller than this threshold.</dd>
+<dt>ImageVMThreshold=64</dt>
+<dd>If an image is larger than this value (in megabytes), the Windows
+driver will create a temporary virtual memory file for the image.</dd>
+</dl>
+</dd>
+</dl>
+<p><strong>#148</strong> WMF and Placeable WMF output removed from PvSDK - unsupported</p>
+<dl class="docutils">
+<dt><strong>#164</strong> AlwaysUseWindowsFonts=Y will substitute Windows</dt>
+<dd>fonts for (almost?) any font detected on input</dd>
+<dt><strong>#179</strong> WinAnsiEncoding=Y instead of standard encoding for driver defined fonts.</dt>
+<dd>This appears to relate to CE font encoding mentioned in the PLRM</dd>
+<dt><strong>#192</strong> More attempts to handle Windows PostScript driver output for</dt>
+<dd><p class="first">wide GID_CHARSET fonts; this is in the Windows driver, but also affects the distiller.
+This set of changes is complex - more information is available if needed.</p>
+<ul class="last">
+<li><p class="first">ini setting for PPDDefaultEncoding= to control default wide encoding / locale</p>
+</li>
+<li><p class="first">for encoding CMaps, also look in the unadorned etc path</p>
+</li>
+<li><p class="first">Distiller can now reference external Windows fonts</p>
+</li>
+<li><p class="first">The Distiller now supports AlwaysUseEmbeddedFonts (<tt class="docutils literal"><span class="pre">gxc-&gt;embedded</span> <span class="pre">==</span> <span class="pre">0</span></tt>)
+so it's now possible to override embedded fonts if desired.</p>
+</li>
+<li><p class="first">Windows now has HFONT[#]= and VFONT[#]= ini settings
+to override the Unicode/dbcs font search.
+[#] is the charset (gfx/encoding.h), H/V for horizontal or vertical
+for example:</p>
+<pre class="literal-block">
+HFONT[134]=SimSun
+</pre>
+<p>to force SimSun as the Chinese font.</p>
+</li>
+<li><p class="first">PPDDefaultEncoding= can be a problem for any &quot;normal&quot; PostScript fonts;
+any normal encoding manipulations are ignored.  Disabled for embedded fonts.</p>
+</li>
+<li><p class="first">Apparently GlyphNames2Unicode would help, but we don't use it yet</p>
+</li>
+</ul>
+</dd>
+<dt><strong>#217</strong> Windows only: PDF read error throw leaves PDF open</dt>
+<dd>A couple of try/finally blocks to clean up while unwinding;
+not ignoring the error, just cleaning up better.</dd>
+</dl>
+<p><strong>#310</strong> initial clipping clobbered when printing</p>
+<p>Adding <tt class="docutils literal"><span class="pre">LS_GetCap</span></tt> so sample.exe can ask if distiller is available
+deletes menu items instead of disabling them, to avoid confusion.</p>
+<p>Print warnings in release mode if swallowing a hardware error
+<tt class="docutils literal"><span class="pre">NO_FAILURE_STDERR</span></tt> can turn them off - see <tt class="docutils literal"><span class="pre">rt_config.h</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">psijpg</span></tt> EMF creation: get extents or bad things will happen</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id17" id="rip-and-antigrain" name="rip-and-antigrain">RIP and AntiGrain</a></h2>
+<p id="rip">The RIP has been completely replaced.  This uses a newer AntiGrain (2.4)
+as well as a new driver architecture called VITAL.  The new RIP has
+extensive support for the PDF Transparency model.</p>
+<p>Several bug reports that were fixed in the branch are no longer relevant;
+Other issues may require revisiting in the new architecture.</p>
+<p>Some features that are not present in the new RIP: The old RIP supported
+direct CMYK rendering, although this was never used by any customers.  The
+old RIP also had special support for fat pixels (16 bits per component)
+and very wide lines (&gt; 32767 pixels).  This is for a specific customer,
+and will be added to a RIP update in the future.</p>
+<p><tt class="docutils literal"><span class="pre">riptest</span></tt> Added dpi and page size to command line parameters</p>
+<p>Previous RIP bugs:</p>
+<p><strong>#126</strong> Aliasing options and related bugs</p>
+<p><strong>#129</strong> Fixing holes in gradients</p>
+<p><strong>#351</strong> Part 1 - Transparency glitch - funky alpha math</p>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id18" id="other" name="other">Other</a></h2>
+<dl class="docutils">
+<dt><strong>#231</strong> HP-GL/2 output improvements</dt>
+<dd>The HP-GL/2 output driver has been expanded to a fairly complete state
+including some support for HP-RTL.</dd>
+</dl>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id19" id="driver-interface" name="driver-interface">Driver Interface</a></h2>
+<p>The driver interface consists of:</p>
+<blockquote>
+<ul class="simple">
+<li>The Interpreter Context: <tt class="docutils literal"><span class="pre">PS_CONFIG</span></tt> (psc)</li>
+<li>The <a class="reference" href="#driver-caps">Driver Caps</a>: <tt class="docutils literal"><span class="pre">PSDEVCAP</span></tt> (gxc),</li>
+<li>The <a class="reference" href="#graphic-state">Graphic State</a>: <tt class="docutils literal"><span class="pre">PSGXSTAT</span></tt> (gxs)</li>
+<li>The driver call parameter constants and structs.</li>
+<li>Any other portions of the PSI API that might be referenced by the driver</li>
+</ul>
+</blockquote>
+<dl class="docutils">
+<dt><strong>#238</strong> <tt class="docutils literal"><span class="pre">UniFunc</span></tt> enhancements</dt>
+<dd>expanded gfx/function.d <tt class="docutils literal"><span class="pre">UniFunc</span></tt> interface to make driver-based
+gradient / shader implementations easier</dd>
+</dl>
+<p><strong>#248</strong> pserr.h is now generated from psio/pserr.d</p>
+<dl class="docutils">
+<dt><strong>#286</strong> In order to clean up some dependency cycles and narrow the exposed symbols,</dt>
+<dd><p class="first">the PSI include files have been reorganized.</p>
+<p>psi.h and psgxs.h have been split into:</p>
+<blockquote class="last">
+<ul class="simple">
+<li>psibase.h - low level PSI types and defines like PS_OBJECT</li>
+<li>psix.h - PS_CONFIG (psc) and PSDEVCAP (gxc)</li>
+<li>psgxs.h - PSGXSTAT (gxs) and all the driver constants and structs</li>
+<li>psi.h - full interface, just includes other files</li>
+</ul>
+</blockquote>
+</dd>
+<dt><strong>#307</strong> <tt class="docutils literal"><span class="pre">DriverEscape</span></tt> operator - escape to the driver from arbitrary PostScript.</dt>
+<dd><tt class="docutils literal"><span class="pre">DriverEscape</span></tt> expects two arguments: a PostScript &quot;object&quot; and an
+integer.  It calls the driver passing the integer and the object as the
+two parameters.  It pops the two arguments off the PostScript stack before
+calling the driver.  You can use any integer to switch in the driver -
+just stay away from low numbers where the existing driver call numbers
+are.  Take a look at the pdfmark implementation for an example.</dd>
+</dl>
+<p><strong>#324</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;clip_rect</span></tt> is now float</p>
+<dl class="docutils">
+<dt><strong>#355</strong> (part 1) Image floating point interface -</dt>
+<dd><tt class="docutils literal"><span class="pre">DvImgStr</span></tt> / <tt class="docutils literal"><span class="pre">PSDVIMGS</span></tt> was pinning <tt class="docutils literal"><span class="pre">pts</span></tt> and <tt class="docutils literal"><span class="pre">matrix</span></tt> to integer,
+now <tt class="docutils literal"><span class="pre">matrix</span></tt> is unpinned floating point for completeness</dd>
+</dl>
+<div class="section">
+<h3><a class="toc-backref" href="#id20" id="ps-config" name="ps-config">PS_CONFIG</a></h3>
+<p>PS_CONFIG is defined in psix.h</p>
+<dl class="docutils">
+<dt><strong>#248</strong> Error cleanup</dt>
+<dd><p class="first">changed:</p>
+<pre class="literal-block">
+char *  error;                 /*  Current error  */
+int     signalerr;             /*  cleaned and Signalled error value */
+</pre>
+<p>and added:</p>
+<pre class="last literal-block">
+struct
+{    char *raw;                /* thrown error */
+     char *PostScript;                 /* in PostScript error space */
+     int   simple;             /* simple erorr space */
+} last_error;                  /* most recent error being handled (overkill) */
+</pre>
+</dd>
+<dt><strong>#279</strong> PostScript write security</dt>
+<dd><p class="first">added:</p>
+<pre class="last literal-block">
+char *  ps_write_path;   /*  force file write operations to be in this area */
+</pre>
+</dd>
+<dt><strong>#288</strong> PDF crop box</dt>
+<dd><p class="first">changed the meaning of:</p>
+<pre class="last literal-block">
+int     pdfCropped;            /*  pdfdoc::PgExtType */
+</pre>
+</dd>
+</dl>
+<p>added some fields for internal use:</p>
+<pre class="literal-block">
+PS_DICT *  last_font_dict;
+int        parsingCustomColors;    /* parser flag */
+int        makingDuoTone;          /* cspace.c flag */
+FFsPtr     run_file;               /* debugging, and DvImgGrab check `#316`_ */
+</pre>
+<p>removed some fields no longer in use:</p>
+<pre class="literal-block">
+int  in_text;      /*  In text rendering  */
+int  in_getchar;   /*  In the middle of getchar  */
+int  in_charem;    /*  already capturing character (DvCharEm) */
+int *time_count;   /*  Pointer to time counter  */
+</pre>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id21" id="driver-caps" name="driver-caps">Driver Caps</a></h3>
+<p>PSDEVCAP (gxc) is defined in psix.h</p>
+<p><strong>Important</strong> read <a class="reference" href="#id7">#166</a> PostScript now recognizes <tt class="docutils literal"><span class="pre">gxc-&gt;multichar</span> <span class="pre">==</span> <span class="pre">0</span></tt>.</p>
+<dl class="docutils">
+<dt><strong>#179</strong> Driver fonts optionally Windows ANSI encoding instead of PostScript Standard</dt>
+<dd><p class="first">adds:</p>
+<pre class="last literal-block">
+int use_winansi; /* use WinAnsiEncoding for driver fonts, instead of StandardEncoding */
+</pre>
+</dd>
+<dt><strong>#306</strong> Distiller enhancement PostScript Duotone Colorspace Detection</dt>
+<dd><p class="first">adds:</p>
+<pre class="literal-block">
+int image_raw_indexed:1; /*  Device wants raw image data AND indexed (requires both!) */
+int want_duotone;        /* #306 turns on duotone logic (and DeviceNSeparations) */
+</pre>
+<p class="last">which extends the meaning of image_raw_data</p>
+</dd>
+<dt><strong>#324</strong> <tt class="docutils literal"><span class="pre">gxc-&gt;clip_rect</span></tt> is now float</dt>
+<dd><p class="first">changes:</p>
+<pre class="last literal-block">
+FRECT   clip_rect;  /*  Device default clip rect  */
+</pre>
+</dd>
+</dl>
+<p>This flag will substitute explicitly masked images in place of stencil masked images:</p>
+<pre class="literal-block">
+int image_explicit4stencil; /* emulate stencils using explicit masks; requires image_mask=1 */
+</pre>
+<p>These flags enable new driver Dv calls:</p>
+<pre class="literal-block">
+int  want_BT_ET;   /*  send DvBegin/EndText */
+int  want_xpc;     /*  send XpcGroup and SoftMask calls */
+int  want_imgsrc;  /*  send DvImgSrc - return 0 if grabbed */
+</pre>
+<p>The auto tiff logic (client specific) is enabled by:</p>
+<pre class="literal-block">
+int  auto_tiff;    /* enable PostScript Automatic tiff detection */
+</pre>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id22" id="graphic-state" name="graphic-state">Graphic State</a></h3>
+<p>PSGXSTAT (gxs) is defined in psgxsh.h</p>
+<p>These fields are part of the transparency model (<strong>#2</strong>):</p>
+<pre class="literal-block">
+int     blend_mode;    /*  PDFREF 7.2.4 */
+float   stroke_alpha;  /*  PDFREF 4.3.4 */
+float   fill_alpha;
+</pre>
+<p>While alpha is part of many of the driver parameter structs, this is the
+only place to pick up the <tt class="docutils literal"><span class="pre">blend_mode</span></tt>.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id23" id="additional-driver-signals" name="additional-driver-signals">Additional driver signals</a></h3>
+<ul>
+<li><p class="first"><tt class="docutils literal"><span class="pre">DvImgSrc</span></tt> (requires <tt class="docutils literal"><span class="pre">gxc-&gt;want_imgsrc</span></tt>)</p>
+<p><tt class="docutils literal"><span class="pre">PSDVIMGS</span></tt> adds the <tt class="docutils literal"><span class="pre">image_source</span></tt> (gfx/imaging.d Class ImageSource) parameter
+which can be read by the driver instead of using <tt class="docutils literal"><span class="pre">DvImgRow</span></tt> and <tt class="docutils literal"><span class="pre">DvImgEnd</span></tt>.
+(By convention, if <tt class="docutils literal"><span class="pre">DvImgStr</span></tt> returns &lt; 0, the driver has handled the image.)
+However, at <tt class="docutils literal"><span class="pre">DvImgStr</span></tt> time, the image data isn't fully cooked, which can put
+additional burdens on the driver.  <tt class="docutils literal"><span class="pre">DvImgSrc</span></tt> is another chance for
+the driver to use <tt class="docutils literal"><span class="pre">PSDVIMGS</span></tt> <tt class="docutils literal"><span class="pre">image_source</span></tt> to grab the image, after the
+image format and color space have been cooked.  If the driver sets
+<tt class="docutils literal"><span class="pre">gxc-&gt;want_imgsrc</span></tt> it will receive <tt class="docutils literal"><span class="pre">DvImgSrc</span></tt>; if the driver handles the image,
+it should return 0.</p>
+</li>
+<li><p class="first"><tt class="docutils literal"><span class="pre">DvBeginText</span></tt> and <tt class="docutils literal"><span class="pre">DvEndText</span></tt>  (requires <tt class="docutils literal"><span class="pre">gxc-&gt;want_BT_ET</span></tt>)</p>
+<p>For PDF, sends these driver signals on <tt class="docutils literal"><span class="pre">BT</span></tt> and <tt class="docutils literal"><span class="pre">ET</span></tt> operators, to help
+organize text input.  There is no equivalent for PostScript.</p>
+</li>
+<li><p class="first">Transparency (requires <tt class="docutils literal"><span class="pre">gxc-&gt;want_xpc</span></tt>)</p>
+<p>This set of driver calls support the PDF transparency model.
+The model is quite complex, and beyond the scope of this document.
+If you are interested in implementing transparency, please see
+The <a class="reference" href="http://www.adobe.com/devnet/acrobat/pdfs/pdf_reference.pdf">PDF Reference</a>, and the current <a class="reference" href="#rip">RIP</a> implementation.
+The source file <tt class="docutils literal"><span class="pre">psgxs.h</span></tt> has the detailed definitions for the parameter blocks.</p>
+<ul class="simple">
+<li>Transparency Groups<ul>
+<li><tt class="docutils literal"><span class="pre">DvBeginXpcGroup</span></tt> - parameter <tt class="docutils literal"><span class="pre">PsDvBeginXpcGroup</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DvEndXpcGroup</span></tt> - no parameters</li>
+</ul>
+</li>
+<li>Soft Masks<ul>
+<li><tt class="docutils literal"><span class="pre">DvBeginSoftMask</span></tt> - parameter <tt class="docutils literal"><span class="pre">PsDvBeginSoftMask</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DvEndSoftMask</span></tt> - parameter <tt class="docutils literal"><span class="pre">PsDvSetSoftMask</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DvSetSoftMask</span></tt> - parameter <tt class="docutils literal"><span class="pre">PsDvSetSoftMask</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DvDiscardSoftMask</span></tt> - parameter <tt class="docutils literal"><span class="pre">PsDvDiscardSoftMask</span></tt></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id24" id="extended-font-operations" name="extended-font-operations">Extended font operations</a></h3>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">DvFont</span></tt> adds the additional sub-functions:</dt>
+<dd><tt class="docutils literal"><span class="pre">FtGetInfo</span></tt>, <tt class="docutils literal"><span class="pre">FtGetGIDMap</span></tt>, <tt class="docutils literal"><span class="pre">FtGetGIDWidths</span></tt></dd>
+<dt>and their parameter blocks:</dt>
+<dd><tt class="docutils literal"><span class="pre">PSDVFONTINFO</span></tt>, <tt class="docutils literal"><span class="pre">PSDVGIDMAP</span></tt>, <tt class="docutils literal"><span class="pre">PSDVGIDWIDTHS</span></tt></dd>
+</dl>
+<p>which are used specifically by the Distiller to talk to the Windows driver
+about fonts.</p>
+</div>
+<div class="section">
+<h3><a class="toc-backref" href="#id25" id="changes-to-driver-parameter-structs" name="changes-to-driver-parameter-structs">Changes to driver parameter structs</a></h3>
+<p><tt class="docutils literal"><span class="pre">PSDVCLIP</span></tt> adds:</p>
+<pre class="literal-block">
+rt_Bool *evenOdd;        /*  winding flags for paths */
+</pre>
+<p><tt class="docutils literal"><span class="pre">PSDVIMGS</span></tt> adds:</p>
+<pre class="literal-block">
+ClrPtr   color_space;    /*  image_raw_data : rather than tuck it in gxs */
+ImagePtr image_source;   /*  quick hook to grab the ImageSource */
+float    alpha;          /*  also in gxs-&gt;fill_alpha */
+</pre>
+<p><tt class="docutils literal"><span class="pre">PSDVIMGRAB</span></tt> adds this for <a class="reference" href="#id9">#316</a>:</p>
+<pre class="literal-block">
+int  is_unbounded_WARNING;  /* inline PostScript - can't read to eof */
+</pre>
+<p><tt class="docutils literal"><span class="pre">PSDVGLYPH</span></tt> adds this for <a class="reference" href="#id2">#126</a>:</p>
+<pre class="literal-block">
+int  bytes_per_row;   /* pitch / stride */
+</pre>
+<p><tt class="docutils literal"><span class="pre">PSDVCHAREM</span></tt> changes the meaning of these fields for ticket <a class="reference" href="#id1">#11</a>:</p>
+<pre class="literal-block">
+double x2;     /* end point */  /*returned if driver handles glyph!*/
+double width;  /* character width - *returned if driver handles glyph!* */
+</pre>
+<p><tt class="docutils literal"><span class="pre">PSDVCHAREM</span></tt> adds this for ticket <a class="reference" href="#id3">#384</a>:</p>
+<pre class="literal-block">
+int   text_mode;       /* optional: text rendering mode PDFREF 5.2.5 */
+</pre>
+</div>
+</div>
+<div class="section">
+<h2><a class="toc-backref" href="#id26" id="references" name="references">References</a></h2>
+<ul class="simple">
+<li><a class="reference" href="http://www.lib-sys.com">Liberty Technology Systems</a></li>
+<li><a class="reference" href="http://www.antigrain.com/">Anti-Grain Geometry</a></li>
+<li><a class="reference" href="http://www.littlecms.com/">Little cms</a></li>
+<li><a class="reference" href="http://www.FreeType.org/">The FreeType Project</a></li>
+<li><a class="reference" href="http://www.ijg.org/">Independent JPEG Group</a></li>
+<li><a class="reference" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></li>
+<li><a class="reference" href="http://www.zlib.net/">zlib compression library</a></li>
+<li><a class="reference" href="&lt;http://www.adobe.com/products/PostScript/pdfs/PLRM.pdf&gt;`_">Adobe PostScript Language Reference</a></li>
+<li><a class="reference" href="http://www.adobe.com/devnet/acrobat/pdfs/pdf_reference.pdf">Adobe PDF Reference, Sixth Edition, version 1.7</a></li>
+<li>The <a class="reference" href="http://www.aiim.org/documents/standards/19005-1_FAQ.pdf">PDF/A FAQ</a></li>
+<li>The <a class="reference" href="https://committees.standards.org.au/COMMITTEES/IT-021/N0001/ISO_19005-1-2005.pdf">PDF/A Specification</a> (ISO 19005-1-2005)</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

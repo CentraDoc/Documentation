@@ -1,0 +1,589 @@
+
+                CentraDoc 6 - Summary of changes
+               ==================================
+
+While the 5.5 release was primarily a bug fix release,
+6.0 contains a number of significant enhancements.
+
+Here are the highlights:
+
+PDF support for JBIG2 images via a custom decoder,
+and support for JPEG2000 via integration of the JasPer library (plus fixes).
+
+PS support for CID fonts, both embedded and driver supported.
+This includes CMap encoding detection via font name with PPD file parsing.
+
+PS and PDF support for 16 bit color, including 12 bit PS images and 16 bit
+PDF images.  Support has been added to the AntiGrain and PDF drivers (distiller).
+This includes unification of the PS and PDF image and color models.
+
+Extensive enhancements to the Pdf Update library (and distiller).
+The Pdf Update library now supports native shader representation.
+The AntiGrain driver can now render some of the shaders natively
+(Axial, Gouraud, Circular radial).
+
+Improved (though incomplete) support for PDF transparency via alpha channel.
+
+Integrated support libraries have been updated:
+    Latest ZLib (1.2.2)
+    Latest FreeType (2.1.10)
+    Latest AntiGrain (2.3)
+
+Added improved color management support by integrating Little CMS (LCMS) 1.14
+(http://www.littlecms.com).  Many thanks to Marti Maria for making LCMS
+available.  Comprehensive color management based on LCMS will be available in
+the future.
+
+Note that the use of JasPer and LCMS may have an impact on portability issues.
+Use of the AntiGrain driver and library may also have portability issues.
+While many of these issues have been addressed when integrating the libraries,
+please contact Liberty Systems if you run into difficulties.
+
+
+Here are more details about specific fixes and improvements by category:
+
+Driver Interface:
+
+    Several changes to support 16 bit color:
+        PSDEVCAP added
+            color_16 - set this to get 16 bit color in PS_COLOR objects.
+                       values 0-65535 instead of 0-255.
+
+            image_16 - set this to enable support for 16 bits per component images
+                       use PSDVIMGS.bpc to tell 8 from 16
+
+            image_16_byte_order - controls byte order for 16 bit images
+                        0==native 1==MSB(std) -1==LSB
+
+        PSDVIMGS added
+            bpc - bits per component - to differentiate 8 from 16 bit images.
+
+            ncomps - number of components
+
+            identity - when reading PDF files, this can be used to detect
+                multiple occurrences of the same image.
+
+        alpha value added to several PSDV structs, for PDF transparency
+
+    More pdf substitution control flags:
+        pdf_nosub_symbolic  Disable pdf font driver handling for fonts marked "symbolic"
+
+        pdf_sub_uncsym      Enable pdf font substitution for unclaimed symbolic
+
+        See pvsdkini.txt for further discussion of PDF font substitution strategies
+
+    ProgressProc becomes PsiProgressProc to avoid namespace collisions
+
+    Significant changes to color correction callbacks (see proc signatures)
+
+
+Additional Ini settings:
+
+    AutoPageTranslate=Y
+        Turns on gxc->auto_page_translate for automatically
+        translating output based on the PS BoundingBox coordinates.
+
+    DeviceNSeparations=Y    default:N
+        Enables a smart DeviceN mechanism that will look up separation
+        colorants instead of using the DeviceN alternate color space.
+        This works around bugs in EPS files written by Adobe Illustrator(R).
+
+    FastCMYK=Y              default:N
+        Reverts the CMYK to RGB color conversion to "naive" mode.
+        The hand-coded transform (previously only used in PDF) has been
+        integrated into PS as well; this switch turns it off for PS and PDF.
+
+    MetafileUnicode=Y       default:Y
+        Turn this off to work around a bug in
+        Chinese Windows 98 when creating metafiles.
+
+    PdfSubstituteSymbolic=Y default:Y
+        Enables driver substitution of Symbolic PDF fonts.
+
+    PdfSubstituteUnclaimedSymbolic=Y default:N
+        Enables replacement substitution of symbolic pdf fonts not
+        initially claimed by the driver.
+
+    PPDFile=filename        default:None
+        A PPD file can be used to help the PS interpreter figure out
+        the encoding for a CJK style font based on the font name.
+
+    ShaderPPI1 through ShaderPPI7
+        Control linear "patches per inch"
+
+    ShaderConvergence4 through ShaderConvergence7
+        Control color convergence threshold for triangle and tensor shaders
+
+    UseGeometricPen=Y       default:Y
+        Enables native Windows handling for line cap / join / dash styles,
+        instead of emulating by converting stroked lines to polygons.
+
+    Also: several settings control the HP-GL/2 driver (described below)
+
+    Note that the environment variable PSI_PATH is recognized as
+    a way to control the etc_path variable in the PS_CONFIG context.
+    This is the place CentraDoc looks for a number of files
+
+    The pvsdk.ini file now always loads from the .dll directory,
+    even if PSI_PATH is set.
+
+
+General Font, Text, & Encoding:
+
+    Updated to latest Freetype 2.1.10, and re-integrated some custom fixes
+        (pseudo CFF charmaps for CFF CID PDF embedded fonts).
+
+    Added more CMaps to the encoding directory; Also added some standard PPD
+    files to the encoding directory.  The ini setting PPDFile=filename can be
+    used to specify a PPD file, which is used to determine the correct
+    encoding for PS CID fonts by looking up the font name.
+
+    Fix CMap parser to be more forgiving of missing spaces
+
+    Many fixes to the DvFontEm/DvCharEm mechanism, especially for Type 3 fonts,
+    and spacing parameters (Tc), PDF page offsets and rotations (xoff/yoff),
+    support for Color and Alpha, Ligatures, CIDs, etc.
+
+    Macintosh struct alignment (codewarrior) flushed a typo in the
+    cmap loader memory management, fixed.
+
+    Memory bug in cmap loader, caught by vs.net 2003;
+    Wide targets not handled correctly
+
+
+PDF Font, Text, & Encoding:
+
+    Embedded TrueType font encoding handling changed to better match
+    the PDF reference description of expected behavior.  The default
+    TrueType encoding is WinAnsi.  These changes will correctly handle
+    cases where the TrueType post table is missing or incorrect.
+    Also detects some cases of /G## encoding and maps the ## to glyphs
+    in WinAnsiEncoding.
+
+    /ToUnicode maps are now used in addition to the font encoding, instead
+    of replacing the font encoding.  Often ToUnicode maps only specify
+    a few characters.
+
+    Type 1 and Type 3 fonts with /ToUnicode now operate in DBCS mode to
+    provide the driver with accurate characters.
+
+    Character set guessing based on /ToUnicode has been improved;
+    Also added detection for some cases of "bogus" /ToUnicode maps.
+    This is heuristic and could be improved further.  More character
+    set constants are present in gfx/encoding.h.  Macros for helping
+    to decode the overloaded PSDVFONT.dbcs field added to psgxs.h.
+    No longer guesses BIG5 based on private use area,
+    even though Adobe BIG5 cmap points up there.
+
+    Fixed placement of ligature subcharacters for CID fonts
+
+    Fixed bomb if /Font /Widths array was too short
+
+    Fixed case of type 0 font failing to load and not substituting
+
+    Special handling of various dingbat fonts to avoid incorrect
+    font substitutions, especially if the encoding has been modified.
+    Ignoring /ToUnicode for ZapfDingbats, the glyph names aren't useful.
+
+    Support for CMaps in /Encoding streams for Type 0 fonts
+
+    Fixes for type 3 placement logic
+
+    Added copyright character alternative mappings for Symbol font
+
+    PDF mapped a number of fonts to the standard font names.
+    This has been moved "later" to give the driver a shot at
+    the initial font name (Arial v. Helvetica, etc.).  If the driver
+    doesn't like the first name, it gets a shot at the second, as well.
+
+    Another heuristic in font guessing, looking for Serif w/o Sans in font name.
+
+    Significant improvement for vertical writing glyph placement.
+
+    Some cases of save/restore messing up the TRM, causing font size to jump.
+
+    Werner Lemberg fixed a FreeType bug with CFF/CID embedded font where
+    units_per_em (from FontMatrix) is 2048 (instead of 1000) from the subfont.
+    Thanks Werner!
+
+    Be aware that PDF overloads the PSDVFONT embedded_font pointer, and
+    can set this to 1.  If you need this actual pointer, check for 0 or 1
+    first, not just 0.  (This may be fixed in the future).
+
+
+PS Font, Text, & Encoding:
+
+    PS CID font support, both embedded and driver based.
+    This includes figuring out the encoding/CMap based on font name,
+    either by the CMap being part of the font name, or looking up known
+    fonts in PPDFile=.  Note that the driver-based CID fonts happen
+    at a high level (composefont), and some PS files use lower level
+    mechanisms.  Fixes for some of these lower level cases are pending.
+
+    Some support for WinCharSetFFFF-H,H2,V,V2
+    including GID_CHARSET symbol, and fname field in PSDVFONT
+    (name includes the appended CMap name, fname doesn't)
+
+    Handling many cases of font encoding and glyph definitions updated on the
+    fly.  Note that this requires incremental support in freetype; If you have
+    a localized freetype, please turn this on via
+    FT_CONFIG_OPTION_INCREMENTAL defined in ftoption.h
+
+    Several fixes for font outlines for embedded type 3 and type 42 fonts.
+
+    Type 3 fonts grabbed by the driver could cause problems when
+    asking the Type 3 font for width or path information.
+    For now, these requests revert to the driver.
+
+    (Drivers should be very careful about picking up type 3 fonts -
+     psdvwin.c has examples for how to ignore them.)
+
+    Allow a driver to fail on FtSet for 200+ (embedded) fonts,
+    reverting to embedded font even if the driver grabbed FtCheck/FtLoad.
+
+    For historic PS reasons, FontBBox should be executable.
+
+    Default lenIV is 4, not 0.
+
+    Fixed some bombs for particular font types if want_unicode is set.
+
+    stringwidth returned 0 for recursive type 3 fonts causing character pile up
+
+    Removed static variables font glyph executive (potential threading problems)
+
+    Needed to base Symbol encoding check on /FontName in dictionary,
+    rather than font name passed (for when Symbol font is renamed).
+
+    Fixed exec_canned bomb (used when running glyph procs)
+
+
+General:
+
+    Fixed a lockup if the ini file initialization was called more than once
+
+    Function Type 0 didn't work for LUTs with more than two dimensions
+
+    Changed JPEG input library to assumed 4 color jpeg with JFIF header is YCCK
+    to match Acrobat.  This is not typical or valid JPEG input.
+
+    Release memory manager thread lock on memory validation failure
+    Thread lock is only present if memory manager is in debug mode.
+
+    Fix IsRectangle in region merge
+    (Region clipping code is for drivers that don't support clipping)
+
+    Fixed a variety of memory leaks
+
+    Integrated PS/PDF color space code; all color model constants
+    now have the same value (if not the same names).
+
+    Fixed problems with color Range for Lab and CIE color spaces
+
+    Made all the ini based globals (the ones not in PSDEVCAP) public
+    to enable easy access in non-Windows based builds.
+    Here are the current definitions:
+        int   gFastCMYK;
+        int   gFreeTypeHinting;
+        char *gUsePPDFile;
+        char *gEncodingDir;
+        char *gExternalFontDir;
+        char *gFontMapFile;
+        int   gDeviceNSeparations;
+        int   gShaderPPI1;          /* through 7 */
+       double gShaderConvergence4;  /* through 7 */
+
+
+PDF specific changes:
+
+    JBIG2 Image support via custom decoder
+
+    JPEG2000 Image support via JasPer integration, plus some fixes
+
+    PDF API now support PieceInfo for metadata
+
+    Fixes for annotation placement by matrix
+
+    Fixes for annotation clipping on render
+
+    Fixed progress report callback (again)
+
+    Added Pattern and shading support for Text and image masks
+
+    Pdf pages with uninitialized stroke color picked up fill color by accident
+
+    Fix for spurious dashes on sequence: [ 1 ] 0 d
+        Acrobat renders this as solid
+
+    Encryption format /R 3 fixed
+
+    Fixed bomb on Pdf file with unsupported Encryption formats;
+    more Encryption format implementations are pending
+
+    PDF makes an attempt to coalesce clipping rectangles sets;
+    this can improve driver performance
+
+    Make the short wide line emulation test a bit less sensitive;
+    some cases of it kicking in too soon on short lines
+
+    Initial stream validation a little more forgiving of slight errors
+
+    DV_SetExtent call DvPage/ErasePage with page width and height,
+    for consistency w/PS - simplifies driver handling slightly
+
+    Allow for unbalanced EMC in pdf stream (was choking)
+
+    Fix odd image placement if /CropBox
+
+    Fix Soft Mask with gray images
+
+    Fix clip_rect support / gxc->clip_rect didn't work if x1 was 0
+
+    Watch for unicode byte order mark when measuring unspecified string length
+
+    Allow for float input wherever integer is expected
+
+    Added image identity for handling repetitive images in pdf input files
+    The identity key can be used in DvImgGrab or DvImgStart to flag
+    an image that's already been seen.  Note this specifies that a return
+    value of -1 from DvImgStart is no longer an error, but "I've got this one".
+
+    Initial alpha implementation for (some) transparency support
+
+    Layer tracking now handles duplicates
+
+    Auto-unload for PDF streams in some cases, improves memory usage
+
+    Work around for FOP bug, embedding Tc commands in TJ array
+    http://issues.apache.org/bugzilla/show_bug.cgi?id=9054
+
+    Deeply nested forms would use up the drawing execution stack
+
+
+PS Specific changes:
+
+    Interpreter version set to 3010 (incremental font handling in place)
+
+    Enable TBCP (tagged binary) if first bytes are \001 M
+
+    Fixes for clip caching
+
+    File filter objects passed as images are now destroyed immediately after
+    rendering to prevent memory problems in pathological cases
+
+    Color space objects cached via new baggage space hook,
+    speeds up performance in many cases
+
+    Operator currentgray fixed
+
+    ], [, <<, >> implented as actual operators (instead of parsing actions)
+    to handle cases like (]) cvn cvx exec
+
+    Replaced arc, arcn, arct, arcto mechanism.
+    arc were not sufficiently circular in many cases
+
+    Operator currentfile fixed while executing string buffers;
+    string buffers aren't files
+
+    Added operators setoverprintmode and currentoverprintmode
+
+    Prefer 1.0 over 1. in cvs operator
+
+    Fixed nasty glitch in psobjsame not checking string offset;
+    substrings with the same length in the same object tracked as "same",
+    which means def operator didn't do anything
+
+    The update nature of setpagedevice includes subdictionaries;
+    only update existing dictionaries, don't replace.
+
+    Failed to run a pattern with DeviceN or Separation color sub-space
+
+    Fixes for 12 bit indexed and 12 bit separation images
+
+    erasepage before initgraphics so driver can initialize clip_rect via DvPage
+
+
+Windows Specific:
+
+    SEH: Windows build now uses Structured Exception Handling for error
+    recovery, instead of the setjmp/longjmp mechanism.  This cleans up a
+    variety of issues, as well as trapping CPU errors in NDEBUG mode.
+
+    UseGeometricPen=Y enables native Windows handling for line
+    cap / join / dash styles, instead of using the Line Emulator,
+    which converts stroked lines to polygons.
+
+    LS_TextExtract was broken, repaired.
+
+    LS_PrintOffsetDC caused repeated ResetDC
+
+    Several glitches in the font width calibration code;
+    calibrating the wrong font (order sensitive), and for some
+    CID fonts, calibrating via the wrong characters (no mapping).
+
+    Some fixes to rectangular clipping to avoid unexpected line drops
+
+    Check for postscript type 3 and don't grab
+
+    Soft masked image didn't flip RGB for BGR (wrong color results)
+
+    Rearranged dsp builds somewhat for cleaner dependencies
+
+
+Filters:
+
+    PS: Improved support for filter parameters, including LZW EarlyChange,
+    Flate and LZW PNG predictor support, and passing dictionary parameters
+    to ReusableStreamDecode subfilters.
+
+    SubFileDecode fixes for marker matching;
+    also handling funky definition: 0 () /SubFileDecode
+
+    eexec filter no longer detects EOD, it relies on the instruction stream
+    to stop.  This can be trouble both ways...
+
+    Ccitt decoder, improved error recovery in several cases
+
+    Fixed several cases of end of stream glitches, where reading "just enough"
+    from a stream didn't read the EOD marker.  This was hidden in many
+    cases by an implicit flush in PS image read code (since removed).
+
+    PDF make sure stream drain actually drains;
+    some filters (A85) require extra room and go out to lunch if the
+    lower-level drain doesn't actually happen.
+
+    Fixed confusion over FFS_fill_ semantics; for correct support of
+    FFS_ReadByte, FFS_fill_ implementations *must* set ReadPtr==0
+    if no data is available.  Some implementations assumed "1 more call"
+    and set ReadPtr==0 based on EOD on next FFS_fill_.
+
+
+Images:
+
+    Detect indexed monochrome images as mono 1bbp instead of rgb 24bpp
+
+    Allow Separation color space for image masks
+
+    gxc->image_grab choking on some color spaces - no longer grabs
+
+
+Gradients/Shader:
+
+    Tensor patches are now rendered as Bezier patches instead of quadrilaterals,
+    which eliminates gaps in some cases
+
+    Triangle/Gouraud shading changed recursive split mechanism for better results
+
+    Parametric Triangle/Gouraud shader removes bug emulation
+    (following a bug in Acrobat 5 fixed in Acrobat 6).
+
+    Parameter checking was too zealous - BitsPerFlag not required for shader 5
+
+    Improved many cases where the shader would choke if the driver had
+    no outer bounds set (clip_rect).  Some of these cases remain unavoidable.
+
+    Fixed some problems handling Matrix setting
+
+    Fixed errors in patch count usage for odd user coordinate spaces
+
+    ShaderPPI1 through ShaderPPI7 control linear "patches per inch"
+    current defaults:
+        ShaderPPI1=24
+        ShaderPPI2=48
+        ShaderPPI3=48
+        ShaderPPI4=24
+        ShaderPPI5=24
+        ShaderPPI6=24
+        ShaderPPI7=24
+
+    ShaderConvergence4 through ShaderConvergence7 control color convergence
+    threshold for triangle and tensor based shaders
+    current defaults:
+        ShaderConvergence4=0.028
+        ShaderConvergence5=0.028
+        ShaderConvergence6=0.014
+        ShaderConvergence7=0.014
+
+
+Distiller fixes and enhancements:
+
+    Support for 16 bit colors and images
+
+    Support for native shader objects
+
+    Fixed line color
+
+    Implement automatic "closepath" detection
+
+    Calculate page bounds on the fly if specified width and height are 0.
+
+    Fix for writing out name with embedded space/# other funky characters
+
+    Eliminating some gas in the output, and limit numbers to 3 decimal places
+
+    Changed coordinate scaling approach
+
+
+Pdf Update library enhancements:
+
+    NewMask, NewSoftMask, NewMaskedImage, NewChromaKeyImage
+
+    ExtGState with Alpha
+
+    Type3 font support
+
+    FreeForm Triangle Shadings
+
+    Create Annotations (with printing)
+
+    /BBox deferral and auto tracking for forms and appearance streams
+
+    Allow for interruptions during forms / appearance streams
+    by always caching in a temporary buffer.
+
+    PieceInfo private metadata by document or page
+
+    Fixed problem with useresource across pages (shared fonts or images)
+
+
+AntiGrain and driver:
+
+    Updated to the latest AntiGrain
+
+    AntiGrain updated for 16 bit color support and wide buffers (>32767 pixels).
+    Added support for aliased rendering (unmodified color output) to the driver.
+    See compile options in psdv/psdvagg2.h
+
+    Several shader types implemented natively (axial, some radial, gouraud)
+
+    Better default shader parameters for non-native cases
+
+    Significant performance improvements in clipping strategies
+
+
+HP-GL/2:
+
+    Extensive control of HP-GL driver via ini switches:
+
+        HpglInitString=
+        HpglEndPageString=
+        HpglStrokePolygons=Y|N
+        HpglLineStyles=Y|N
+        HpglClipping=Y|N
+        HpglBezier=Y|N
+        HpglRotation=one of 0,1,2,3,90,180,270
+
+    These override the defaults,
+    which depend on which call is used: LS_HPGL2 or LS_MHGL2
+
+    LS_MHGL2 for Mutoh Cutter,
+    uses Mutoh Cutter options for HP-GL/2 output ("MH-GL/2").
+    Includes filter color option - only cuts stuff with specified RGB color.
+
+
+PCL6:
+
+    PCL6 fix parsing for SetHalftoneMethod
+
+    Unplugged SetColorTreatment, behavior doesn't match documentation
+
+    Allowing for "quiet pass through" of unhandled operators

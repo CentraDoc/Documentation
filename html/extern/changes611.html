@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>CentraDoc 6.11 - Summary of Changes since 6.7.7</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #eeeeee }
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 50em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #444499;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-6-11-summary-of-changes-since-6-7-7">
+<h1 class="title">CentraDoc 6.11 - Summary of Changes since 6.7.7</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title first">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="id2">Introduction</a></li>
+<li><a class="reference internal" href="#id1" id="id3">6.11 2016-04-27</a><ul>
+<li><a class="reference internal" href="#pdf-reader" id="id4">PDF Reader</a></li>
+<li><a class="reference internal" href="#pdf-output-distiller" id="id5">PDF Output &amp; Distiller</a></li>
+<li><a class="reference internal" href="#pdf-xfa" id="id6">PDF/XFA</a></li>
+<li><a class="reference internal" href="#postscript" id="id7">PostScript</a></li>
+<li><a class="reference internal" href="#rip" id="id8">RIP</a></li>
+<li><a class="reference internal" href="#general" id="id9">General</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references" id="id10">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes since 8655:d1bf5210a2ef) -->
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#id2">Introduction</a></h2>
+<p>This document covers changes CentraDoc since the 6.7.7 release.
+The 6.9 release did not include release notes, so all 6.9 changes are listed here.
+Changes are listed by category and ticket number, newest first.</p>
+<p>Some specific areas of interest:</p>
+<ul>
+<li><p class="first">Updated third party libraries:</p>
+<ul class="simple">
+<li>FreeType 2.6.3</li>
+<li>Little CMS 2.7</li>
+<li>libpng 1.6.21</li>
+<li>JPEG-9b</li>
+</ul>
+</li>
+<li><p class="first">Improved support for embedded subset fonts (<strong>#1608</strong>) writing PDF files.</p>
+<ul class="simple">
+<li>Any narrow font can be written as Type 1.</li>
+<li>Support for TrueType subsets via Google's sfntly library, as a plugin.</li>
+</ul>
+</li>
+<li><p class="first">Additional documentation built with Doxygen, generated from sources.</p>
+</li>
+<li><p class="first">Improved C++ compatibility for GCO &amp; Little-IDL class engine.</p>
+</li>
+<li><p class="first">PDF Distiller enhancements, improvements, and fixes.</p>
+</li>
+<li><p class="first">Numerous PDF/XFA fixes.</p>
+</li>
+<li><p class="first">Numerous PDF font and encoding issues fixed (as usual).</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><a class="toc-backref" href="#id3">6.11 2016-04-27</a></h2>
+<div class="section" id="pdf-reader">
+<h3><a class="toc-backref" href="#id4">PDF Reader</a></h3>
+<ul>
+<li><p class="first"><strong>#1694</strong> Fix bomb caused by incorrect leak fix in <strong>#1658</strong> PDF shared object ownership.</p>
+</li>
+<li><p class="first"><strong>#1693</strong> Ignore <tt class="docutils literal">ToUnicode</tt> for non-embedded narrow fonts with &quot;normal&quot; encoding.
+PDF with bogus <tt class="docutils literal">ToUnicode</tt> map produced incorrect results.</p>
+</li>
+<li><p class="first"><strong>#1684</strong> PDF layer support not handling <tt class="docutils literal">/OCG</tt> from page content.</p>
+</li>
+<li><p class="first"><strong>#1673</strong> also <strong>#1656</strong>, <strong>#1540</strong>, <strong>#658</strong>
+Problems with PDF fonts with invalid Symbolic flag.</p>
+</li>
+<li><p class="first"><strong>#1660</strong> For PDF, if the page dictionary doesn't unload, relock it, or it may unload later and crash.</p>
+</li>
+<li><p class="first"><strong>#1654</strong> Handle PDF with degenerate file catalog pointing directly at a page object, no page tree root object.</p>
+</li>
+<li><p class="first"><strong>#1653</strong> PDF Automatic BOM detection on strings causing problems: specifically, watch out for binary strings.</p>
+</li>
+<li><p class="first"><strong>#1651</strong> More fixes for PDF CID fonts with bogus <tt class="docutils literal">ToUnicode</tt> maps. CID to unicode has trouble if the result is very wide.</p>
+</li>
+<li><p class="first"><strong>#1646</strong> Handle a PDF bookmark without a destination.</p>
+</li>
+<li><p class="first"><strong>#1640</strong> More dummy PDi calls from pathological pattern trap - advanced operators in pattern being scanned.</p>
+</li>
+<li><p class="first"><strong>#1639</strong> PDF workaround for a bogus narrow <tt class="docutils literal">ToUnicode</tt> map written by GhostScript.</p>
+</li>
+<li><p class="first"><strong>#1636</strong> bit by the opposite of <strong>#1282</strong> font with bogus <tt class="docutils literal">CIDToGIDMap</tt> present in non CID-font</p>
+</li>
+<li><p class="first"><strong>#1629</strong> For PDF attachments, honor collection sort order specification.</p>
+</li>
+<li><p class="first"><strong>#1624</strong> PDF nested Type 3 with <tt class="docutils literal">DvCharEm</tt> enabled caused assertion failure.</p>
+</li>
+<li><p class="first"><strong>#1622</strong> PDF encryption issues, and some related changes</p>
+<ul class="simple">
+<li><strong>PENDING</strong>: PDF encrypt-attachments-only mode is not documented correctly, no reply from Adobe.</li>
+<li>AES would bomb on null string encryption</li>
+<li>if AESV3 R 6 (currently unsupported), but if encrypt attachments only, proceed with processing anyway</li>
+<li>changes to string format returned for PDF attachment names and filenames</li>
+<li>PVSDK <tt class="docutils literal">LS_Authorize</tt> (&amp; other psisys related) not working for some encryptions</li>
+<li>Removed references to <tt class="docutils literal">SetFilePointerEx</tt> and <tt class="docutils literal">GetFileSizeEx</tt> if using Visual Studio 2008 (for NT compatibility (!))</li>
+<li>Ini <tt class="docutils literal">LogFile=</tt> setting for overriding pvsdk.log filename and path.  Normally pvsdk.log goes in S_Path which is DLL directory, or from <tt class="docutils literal">LS_SetPath</tt>. Ini or <tt class="docutils literal">LS_SetParameters</tt> can be used to setup <tt class="docutils literal">LogFile=</tt>.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1600</strong> PDF not doing input validation on AES decryption.  Passed an &quot;empty&quot; string containing a BOM and tried to decrypt it.</p>
+</li>
+<li><p class="first"><strong>#1599</strong> PDF patch for JasPer (JPEG2000 support) trouble file.</p>
+</li>
+<li><p class="first"><strong>#1599</strong> Handle PDF image stream with empty DecodeParms array.</p>
+</li>
+<li><p class="first"><strong>#1591</strong> PDF <tt class="docutils literal">MAX_PDF_PATTERN_OPERATORS EXCEEDED</tt> message; change pattern size threshold before dropping the test.</p>
+</li>
+<li><p class="first"><strong>#1589</strong> Fix for PDF file with degenerate struct tree.</p>
+</li>
+<li><p class="first"><strong>#1581</strong> Fix for PDF file crash tracking markers.</p>
+</li>
+<li><p class="first"><strong>#1575</strong> Fix for PDF file missing F in <tt class="docutils literal">%%EOF</tt>.</p>
+</li>
+<li><p class="first"><strong>#1569</strong> Allow buggy PDF, producer (Acrobat Distiller??) marked an <tt class="docutils literal">/XObject /Form</tt> as a <tt class="docutils literal">/Form /Form</tt> (Acrobat doesn't check for this)</p>
+</li>
+<li><p class="first"><strong>#1568</strong> PDF layer engine, lock <tt class="docutils literal">OCG</tt> dictionaries (and smart objects) since they don't go away.</p>
+</li>
+<li><p class="first"><strong>#1566</strong> Handle PDF Type 4 function containing comments  Also: buffer glitch on error message creation.</p>
+</li>
+<li><p class="first"><strong>#1565</strong> Fix another PDF file encoding problem with <tt class="docutils literal">DvChar</tt> parameters.</p>
+</li>
+<li><p class="first"><strong>#1561</strong> Improve functional shader implementation using lattice triangle mesh.</p>
+</li>
+<li><p class="first"><strong>#1555</strong> PDF don't issue syntax error if objects in object streams are missing.</p>
+</li>
+<li><p class="first"><strong>#1551</strong> PDF improved logic for name tree lookup.</p>
+</li>
+<li><p class="first"><strong>#1548</strong> PDF Recent changes for <strong>#1544</strong> broke some cases of pathological pattern un-dithering mechanism, producing the wrong color.</p>
+</li>
+<li><p class="first"><strong>#1546</strong> PDF more forgiving when walking a num tree.  PDF example file num tree is broken in interesting ways.</p>
+</li>
+<li><p class="first"><strong>#1544</strong> Fix for PDF file exception: when running pattern operations, gray is the default color space.</p>
+</li>
+<li><p class="first"><strong>#1542</strong> Fix for crash in <tt class="docutils literal">DvTextData</tt> from using wrong position array.</p>
+</li>
+<li><p class="first"><strong>#1540</strong> re <strong>#658</strong> some more tweaks for PDF embedded TrueType encoding.</p>
+</li>
+<li><p class="first"><strong>#1537</strong> Fix for PDF file, truncate Index Color high value instead of barfing.</p>
+</li>
+<li><p class="first"><strong>#1536</strong> PDF file displaying wrong pattern: Pattern color spaces are not comparable by default.</p>
+</li>
+<li><p class="first"><strong>#1534</strong> Corrupted PDF file, more robus syntax recovery.</p>
+</li>
+<li><p class="first"><strong>#1529</strong> PDF annotation clipbox left commented out from #1508 work.</p>
+</li>
+<li><p class="first"><strong>#1523</strong> PDF go ahead and unload objects for &quot;big&quot; files - checking for &gt; 42 pages;
+deferring all the page tree nodes and page objects.</p>
+</li>
+<li><p class="first"><strong>#1521</strong> PDF detect another bogus <tt class="docutils literal">ToUnicode</tt> case.</p>
+</li>
+<li><p class="first"><strong>#1508</strong> Render PDF annotation with <tt class="docutils literal">NoRotate</tt> flag.</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="pdf-output-distiller">
+<h3><a class="toc-backref" href="#id5">PDF Output &amp; Distiller</a></h3>
+<ul>
+<li><p class="first"><strong>#1692</strong> Distiller work around troublesome PostScript pattern glitch
+by not capturing large patterns.  Other distiller fixes including
+<tt class="docutils literal">BT</tt>/<tt class="docutils literal">ET</tt> balancing, and missing colors in pattern capture.</p>
+</li>
+<li><p class="first"><strong>#1685</strong> Distiller <tt class="docutils literal"><span class="pre">-stdin</span></tt> enhancement</p>
+<ul class="simple">
+<li>Add <tt class="docutils literal"><span class="pre">-stdin</span></tt> option to distiller (ps2pdf).</li>
+<li>Allow for valid square page sizes (PostScript).</li>
+<li><tt class="docutils literal">psisetsource</tt> add TBCP filter if leading ESC found.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1682</strong> Distiller (<tt class="docutils literal">ps2pdf</tt>) better page size detection.</p>
+</li>
+<li><p class="first"><strong>#1671</strong> Distiller improve handling of CID sub fonts.</p>
+</li>
+<li><p class="first"><strong>#1662</strong> Distiller missing <tt class="docutils literal">ET</tt> on closepage if text was last object in input.</p>
+</li>
+<li><p class="first"><strong>#1659</strong> PDF/A-2b preflight: optional content configuration dictionary requires a name.</p>
+</li>
+<li><p class="first"><strong>#1648</strong> Distiller -on option not checking for page wrap correctly.</p>
+</li>
+<li><p class="first"><strong>#1642</strong> PDF output, change on-the-fly font's artificial Unicode encoding to use /Uxxxx syntax recognized elsewhere, cleanup UTF conversions</p>
+</li>
+<li><p class="first"><strong>#1632</strong> <tt class="docutils literal">pdfcp</tt> program add password options (see usage).</p>
+</li>
+<li><p class="first"><strong>#1608</strong> PDF output EmbedFontSubset feature</p>
+<ul class="simple">
+<li>Uses google sfntly library via sfntlywrap</li>
+<li>Capture any font to narrow Type 1</li>
+<li>Capture narrow or wide TrueType</li>
+<li>Some combinations return errorUnsupportedFeature</li>
+<li>PDF EmbedFont flag kEmbedFontNarrowMacRoman for very simple control of narrow encoding</li>
+<li><tt class="docutils literal">wchar_t</tt> is problematic on the Macintosh. Linux &amp; OS/X <tt class="docutils literal">wchar_t</tt> is UTF-32 but sfntly always returns UTF-16</li>
+<li><strong>#1686</strong> fixes related to <strong>#1608</strong> font embedding enhancements<ul>
+<li>Handle sfntly library not returning errors when it should.</li>
+<li>Embed Unicode font subset without sfntly didn't use correct cmap.</li>
+<li>Fix leaks.</li>
+</ul>
+</li>
+<li><strong>#1670</strong> more re <strong>#1608</strong><ul>
+<li>Added support for Mac dfont and suitcase fonts.</li>
+<li>For embedded Type 1 subset: handle case with missing unicode glyph.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1606</strong> <tt class="docutils literal">ps2pdf</tt> distiller added <tt class="docutils literal"><span class="pre">-user</span></tt> and <tt class="docutils literal"><span class="pre">-owner</span></tt> options for encryption. Defaults to 1.4 encryption and read-only access.</p>
+</li>
+<li><p class="first"><strong>#1605</strong> PDF/A-2 fixes</p>
+<blockquote>
+<ul class="simple">
+<li>Added constants <tt class="docutils literal">kPdfVersion_1_7</tt> and <tt class="docutils literal">kPdfAcrobat8</tt> = <tt class="docutils literal">kPdfVersion_1_7</tt></li>
+<li>PDF/A-2 markers</li>
+</ul>
+</blockquote>
+</li>
+<li><p class="first"><strong>#1597</strong> PDF output, updated form examples.</p>
+</li>
+<li><p class="first"><strong>#1582</strong> Implemented <tt class="docutils literal"><span class="pre">-annot</span></tt> in <tt class="docutils literal">ps2pdf</tt> distiller - draw into text annotation.</p>
+<ul class="simple">
+<li>Input x y is lower left of annotation</li>
+<li>w h required, not calculated</li>
+<li>Handles rotation OK</li>
+<li>Using Text instead of Watermark because Text comes after watermark in draw order.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1558</strong> PDF output <tt class="docutils literal">FreeText</tt> annotation text placement wasn't accounting for border.</p>
+<blockquote>
+<p>Note: Acrobat does something fairly inconsistent.  It's using ~.79 for Helvetica &amp; Times, and ~.63 for Courier,
+although the Courier value changes from case to case, it's close to Courier ascent, but helvetica &amp; times ascent is 718
+and arial ascent is around 905.  No obvious logic to it.</p>
+</blockquote>
+</li>
+<li><p class="first"><strong>#1558</strong> Related crash, looking for wrong key for <tt class="docutils literal">FreeText</tt> <tt class="docutils literal">BBox</tt></p>
+</li>
+<li><p class="first"><strong>#1552</strong> <tt class="docutils literal">Pdf_InsertAndBegin</tt> added, fixes some usability issues in PDF output.</p>
+</li>
+<li><p class="first"><strong>#1541</strong> Increase the image size threshold that turns on JPEG compression.  Threshold is 64k total pixels (e.g., 256*256)</p>
+</li>
+<li><p class="first"><strong>#1530</strong> PDF output layer name, don't use <tt class="docutils literal">strlen</tt> when passing a possibly Unicode string.</p>
+</li>
+<li><p class="first"><strong>#1527</strong> <tt class="docutils literal">PdfCopier</tt> shows problem with append in <tt class="docutils literal">PdfUpd_InsertPage</tt></p>
+<ul class="simple">
+<li><tt class="docutils literal">PdfCopier</tt> page order, <tt class="docutils literal">ValMapIter</tt> is not ordered</li>
+<li>Make the <tt class="docutils literal">PdfCopier</tt> API a little cleaner for <tt class="docutils literal">Catalog</tt> stuff</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1522</strong> Adding pattern capture to distiller.</p>
+</li>
+<li><p class="first"><strong>#1515</strong> Several PDF update problems with particular hybrid XRef Files.</p>
+</li>
+</ul>
+<blockquote>
+<ul class="simple">
+<li>Hybrid == mixing XRefStm and XRef table</li>
+<li>Don't include XRefStm entry in new Trailers appended to Hybrid file</li>
+<li>Don't use the XRef free list from <em>any</em> PDF file</li>
+<li>Buggy example file: all the entries moved to ObjStms marked free!</li>
+<li>Write an extra <tt class="docutils literal">\n</tt> when appending to avoid <tt class="docutils literal">%%EOF1 0 obj &lt;&lt; etc &gt;&gt;</tt>
+because that type of file won't recover readily</li>
+</ul>
+</blockquote>
+<ul>
+<li><p class="first"><strong>#1498</strong> Distiller N-Up enhancement; place multiple PostScript pages
+together on PDF output pages.  Includes automatic user unit setting for large
+pages.  Example:</p>
+<pre class="literal-block">
+ps2pdf nup.ps -w 8.5 -h 11 -nw 2 -nh 2 t.pdf
+</pre>
+</li>
+<li><p class="first"><strong>#1488</strong> PDF Read and Write structure elements for alternate text</p>
+<ul>
+<li><p class="first">Read details:</p>
+<ul>
+<li><p class="first">in <tt class="docutils literal">DvOpen</tt> set: <tt class="docutils literal"><span class="pre">cap-&gt;want_DvMarker</span></tt></p>
+</li>
+<li><p class="first">driver will receive <tt class="docutils literal">DvBeginMarker</tt> and <tt class="docutils literal">DvEndMarker</tt>, which pass a <tt class="docutils literal">PdfMarker *</tt> (from <tt class="docutils literal">pdfdoc/pdfstruct.d</tt>).</p>
+</li>
+<li><p class="first">the PdfMarker contains <tt class="docutils literal">PdfStructElem *element</tt>, where you can pick up the Alternate Text:</p>
+<pre class="literal-block">
+const char *alt = PdfStructElem_GetAltText(marker-&gt;element);
+</pre>
+</li>
+</ul>
+</li>
+<li><p class="first">Write example 1:</p>
+<pre class="literal-block">
+PdfMarkSpec mark;
+PdfStructElem *se;
+
+rt_CLEAR(&amp;mark, sizeof(mark));
+mark.type = kPST_Figure;
+mark.role = &quot;Figure&quot;;
+mark.altText = &quot;test image!&quot;;
+
+se = PDF_CreateStructElem(pdf, 0, &amp;mark);
+PDF_BeginMarkedContent(pdf, se);
+PDF_DrawImage(pdf, image, points);
+PDF_EndMarkedContent(pdf);
+</pre>
+</li>
+<li><p class="first">Write example 2:</p>
+<pre class="literal-block">
+PDF_DrawTaggedImage(pdf, image, points, &quot;Tagged Image!&quot;);
+</pre>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="pdf-xfa">
+<h3><a class="toc-backref" href="#id6">PDF/XFA</a></h3>
+<ul>
+<li><p class="first"><strong>#1696</strong> PDF/XFA HTML wrapping fix.</p>
+</li>
+<li><p class="first"><strong>#1687</strong> Added heuristic for detecting bogus <tt class="docutils literal">ToUnicode</tt> maps in CID fonts,
+PDF with all CIDs mapped to the space character.</p>
+</li>
+<li><p class="first"><strong>#1672</strong> PDF XFA/F don't synthesize appearances for non-widget items that already have an appearance.</p>
+</li>
+<li><p class="first"><strong>#1666</strong> PDF/XFA <tt class="docutils literal">pagearea</tt> <tt class="docutils literal">medium</tt> not looking at orientation.</p>
+</li>
+<li><p class="first"><strong>#1652</strong> DIB image fixes (PDF/XFA BMP support).</p>
+</li>
+<li><p class="first"><strong>#1643</strong> PDF/XFA binding occurrence issue; only go up one subform.</p>
+</li>
+<li><p class="first"><strong>#1638</strong> PDF/XFA fixes:</p>
+<ul class="simple">
+<li>Too tall fix caused some regressions.</li>
+<li>Another attempt at nested tables; fix bad parent item counts after split</li>
+<li>When binds split, only go up as far as necessary for the restart</li>
+<li>One case where next_split didn't return width</li>
+<li>Move lint vars out of function wrappers</li>
+<li>some missing canvas bits</li>
+<li>Chrome App (some) image support</li>
+<li>Chrome App, for #1103 nodes has to come before form</li>
+<li>Displaying on Chrome Canvas, more or less.  Chrome's DOMParser seems OK!</li>
+<li>Two glitches: _splitH returns variant type; layout_row has problems with sub-subforms</li>
+<li>XFA XFAF tweak XML portability glitch (node.root dropped)</li>
+<li>Positional subforms taller than contentArea caused run-on empty pages (.0001 too tall!)</li>
+<li>Handle breakBefore pageArea with no target</li>
+<li>Work-around for empty contents inside some subforms</li>
+<li>Explicitly draw page contents before content areas</li>
+<li>Always examine image, don't trust XFA to label the image type correctly</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1625</strong> PDF/XFA fixes:</p>
+<ul class="simple">
+<li>Fix XFA degenerate round rects</li>
+<li>XFA xml parse error if &lt;_symbol&gt;</li>
+<li>XFA js ._pageTemplate glitch</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1590</strong> PDF/XFA regressions:</p>
+<ul class="simple">
+<li>image default to fit; even if a subform is already bound, bind its children</li>
+<li>guess image type for unmarked images</li>
+<li>fix html error if empty body</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1588</strong> PDF/XFA fixes:</p>
+<ul class="simple">
+<li>positional subforms can still split</li>
+<li>don't render a push button's value</li>
+<li>xfatest.js handle multiple files correctly</li>
+<li>xml parser glitch</li>
+</ul>
+</li>
+<li><p class="first"><strong>1556</strong> PDF/XFA fixes:</p>
+<ul class="simple">
+<li>implement linear fill</li>
+<li>hAlign='right' is not <em>really</em> right justified if the text is too wide</li>
+<li>has many nested xfa:data inside xfa:datasets</li>
+<li>short circuit GIF transparent as white</li>
+<li>unqualified som expression did not go &quot;up&quot; correctly</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1553</strong> PDF/XFA workaround for spaces in font names (missing dingbats characters).</p>
+</li>
+<li><p class="first"><strong>#1545</strong> PDF/XFA fixes:</p>
+<ul class="simple">
+<li>missing button, regression bb.target may not exist.</li>
+<li>ignore text{ pictures, since in the example the picture doesn't work anyway</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1539</strong> and <strong>#1502</strong> PDF XFAF fixes = generate xfa.form and xfa.layout independently for SOM lookup</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="postscript">
+<h3><a class="toc-backref" href="#id7">PostScript</a></h3>
+<ul>
+<li><p class="first">Re <strong>#1682</strong> <strong>#1679</strong> <strong>#1621</strong></p>
+<ul class="simple">
+<li>Don't send driver initial bogus <tt class="docutils literal">erasepage 792 792</tt>.</li>
+<li>Better handling of a3 and page orientation (PostScript).</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1674</strong> Provide more DBCS info (<tt class="docutils literal">UNKNOWN_CHARSET</tt>) for driver to decide about embedded font.</p>
+</li>
+<li><p class="first"><strong>#1663</strong> Add Driver Begin/End fine text adjustment calls for the PostScript <tt class="docutils literal">xshow</tt> operator.</p>
+</li>
+<li><p class="first"><strong>#1621</strong> Support for <tt class="docutils literal">%%ViewingOrientation</tt>, undocumented PostScript DSC.
+Also: fix <cite>psconcat</cite> bug if destination mtx is left matrix.</p>
+</li>
+<li><p class="first"><strong>#1572</strong> Ignore <tt class="docutils literal">PageBoundingBox</tt> with <tt class="docutils literal">auto_page_translate</tt>.</p>
+</li>
+<li><p class="first"><strong>#1524</strong> No <tt class="docutils literal">PageBoundingBox</tt> in example PostScript DSC, check for <tt class="docutils literal">HiResBoundingBox</tt> and <tt class="docutils literal">CropBox</tt> as well.</p>
+</li>
+<li><p class="first"><strong>#1466</strong> reset <tt class="docutils literal">ColorMgr</tt> <tt class="docutils literal">fDevColor</tt> cache if re-prepped; case of EPS file crashing.</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="rip">
+<h3><a class="toc-backref" href="#id8">RIP</a></h3>
+<ul>
+<li><p class="first"><strong>#1612</strong> RIP isn't initializing soft mask background correctly.</p>
+</li>
+<li><p class="first"><strong>#1584</strong> Fix for PDF file crashing RIP, not tracking fill color correctly.</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+<div class="section" id="general">
+<h3><a class="toc-backref" href="#id9">General</a></h3>
+<ul>
+<li><p class="first"><strong>#1690</strong> Remove references to <tt class="docutils literal">getenv</tt> and <tt class="docutils literal">strcpy</tt>. Remaining references:</p>
+<ul class="simple">
+<li><tt class="docutils literal">gco/rt_stdlib.c</tt> non-Windows OS, and Windows &lt; Visual Studio 2005</li>
+<li><tt class="docutils literal">ftype/ftdebug.c</tt> <tt class="docutils literal">#ifdef</tt>-fed out</li>
+<li><tt class="docutils literal">jpeg/jmemmgr.c</tt> <tt class="docutils literal">#ifdef</tt>-fed out via <tt class="docutils literal">jpatch.h</tt></li>
+</ul>
+</li>
+<li><p class="first"><strong>#1680</strong> more consistent support for UTF-16 file names based on BOM,
+including RIP support.</p>
+</li>
+<li><p class="first"><strong>#1676</strong> Resolved some problems with search paths.</p>
+<ul class="simple">
+<li>PSI kept resetting the search path, making it difficult to change,
+now it only resets if <tt class="docutils literal">PS_CONFIG</tt> <tt class="docutils literal">etc_path</tt> is set.</li>
+<li>UTF-16 search path would break when using the <tt class="docutils literal">ffswin32.c</tt> module.</li>
+</ul>
+</li>
+<li><p class="first"><strong>#1658</strong> <tt class="docutils literal">ClrDevSeps</tt> now handles mismatched sets of Separations (different base types).</p>
+</li>
+<li><p class="first"><strong>#1650</strong> Partial fixes for <tt class="docutils literal">size_t</tt> 64 bit buffer issues.</p>
+</li>
+<li><p class="first"><strong>#1635</strong> For some reason the matrix class used a page allocator, which isn't thread safe.  This dates back to 12/14/2001.  No other class uses this feature.</p>
+</li>
+<li><p class="first"><strong>#1633</strong> <tt class="docutils literal">ClrSepScaled</tt> feature for improved color separation handling.</p>
+</li>
+<li><p class="first"><strong>#1615</strong> Updated notes about shader ini keys.</p>
+</li>
+<li><p class="first"><strong>#1592</strong> Fix for triangle mesh grid mapping.</p>
+</li>
+<li><p class="first">Improvements to GCO/lidl import/export mechanism and examples.</p>
+</li>
+<li><p class="first">Fix RGN bomb.</p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#id10">References</a></h2>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.littlecms.com/">Little cms</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ece.uvic.ca/~mdadams/jasper/">The JasPer Project</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.libpng.org/">libng Portable Network Graphics library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://partners.adobe.com/public/developer/ps/index_specs.html">Adobe PostScript language specifications</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.adobe.com/devnet/pdf/pdf_reference.edu.html">Adobe PDF Reference and Adobe Extensions to the PDF Specification</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://partners.adobe.com/public/developer/xml/index_arch.html">Adobe XML Forms Architecture (XFA)</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.doxygen.org">Doxygen</a></p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+See http://docutils.sourceforge.net/rst.html for more information.) -->
+</div>
+</div>
+</body>
+</html>

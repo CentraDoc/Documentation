@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<title>CentraDoc 7.2.x - Summary of Changes since 7.2.4</title>
+<style type="text/css">
+
+/*
+:Authors: Ian Bicking, Michael Foord
+:Contact: fuzzyman@voidspace.org.uk
+:Date: 2005/08/26
+:Version: 0.1.0
+:Copyright: This stylesheet has been placed in the public domain.
+
+Stylesheet for Docutils.
+Based on ``blue_box.css`` by Ian Bicking
+and ``html4css1.css`` revision 1.46.
+*/
+
+/*inlining html4css1.css*/
+
+/*
+:Author: David Goodger
+:Contact: goodger@users.sourceforge.net
+:Date: $Date: 2005-12-13 01:29:08 +0100 (Tue, 13 Dec 2005) $
+:Revision: $Revision: 4185 $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, .borderless td {border: 0;}
+
+/* "! important" is used here to override other ``margin-top`` and
+   ``margin-bottom`` styles that are later in the stylesheet or
+   more specific.  See http://www.w3.org/TR/CSS1#the-cascade */
+.first {
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin-left: 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left {
+  clear: left }
+
+img.align-right {
+  clear: right }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font-family: serif ;
+  font-size: 100% }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em ;
+  background-color: #f8f8f8 }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #f8f8f8 }
+pre.code .comment, code .comment { color: #008000 }
+pre.code .keyword, code .keyword { color: #4040D0; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #D04040 }
+pre.code .name.builtin, code .name.builtin { color: #4040D0 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+tt.docutils {
+  background-color: #eeeeee }
+
+ul.auto-toc {
+  list-style-type: none }
+/*end inline*/
+
+body {
+  font-family: Arial, sans-serif;
+  /* this doesn't work in IE.  oh well */
+  max-width: 65em;
+}
+
+em, i {
+  /* Typically serif fonts have much nicer italics */
+  font-family: Times New Roman, Times, serif;
+}
+
+a.target {
+  color: blue;
+}
+
+a.target {
+  color: blue;
+}
+
+a.toc-backref {
+  text-decoration: none;
+  color: black;
+}
+
+a.toc-backref:hover {
+  background-color: inherit;
+}
+
+a:hover {
+  background-color: #cccccc;
+}
+
+div.attention, div.caution, div.danger, div.error, div.hint,
+div.important, div.note, div.tip, div.warning {
+  background-color: #cccccc;
+  padding: 3px;
+  width: 80%;
+}
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title  {
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title {
+  color: #cc0000;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #999999;
+  display: block;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Helvetica, Arial, sans-serif;
+  border: thin solid black;
+  /* This makes the borders rounded on Mozilla, which pleases me */
+  -moz-border-radius: 8px;
+  padding: 4px;
+}
+
+h1,h2 {
+  background-color: #BBBBEE;
+  color: #ffffff;
+  border: medium solid black;
+}
+
+h1 a.toc-backref, h2 a.toc-backref {
+  color: #ffffff;
+}
+
+h3, h4, h5, h6 {
+  background-color: #cccccc;
+  color: #000000;
+}
+
+h3 a.toc-backref, h4 a.toc-backref, h5 a.toc-backref,
+h6 a.toc-backref {
+  color: #000000;
+}
+
+h1.title {
+  text-align: center;
+  background-color: #7777CC;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+h2.title {
+  text-align: center;
+  background-color: #444499;
+  color: #eeeeee;
+  border: thick solid black;
+  -moz-border-radius: 20px;
+}
+
+table.footnote {
+  padding-left: 0.5ex;
+}
+
+table.citation {
+  padding-left: 0.5ex
+}
+
+pre.literal-block, pre.doctest-block {
+  border: thin black solid;
+  padding: 5px;
+}
+
+.image img { border-style : solid;
+            border-width : 2px;
+}
+
+h1 tt, h2 tt, h3 tt, h4 tt, h5 tt, h6 tt {
+  font-size: 100%;
+}
+
+code, tt {
+  color: #000066;
+}
+
+p.topic-title {
+  font-size: 150%;
+  font-weight: bold
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="document" id="centradoc-7-2-x-summary-of-changes-since-7-2-4">
+<h1 class="title">CentraDoc 7.2.x - Summary of Changes since 7.2.4</h1>
+
+<div class="contents topic" id="table-of-contents">
+<p class="topic-title">Table Of Contents</p>
+<ul class="simple">
+<li><a class="reference internal" href="#introduction" id="toc-entry-1">Introduction</a></li>
+<li><a class="reference internal" href="#version-7-2-5" id="toc-entry-2">Version 7.2.5</a></li>
+<li><a class="reference internal" href="#third-party-libraries" id="toc-entry-3">Third-party libraries</a></li>
+<li><a class="reference internal" href="#references" id="toc-entry-4">References</a></li>
+</ul>
+</div>
+<!-- (This document covers changes since a2e0a493, 2023-04-05) -->
+<div class="section" id="introduction">
+<h2><a class="toc-backref" href="#toc-entry-1">Introduction</a></h2>
+<p>These are the changes to CentraDoc since the Version 7.2.4 release 2023-04-05.</p>
+</div>
+<div class="section" id="version-7-2-5">
+<h2><a class="toc-backref" href="#toc-entry-2">Version 7.2.5</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt><strong>#2490</strong> Emscripten support and build compatibility via cmake.  CMake builds available in cdoc/build/cmake.</dt>
+<dd>Note: emscripten build requires larger run time stack, use link option: <cite>-sSTACK_SIZE=1MB</cite></dd>
+</dl>
+</li>
+<li><strong>#2491</strong> Fixed legacy bug in PDF XRef Stream updates: Chrome and Edge would not see updates in some cases.</li>
+<li><strong>#2492</strong> PDF create API New Form XObject calls with more neutral parameter model:</li>
+</ul>
+<pre class="code c literal-block">
+<span class="keyword type">void</span><span class="whitespace">  </span><span class="name function">Pdf_EndFormCTM</span><span class="punctuation">(</span><span class="name">Pdf</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">self</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword">const</span><span class="whitespace"> </span><span class="keyword type">double</span><span class="whitespace"> </span><span class="name">bbox</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">],</span><span class="whitespace"> </span><span class="keyword">const</span><span class="whitespace"> </span><span class="keyword type">double</span><span class="whitespace"> </span><span class="name">mtx</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">]);</span><span class="whitespace">
+</span><span class="keyword type">void</span><span class="whitespace">  </span><span class="name function">Pdf_DrawFormCTM</span><span class="punctuation">(</span><span class="name">Pdf</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">self</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword type">void</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">form</span><span class="punctuation">,</span><span class="whitespace"> </span><span class="keyword">const</span><span class="whitespace"> </span><span class="keyword type">double</span><span class="whitespace"> </span><span class="name">mtx</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">]);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2487</strong> PDF Create API Added Pdf_DrawInlineImage for small images:</li>
+</ul>
+<pre class="code c literal-block">
+<span class="keyword type">int</span><span class="whitespace"> </span><span class="name">Pdf_DrawInlineImage</span><span class="punctuation">(</span><span class="whitespace">
+    </span><span class="name">Pdf</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">self</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword">const</span><span class="whitespace"> </span><span class="keyword type">char</span><span class="whitespace"> </span><span class="operator">*</span><span class="name">data</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">dataLength</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">width</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">height</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">nComponents</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword type">int</span><span class="whitespace"> </span><span class="name">bitsPerComponent</span><span class="punctuation">,</span><span class="whitespace">
+    </span><span class="keyword">const</span><span class="whitespace"> </span><span class="name">double_in</span><span class="whitespace"> </span><span class="name">points</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">]</span><span class="whitespace"> </span><span class="comment multiline">/**&lt; points: ll, lr, ul (ur is implied) */</span><span class="whitespace">
+</span><span class="punctuation">);</span>
+</pre>
+<ul class="simple">
+<li><strong>#2488</strong> Updated distributed FreeType version to 2.13.0.</li>
+<li><dl class="first docutils">
+<dt><strong>#2468</strong> Distiller updates</dt>
+<dd><ul class="first last">
+<li>Fixed bug in font state maintenance from recent changes, causing page to not render</li>
+<li><cite>-polytext</cite> option for ps2pdf, renders text as paths</li>
+<li>Improved font tracking for font capture, reduces redundant fonts in output</li>
+<li>Fixed font capture issues with some Postscript Fonts</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><strong>#2461</strong> updated core Cython glue</li>
+<li><strong>#2444</strong> RIP changes for PostScript page handling</li>
+<li><strong>#2432</strong> more RIP examples &amp; distribution includes more code examples</li>
+<li><strong>#2412</strong> Generic Logger mechanism</li>
+</ul>
+</div>
+<div class="section" id="third-party-libraries">
+<h2><a class="toc-backref" href="#toc-entry-3">Third-party libraries</a></h2>
+<ul class="simple">
+<li>AntiGrain - 2.4</li>
+<li>FreeType - 2.13.0 <strong>UPDATED</strong></li>
+<li>JPEG - JPEG-9e</li>
+<li>LCMS - 2.12</li>
+<li>libdmtx - 0.7.7</li>
+<li>libpng - 1.6.38</li>
+<li>OpenJPEG - 2.5.0</li>
+<li>QR-Code-generator-c - ~2018</li>
+<li>sha2 - 1.0.1</li>
+<li>YAJL - 2.0.1</li>
+<li>ZLib - 1.2.13</li>
+</ul>
+</div>
+<div class="section" id="references">
+<h2><a class="toc-backref" href="#toc-entry-4">References</a></h2>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.lib-sys.com">Liberty Technology Systems</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.antigrain.com/">Anti-Grain Geometry</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.littlecms.com/">Little cms</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.FreeType.org/">The FreeType Project</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.ijg.org/">Independent JPEG Group</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.openjpeg.org/">OpenJPEG / OpenJP2</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.zlib.net/">zlib compression library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.libpng.org/">libng Portable Network Graphics library</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.openssl.org/">OpenSSL Cryptography Toolkit</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.adobe.com/content/dam/acom/en/devnet/actionscript/articles/PLRM.pdf">Adobe PostScript language specifications</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.adobe.com/devnet/pdf/pdf_reference.edu.html">Adobe PDF Reference and Adobe Extensions to the PDF Specification</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/51502.html">ISO 32000-1:2008</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://www.iso.org/standard/63534.html">ISO 32000-2:2017</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.doxygen.org">Doxygen</a></p>
+<blockquote>
+<!-- (this comment forces double spacing in html output) -->
+</blockquote>
+</li>
+</ul>
+<!-- (Here are some aliased links) -->
+<!-- (This file contains reStructuredText directives.
+   See http://docutils.sourceforge.net/rst.html for more information.)
+
+**Copyright (c) 2023 Liberty Technology Systems, Inc.  All Rights Reserved.** -->
+</div>
+</div>
+</body>
+</html>
