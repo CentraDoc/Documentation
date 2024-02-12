@@ -1,0 +1,26 @@
+var cdocrip_8h_struct_r_i_p_target_spec =
+[
+    [ "info", "cdocrip_8h.html#ad93fbfa27c0e16f18b54f9be8ddc218e", null ],
+    [ "Rotation", "cdocrip_8h.html#a3e087b0e62c9cdb973c80c89a25a17f1", null ],
+    [ "XDPI", "cdocrip_8h.html#a7857a7139adaf80dda807dc102887d82", null ],
+    [ "YDPI", "cdocrip_8h.html#aa64781d9a66c8477fa08105a4878acf0", null ],
+    [ "placed", "cdocrip_8h.html#aca84b4506e0b87740ae9053d1c6ec5b6", null ],
+    [ "cropped", "cdocrip_8h.html#aa473a03dbe6c016aeb6c94c89201a83f", null ],
+    [ "clipped", "cdocrip_8h.html#aee3d68ef320410abbccaafd8756e7f83", null ],
+    [ "plotSize", "cdocrip_8h.html#a22abecad7e644d10133c3dfc73c9c8a0", null ],
+    [ "placeRect", "cdocrip_8h.html#a1cce625ccfe4ede7af3114742874878d", null ],
+    [ "cropRect", "cdocrip_8h.html#a6a67d77baa0d01b3e8797be00d8120c2", null ],
+    [ "clipRect", "cdocrip_8h.html#affdf04d4148584c6541513a60fffaa54", null ],
+    [ "draftFlags", "cdocrip_8h.html#ae8cbee35351ef60a767369a16c775006", null ],
+    [ "with_alpha", "cdocrip_8h.html#a32529282f6266445b5ea172563b723bf", null ],
+    [ "clear_background", "cdocrip_8h.html#a6ac177df10a8709db72134d10820e574", null ],
+    [ "white_wash", "cdocrip_8h.html#adc5c79f7c7813184419501965e0d3eb8", null ],
+    [ "enable_overprint", "cdocrip_8h.html#aec78b99f725ef627ce82cc1f59b95020", null ],
+    [ "useMemoryMappedFile", "cdocrip_8h.html#a33a0c38a9e46af7305bb9d173ddc7f7e", null ],
+    [ "image", "cdocrip_8h.html#a22d72d67c6770084ab67482ad21a9c6a", null ],
+    [ "unicodeCB", "cdocrip_8h.html#a5be51d73052f5ed4f59126b93cf267ae", null ],
+    [ "unicodeParm", "cdocrip_8h.html#aaa7a093631183380e776fa36eda08fe8", null ],
+    [ "progressCB", "cdocrip_8h.html#aad5495d11f65c87729030cfe19b16f8f", null ],
+    [ "progressParm", "cdocrip_8h.html#abec66208504432f99362472fafb4c1b7", null ],
+    [ "tickleEvery", "cdocrip_8h.html#a18eee0b7f9ebc2a622f7e415bc84b04a", null ]
+];
