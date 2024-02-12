@@ -1,0 +1,13 @@
+<map id="IImageTargetFactory" name="IImageTargetFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="320,63,460,88"/>
+<area shape="rect" id="node4" href="$struct_i_f_fs_image_target_factory.html" title=" " alt="" coords="513,9,676,35"/>
+<area shape="rect" id="node6" href="$struct_i_image_buffer_target_factory.html" title=" " alt="" coords="508,63,681,88"/>
+<area shape="rect" id="node11" href="$struct_i_size_image_target_factory.html" title=" " alt="" coords="511,112,678,137"/>
+<area shape="rect" id="node2" href="$struct_i_image_factory.html" title=" " alt="" coords="168,63,272,88"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,63,120,88"/>
+<area shape="rect" id="node5" href="$struct_i_jpeg_image_target_factory.html" title=" " alt="" coords="743,5,909,31"/>
+<area shape="rect" id="node7" href="$struct_i_mirror_image_buffer_target_factory.html" title=" " alt="" coords="745,55,907,95"/>
+<area shape="rect" id="node8" href="$struct_i_rot_image_buffer_target_factory.html" title=" " alt="" coords="729,120,923,145"/>
+<area shape="rect" id="node9" href="$struct_i_i_b_t___rot90_bytes___factory.html" title=" " alt="" coords="971,95,1141,120"/>
+<area shape="rect" id="node10" href="$struct_i_i_b_t___rot90_mono___factory.html" title=" " alt="" coords="972,144,1140,169"/>
+</map>

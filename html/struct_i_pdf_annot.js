@@ -1,0 +1,26 @@
+var struct_i_pdf_annot =
+[
+    [ "pushkid", "struct_i_pdf_annot.html#a88045487d71ff81af3bb9add42f3ff83", null ],
+    [ "FirstChild", "struct_i_pdf_annot.html#a2d8c24aa15680577812ef4f4399f3e89", null ],
+    [ "NextSibling", "struct_i_pdf_annot.html#a84857655aaaf6725b3181acb70b8f969", null ],
+    [ "Hide", "struct_i_pdf_annot.html#a8e6516936a91d817b2211102ac0ea44e", null ],
+    [ "Show", "struct_i_pdf_annot.html#a61825dbd188ce8e3273b297e7cc665eb", null ],
+    [ "GetNM", "struct_i_pdf_annot.html#a485a34cecc8fb02664a4f4d10974c87c", null ],
+    [ "GetType", "struct_i_pdf_annot.html#ae61b14b75e24d961a4ee8d356f4551d8", null ],
+    [ "GetRect", "struct_i_pdf_annot.html#a6863321524b3506762fc40710d58da9a", null ],
+    [ "GetRotRect", "struct_i_pdf_annot.html#ad21e69dba7b67a7bb6a0a29ec5396938", null ],
+    [ "GetRenderMatrix", "struct_i_pdf_annot.html#ad6eb6ef84f8e2e20631492cf8a5c0d32", null ],
+    [ "GetContents", "struct_i_pdf_annot.html#adfb6e43cb2617dc2d5f754b263b4d493", null ],
+    [ "GetTitle", "struct_i_pdf_annot.html#a293fdf3cd58689620b466e434d4dd0cf", null ],
+    [ "GetDictionary", "struct_i_pdf_annot.html#aa81a2b01044a14b425e5d06d784738a6", null ],
+    [ "GetAppearance", "struct_i_pdf_annot.html#a0fdc8e7a93f7bd28058de0ce69a0e6fc", null ],
+    [ "CreateAppearance", "struct_i_pdf_annot.html#a1709f335fefcac4f74e9c2c57fd728db", null ],
+    [ "GetAction", "struct_i_pdf_annot.html#a78171281fcf4cfb56d9ccc1462b2bc5d", null ],
+    [ "GetActionType", "struct_i_pdf_annot.html#ade3289484a17cf3002e36c2362491ad1", null ],
+    [ "GetActionDictionary", "struct_i_pdf_annot.html#a32712843f07b1b5464a11506a1d1c9cf", null ],
+    [ "AsLink", "struct_i_pdf_annot.html#a31faa3e5bcb67de773409db3683518c9", null ],
+    [ "GetFlags", "struct_i_pdf_annot.html#aaed13c1d3646bc23ce8b458b3669fa7a", null ],
+    [ "IsVisible", "struct_i_pdf_annot.html#a151862a241c6d4025d18c795018e82f0", null ],
+    [ "IsPrintable", "struct_i_pdf_annot.html#a5b7666a02f01b45970a9a8c43098bf72", null ],
+    [ "AcrobatWillOverride", "struct_i_pdf_annot.html#a11f707f48298995dd2215018941fa27c", null ]
+];

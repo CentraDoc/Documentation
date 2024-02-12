@@ -1,0 +1,8 @@
+<map id="RIPTargetSpec" name="RIPTargetSpec">
+<area shape="rect" id="node1" title="Define the page image target." alt="" coords="126,211,235,236"/>
+<area shape="rect" id="node2" href="$imaging_8h.html#struct_image_info" title="everything you need to know about an image" alt="" coords="28,93,123,119"/>
+<area shape="rect" id="node3" href="$class_clr.html" title="ref Clr, IClr, IClrFactory and the C API starting with Clr_ in gfx/clr.h" alt="" coords="5,5,44,31"/>
+<area shape="rect" id="node4" href="$class_image.html" title="Image returns ImageInfo and can cast to something else but doesn&#39;t do much otherwise." alt="" coords="99,5,156,31"/>
+<area shape="rect" id="node5" href="$cdocrip_8h.html#struct_i_r_e_c_t__" title="Integer RECTangle." alt="" coords="147,93,214,119"/>
+<area shape="rect" id="node6" href="$class_image_buffer.html" title="ref ImageBuffer, IImageBuffer, IImageBufferFactory and the C API starting with ImageBuffer_ in gfx/im..." alt="" coords="238,93,329,119"/>
+</map>

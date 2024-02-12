@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['basecolor_0',['BaseColor',['../struct_i_clr.html#a53f93fdafadb4b0039c96b3bc485afdc',1,'IClr']]],
+  ['bbox_1',['BBox',['../struct_i_pdf_factory.html#a879d16f162c7399ec7dde0118c35d861',1,'IPdfFactory']]],
+  ['beginappearance_2',['BeginAppearance',['../struct_i_pdf.html#a32ee727bf3aa5ebbe87dfdc33f644a73',1,'IPdf']]],
+  ['beginchar_3',['BeginChar',['../struct_i_t1_gen.html#a740276fc2874c72ad454f6835a507cd5',1,'IT1Gen']]],
+  ['begincharsbw_4',['BeginCharSBW',['../struct_i_t1_gen.html#a3968a35adcb70e9b61ab4a5767846a55',1,'IT1Gen']]],
+  ['begincolort3glyph_5',['BeginColorT3Glyph',['../struct_i_pdf.html#af4107d6a07e58db7cb8b9aef006f56b7',1,'IPdf']]],
+  ['beginform_6',['BeginForm',['../struct_i_pdf.html#aa726748ca557f6ed05f4017fafc3357a',1,'IPdf']]],
+  ['begingroup_7',['BeginGroup',['../struct_i_pdf.html#aa640623120ba2e22dab77eb75c7fab97',1,'IPdf']]],
+  ['begingroupex_8',['BeginGroupEx',['../struct_i_pdf.html#a5f08b6673d29241b57cc4345bc1fce44',1,'IPdf']]],
+  ['beginmarkedcontent_9',['BeginMarkedContent',['../struct_i_pdf.html#a4fcd8c5e4f0698430343ede84922d361',1,'IPdf']]],
+  ['beginpage_10',['BeginPage',['../struct_i_pdf.html#a0da7a4c20f73f1f9a9dfc0be7c1bf9b1',1,'IPdf']]],
+  ['beginpattern_11',['BeginPattern',['../struct_i_pdf.html#a9a09211946de66654ac2526e8b5ff00d',1,'IPdf']]],
+  ['beginpatternex_12',['BeginPatternEx',['../struct_i_pdf.html#a8510b72b481535f1118c2e27498c4ce2',1,'IPdf']]],
+  ['beginsoftmask_13',['BeginSoftMask',['../struct_i_pdf.html#a58fe159bdd5557df684cc09ec6c19bd9',1,'IPdf']]],
+  ['beginsoftmaskex_14',['BeginSoftMaskEx',['../struct_i_pdf.html#a3efc2f11c1bc054d59f5f6f36cefdd39',1,'IPdf']]],
+  ['beginstencilpattern_15',['BeginStencilPattern',['../struct_i_pdf.html#ae347a01566227c3975a3d258d9c98660',1,'IPdf']]],
+  ['beginstencilpatternex_16',['BeginStencilPatternEx',['../struct_i_pdf.html#a12c6a781f09d8dc812122b9644d83a8d',1,'IPdf']]],
+  ['beginstencilt3glyph_17',['BeginStencilT3Glyph',['../struct_i_pdf.html#aaef47dc2e29afda861cf7faf23dec272',1,'IPdf']]],
+  ['begint1font_18',['BeginT1Font',['../struct_i_pdf.html#ae82f75ea0658d5e547b74da54b0ec421',1,'IPdf']]],
+  ['begintrianglemesh_19',['BeginTriangleMesh',['../struct_i_pdf.html#a2e13e4462ab1a871f32e896d2e14f2d9',1,'IPdf']]],
+  ['bestmodel_20',['BestModel',['../struct_i_clr.html#adecf04b40b65bcf3af1477fbf93cd3c2',1,'IClr']]],
+  ['bindclass_21',['BINDCLASS',['../gcoutils_8h.html#af5b7eae492cc39080462edc40717c65d',1,'gcoutils.h']]],
+  ['bitmapsavailable_22',['BitmapsAvailable',['../struct_i_fnt.html#a7a59312633af8a591246c386407abce7',1,'IFnt']]],
+  ['bufferinfo_23',['BufferInfo',['../struct_i_f_fs_buf.html#a54bdcdf37fde4c008ed137a722b9d18a',1,'IFFsBuf']]]
+];

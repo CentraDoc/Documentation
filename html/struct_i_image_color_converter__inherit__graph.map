@@ -1,0 +1,9 @@
+<map id="IImageColorConverter" name="IImageColorConverter">
+<area shape="rect" id="node1" title=" " alt="" coords="19,372,163,397"/>
+<area shape="rect" id="node7" href="$struct_i_icc_lab_to_cie_lab_converter.html" title=" " alt="" coords="5,445,176,471"/>
+<area shape="rect" id="node2" href="$struct_i_image_source_row.html" title=" " alt="" coords="27,299,154,324"/>
+<area shape="rect" id="node3" href="$struct_i_image_source_filter.html" title=" " alt="" coords="25,225,156,251"/>
+<area shape="rect" id="node4" href="$struct_i_image_source.html" title=" " alt="" coords="40,152,141,177"/>
+<area shape="rect" id="node5" href="$struct_i_image.html" title=" " alt="" coords="61,79,121,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="55,5,126,31"/>
+</map>

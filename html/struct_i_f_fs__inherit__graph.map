@@ -1,0 +1,42 @@
+<map id="IFFs" name="IFFs">
+<area shape="rect" id="node1" title=" " alt="" coords="124,400,172,425"/>
+<area shape="rect" id="node3" href="$struct_i_f_fs_buf.html" title=" " alt="" coords="235,55,302,80"/>
+<area shape="rect" id="node6" href="$struct_i_f_fs_chain.html" title=" " alt="" coords="228,301,309,327"/>
+<area shape="rect" id="node7" href="$struct_i_f_fs_filter.html" title=" " alt="" coords="230,351,307,376"/>
+<area shape="rect" id="node35" href="$struct_i_f_fs_m_map.html" title=" " alt="" coords="227,400,311,425"/>
+<area shape="rect" id="node36" href="$struct_i_f_fs_o_s.html" title=" " alt="" coords="235,449,302,475"/>
+<area shape="rect" id="node39" href="$struct_i_f_fs_seek_rel.html" title=" " alt="" coords="220,499,317,524"/>
+<area shape="rect" id="node40" href="$struct_i_f_fs_tee.html" title=" " alt="" coords="234,548,303,573"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,400,76,425"/>
+<area shape="rect" id="node4" href="$struct_i_f_fs_buf_c_s_a.html" title=" " alt="" coords="372,5,467,31"/>
+<area shape="rect" id="node5" href="$struct_i_f_fs_rsd.html" title=" " alt="" coords="384,55,455,80"/>
+<area shape="rect" id="node8" href="$struct_i_f_fs_base64.html" title=" " alt="" coords="373,104,465,129"/>
+<area shape="rect" id="node9" href="$struct_i_f_fs_byte_swap.html" title=" " alt="" coords="366,153,473,179"/>
+<area shape="rect" id="node10" href="$struct_i_f_fs_d_i_b.html" title=" " alt="" coords="385,203,454,228"/>
+<area shape="rect" id="node12" href="$struct_i_f_fs_invert.html" title=" " alt="" coords="380,252,459,277"/>
+<area shape="rect" id="node13" href="$struct_i_f_fs_pad.html" title=" " alt="" coords="384,301,455,327"/>
+<area shape="rect" id="node14" href="$struct_i_f_fs_pass_thru.html" title=" " alt="" coords="368,351,471,376"/>
+<area shape="rect" id="node15" href="$struct_i_f_fs_png_chunk.html" title=" " alt="" coords="365,400,473,425"/>
+<area shape="rect" id="node16" href="$struct_i_f_fs_png_file.html" title=" " alt="" coords="373,449,465,475"/>
+<area shape="rect" id="node17" href="$struct_i_f_fs_tap.html" title=" " alt="" coords="385,499,454,524"/>
+<area shape="rect" id="node18" href="$struct_i_f_fs_utf16.html" title=" " alt="" coords="380,548,459,573"/>
+<area shape="rect" id="node19" href="$struct_i_f_fsw_e_o_d.html" title=" " alt="" coords="377,597,462,623"/>
+<area shape="rect" id="node11" href="$struct_i_f_fs_d_i_b_e_m_f.html" title=" " alt="" coords="527,203,624,228"/>
+<area shape="rect" id="node20" href="$struct_i_f_fs85.html" title=" " alt="" coords="544,252,607,277"/>
+<area shape="rect" id="node21" href="$struct_i_f_fs_ccitt.html" title=" " alt="" coords="538,301,613,327"/>
+<area shape="rect" id="node22" href="$struct_i_f_fs_e_exec_out.html" title=" " alt="" coords="521,351,629,376"/>
+<area shape="rect" id="node23" href="$struct_i_f_fs_flate.html" title=" " alt="" coords="537,400,614,425"/>
+<area shape="rect" id="node24" href="$struct_i_f_fs_gif.html" title=" " alt="" coords="543,449,607,475"/>
+<area shape="rect" id="node25" href="$struct_i_f_fs_gif_data.html" title=" " alt="" coords="530,499,621,524"/>
+<area shape="rect" id="node26" href="$struct_i_f_fs_hex.html" title=" " alt="" coords="540,548,611,573"/>
+<area shape="rect" id="node27" href="$struct_i_f_fs_jpeg.html" title=" " alt="" coords="538,597,613,623"/>
+<area shape="rect" id="node28" href="$struct_i_f_fs_lzw.html" title=" " alt="" coords="540,647,611,672"/>
+<area shape="rect" id="node29" href="$struct_i_f_fs_mask.html" title=" " alt="" coords="535,696,615,721"/>
+<area shape="rect" id="node30" href="$struct_i_f_fs_png_pre.html" title=" " alt="" coords="530,745,621,771"/>
+<area shape="rect" id="node31" href="$struct_i_f_fs_rlc.html" title=" " alt="" coords="542,795,609,820"/>
+<area shape="rect" id="node32" href="$struct_i_f_fs_sub.html" title=" " alt="" coords="540,844,611,869"/>
+<area shape="rect" id="node33" href="$struct_i_f_fs_tiff.html" title=" " alt="" coords="543,893,607,919"/>
+<area shape="rect" id="node34" href="$struct_i_f_fs_tiff_p2.html" title=" " alt="" coords="535,943,615,968"/>
+<area shape="rect" id="node37" href="$struct_i_f_fs_base.html" title=" " alt="" coords="380,820,459,845"/>
+<area shape="rect" id="node38" href="$struct_i_f_fs_std.html" title=" " alt="" coords="541,992,609,1017"/>
+</map>

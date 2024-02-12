@@ -1,0 +1,25 @@
+var pdfannot_8h_struct_pdf_free_text_parms =
+[
+    [ "colorModel", "pdfannot_8h.html#afdca2635a03c32314df931bd9e14da06", null ],
+    [ "rect", "pdfannot_8h.html#a571fc2508afd4aed1d7a739ac0320416", null ],
+    [ "contents", "pdfannot_8h.html#ade3216a3c76280473a88a1769da8511d", null ],
+    [ "richText", "pdfannot_8h.html#acd016299a215a410a7865abe538c5c9e", null ],
+    [ "name", "pdfannot_8h.html#a1bb39cc54c33fa0d09abf2d6dd1b50a8", null ],
+    [ "canPrint", "pdfannot_8h.html#abb8ea47356e4ff9de97b6bd88f2e2c1e", null ],
+    [ "borderLineWidth", "pdfannot_8h.html#aab36a6c173d47d03528b57b6abc41c98", null ],
+    [ "borderStyle", "pdfannot_8h.html#a0ac50d0fc2a258da999c6abeabc4fced", null ],
+    [ "backColor", "pdfannot_8h.html#a060b25a9ef58e7e807b08b0700095fc0", null ],
+    [ "author", "pdfannot_8h.html#a7492a998fc25c9b8ba6c9fb47092f782", null ],
+    [ "alpha", "pdfannot_8h.html#ad9267ba7b0e085fd47b1d423da6a0c23", null ],
+    [ "subject", "pdfannot_8h.html#a1fab4b1087c01310326858dd67bd75db", null ],
+    [ "fontHandle", "pdfannot_8h.html#ac399c887f7d9be9365b835b228b845f9", null ],
+    [ "fontName", "pdfannot_8h.html#a9aab5482e282461bba7d4c04a6f78d40", null ],
+    [ "fontSize", "pdfannot_8h.html#a32eb16cd60605ce6ac695172d91368ef", null ],
+    [ "foreColor", "pdfannot_8h.html#a0d8fb7109bf2e63f98323552ca2d70b0", null ],
+    [ "justify", "pdfannot_8h.html#a49174efb097534596f86b8dbc70d73aa", null ],
+    [ "defaultStyle", "pdfannot_8h.html#af201394404fcd36fb3933dfdadd07883", null ],
+    [ "callout", "pdfannot_8h.html#ae54b08354c031ca66dfd3fdad99f8fe8", null ],
+    [ "cloudy", "pdfannot_8h.html#ace125299fc9057f12462024729134ce4", null ],
+    [ "rotate", "pdfannot_8h.html#a9efbb40de94a531f88b62a066863464b", null ],
+    [ "noAppearance", "pdfannot_8h.html#af6fb8b2d7f1b0a6a1fd0ee988a3d2425", null ]
+];

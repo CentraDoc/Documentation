@@ -1,0 +1,28 @@
+var struct_i_pdf_item =
+[
+    [ "GetDocument", "struct_i_pdf_item.html#a176492fd2d204d1c88f7072b3b92bbe0", null ],
+    [ "GetContainer", "struct_i_pdf_item.html#a210018a9b361bc42fd9c16da64ea84a1", null ],
+    [ "Indirect", "struct_i_pdf_item.html#ae1a907ff13e495d53a1612fcbc85842a", null ],
+    [ "Generation", "struct_i_pdf_item.html#ad7461cd3cf632af4c6678ba00b336a6b", null ],
+    [ "IsNull", "struct_i_pdf_item.html#a0fbee167a61864ef3d6512b0ce83c09b", null ],
+    [ "AsIndirect", "struct_i_pdf_item.html#a96c56e49b0894bee28a54a983d163f28", null ],
+    [ "AsBoolean", "struct_i_pdf_item.html#a3fd6166bb2903dc2dd70fa5244e15a60", null ],
+    [ "AsInteger", "struct_i_pdf_item.html#a50bbdbbb28f4f1dc60a5b7a9a8ead642", null ],
+    [ "AsDecimal", "struct_i_pdf_item.html#a4c6b385e7a6dabdddbbd88a2794f4b2e", null ],
+    [ "AsString", "struct_i_pdf_item.html#a1c81c3a22923833d3194bfce926641a4", null ],
+    [ "AsName", "struct_i_pdf_item.html#a9c55b770f68335a3245bcd147fe21cf6", null ],
+    [ "AsArray", "struct_i_pdf_item.html#a0c364274880c5e492ca9b4e0099694a9", null ],
+    [ "AsDictionary", "struct_i_pdf_item.html#a09e66a4114514ab4bc581890381a3a8c", null ],
+    [ "AsStream", "struct_i_pdf_item.html#a015f0082ce576ebc1c367009f5ff079e", null ],
+    [ "Changed", "struct_i_pdf_item.html#a8f40c22ea4226aae3a5adb69e1c5dec9", null ],
+    [ "Updated", "struct_i_pdf_item.html#a151e5e063203e8db97a342575b0f5e42", null ],
+    [ "Delete", "struct_i_pdf_item.html#a71c1589c6f0b76dd9c9eee24ee36c711", null ],
+    [ "Store", "struct_i_pdf_item.html#aab287fc3eda5d59c6ab95c53aa3b683a", null ],
+    [ "SubStore", "struct_i_pdf_item.html#a799792a861b334a1dd972c5c1fd6ea58", null ],
+    [ "Write", "struct_i_pdf_item.html#a39b81350983f8d711242032ad75e98a4", null ],
+    [ "Undefer", "struct_i_pdf_item.html#af7ef6f24377b8b3babd60a30e6f5fa73", null ],
+    [ "Redefer", "struct_i_pdf_item.html#a4d98b7d297524c16c97a8bab93402e67", null ],
+    [ "MakeIndirect", "struct_i_pdf_item.html#a55e949a85b27bc9101af9b16328418e6", null ],
+    [ "Unload", "struct_i_pdf_item.html#a98034ba5951c72f027dbd874af90240d", null ],
+    [ "Copy", "struct_i_pdf_item.html#aa85557b05578e9f3cf153a4c8a85ffa2", null ]
+];

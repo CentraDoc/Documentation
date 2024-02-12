@@ -1,0 +1,42 @@
+<map id="IFFsFactory" name="IFFsFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="168,400,260,425"/>
+<area shape="rect" id="node3" href="$struct_i_f_fs_buf_factory.html" title=" " alt="" coords="323,55,434,80"/>
+<area shape="rect" id="node6" href="$struct_i_f_fs_chain_factory.html" title=" " alt="" coords="316,301,441,327"/>
+<area shape="rect" id="node7" href="$struct_i_f_fs_filter_factory.html" title=" " alt="" coords="318,351,439,376"/>
+<area shape="rect" id="node35" href="$struct_i_f_fs_m_map_factory.html" title=" " alt="" coords="315,400,443,425"/>
+<area shape="rect" id="node36" href="$struct_i_f_fs_o_s_factory.html" title=" " alt="" coords="323,449,434,475"/>
+<area shape="rect" id="node39" href="$struct_i_f_fs_seek_rel_factory.html" title=" " alt="" coords="308,499,449,524"/>
+<area shape="rect" id="node40" href="$struct_i_f_fs_tee_factory.html" title=" " alt="" coords="322,548,435,573"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,400,120,425"/>
+<area shape="rect" id="node4" href="$struct_i_f_fs_buf_c_s_a_factory.html" title=" " alt="" coords="504,5,643,31"/>
+<area shape="rect" id="node5" href="$struct_i_f_fs_rsd_factory.html" title=" " alt="" coords="516,55,631,80"/>
+<area shape="rect" id="node8" href="$struct_i_f_fs_base64_factory.html" title=" " alt="" coords="505,104,641,129"/>
+<area shape="rect" id="node9" href="$struct_i_f_fs_byte_swap_factory.html" title=" " alt="" coords="498,153,649,179"/>
+<area shape="rect" id="node10" href="$struct_i_f_fs_d_i_b_factory.html" title=" " alt="" coords="517,203,630,228"/>
+<area shape="rect" id="node12" href="$struct_i_f_fs_invert_factory.html" title=" " alt="" coords="512,252,635,277"/>
+<area shape="rect" id="node13" href="$struct_i_f_fs_pad_factory.html" title=" " alt="" coords="516,301,631,327"/>
+<area shape="rect" id="node14" href="$struct_i_f_fs_pass_thru_factory.html" title=" " alt="" coords="500,351,647,376"/>
+<area shape="rect" id="node15" href="$struct_i_f_fs_png_chunk_factory.html" title=" " alt="" coords="497,400,649,425"/>
+<area shape="rect" id="node16" href="$struct_i_f_fs_png_file_factory.html" title=" " alt="" coords="505,449,641,475"/>
+<area shape="rect" id="node17" href="$struct_i_f_fs_tap_factory.html" title=" " alt="" coords="517,499,630,524"/>
+<area shape="rect" id="node18" href="$struct_i_f_fs_utf16_factory.html" title=" " alt="" coords="512,548,635,573"/>
+<area shape="rect" id="node19" href="$struct_i_f_fsw_e_o_d_factory.html" title=" " alt="" coords="509,597,638,623"/>
+<area shape="rect" id="node11" href="$struct_i_f_fs_d_i_b_e_m_f_factory.html" title=" " alt="" coords="703,203,844,228"/>
+<area shape="rect" id="node20" href="$struct_i_f_fs85_factory.html" title=" " alt="" coords="720,252,827,277"/>
+<area shape="rect" id="node21" href="$struct_i_f_fs_ccitt_factory.html" title=" " alt="" coords="714,301,833,327"/>
+<area shape="rect" id="node22" href="$struct_i_f_fs_e_exec_out_factory.html" title=" " alt="" coords="697,351,849,376"/>
+<area shape="rect" id="node23" href="$struct_i_f_fs_flate_factory.html" title=" " alt="" coords="713,400,834,425"/>
+<area shape="rect" id="node24" href="$struct_i_f_fs_gif_data_factory.html" title=" " alt="" coords="706,449,841,475"/>
+<area shape="rect" id="node25" href="$struct_i_f_fs_gif_factory.html" title=" " alt="" coords="719,499,827,524"/>
+<area shape="rect" id="node26" href="$struct_i_f_fs_hex_factory.html" title=" " alt="" coords="716,548,831,573"/>
+<area shape="rect" id="node27" href="$struct_i_f_fs_jpeg_factory.html" title=" " alt="" coords="714,597,833,623"/>
+<area shape="rect" id="node28" href="$struct_i_f_fs_lzw_factory.html" title=" " alt="" coords="716,647,831,672"/>
+<area shape="rect" id="node29" href="$struct_i_f_fs_mask_factory.html" title=" " alt="" coords="711,696,835,721"/>
+<area shape="rect" id="node30" href="$struct_i_f_fs_png_pre_factory.html" title=" " alt="" coords="706,745,841,771"/>
+<area shape="rect" id="node31" href="$struct_i_f_fs_rlc_factory.html" title=" " alt="" coords="718,795,829,820"/>
+<area shape="rect" id="node32" href="$struct_i_f_fs_sub_factory.html" title=" " alt="" coords="716,844,831,869"/>
+<area shape="rect" id="node33" href="$struct_i_f_fs_tiff_factory.html" title=" " alt="" coords="719,893,827,919"/>
+<area shape="rect" id="node34" href="$struct_i_f_fs_tiff_p2_factory.html" title=" " alt="" coords="711,943,835,968"/>
+<area shape="rect" id="node37" href="$struct_i_f_fs_base_factory.html" title=" " alt="" coords="512,820,635,845"/>
+<area shape="rect" id="node38" href="$struct_i_f_fs_std_factory.html" title=" " alt="" coords="717,992,829,1017"/>
+</map>

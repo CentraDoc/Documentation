@@ -1,0 +1,10 @@
+<map id="IImageBufferTargetFactory" name="IImageBufferTargetFactory">
+<area shape="rect" id="node1" title=" " alt="" coords="101,225,275,251"/>
+<area shape="rect" id="node5" href="$struct_i_mirror_image_buffer_target_factory.html" title=" " alt="" coords="5,299,168,339"/>
+<area shape="rect" id="node6" href="$struct_i_rot_image_buffer_target_factory.html" title=" " alt="" coords="193,306,386,331"/>
+<area shape="rect" id="node2" href="$struct_i_image_target_factory.html" title=" " alt="" coords="118,152,258,177"/>
+<area shape="rect" id="node3" href="$struct_i_image_factory.html" title=" " alt="" coords="136,79,240,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="131,5,245,31"/>
+<area shape="rect" id="node7" href="$struct_i_i_b_t___rot90_bytes___factory.html" title=" " alt="" coords="108,387,279,412"/>
+<area shape="rect" id="node8" href="$struct_i_i_b_t___rot90_mono___factory.html" title=" " alt="" coords="303,387,471,412"/>
+</map>

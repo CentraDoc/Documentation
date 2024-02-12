@@ -1,0 +1,10 @@
+<map id="IImageBufferTarget" name="IImageBufferTarget">
+<area shape="rect" id="node1" title=" " alt="" coords="111,225,241,251"/>
+<area shape="rect" id="node5" href="$struct_i_mirror_image_buffer_target.html" title=" " alt="" coords="5,299,168,324"/>
+<area shape="rect" id="node6" href="$struct_i_rot_image_buffer_target.html" title=" " alt="" coords="192,299,341,324"/>
+<area shape="rect" id="node2" href="$struct_i_image_target.html" title=" " alt="" coords="128,152,224,177"/>
+<area shape="rect" id="node3" href="$struct_i_image.html" title=" " alt="" coords="146,79,206,104"/>
+<area shape="rect" id="node4" title=" " alt="" coords="141,5,211,31"/>
+<area shape="rect" id="node7" href="$struct_i_i_b_t___rot90_bytes__.html" title=" " alt="" coords="129,372,255,397"/>
+<area shape="rect" id="node8" href="$struct_i_i_b_t___rot90_mono__.html" title=" " alt="" coords="279,372,403,397"/>
+</map>

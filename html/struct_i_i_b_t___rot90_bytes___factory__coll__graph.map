@@ -1,0 +1,8 @@
+<map id="IIBT_Rot90Bytes_Factory" name="IIBT_Rot90Bytes_Factory">
+<area shape="rect" id="node1" title=" " alt="" coords="17,372,187,397"/>
+<area shape="rect" id="node2" href="$struct_i_rot_image_buffer_target_factory.html" title=" " alt="" coords="5,299,199,324"/>
+<area shape="rect" id="node3" href="$struct_i_image_buffer_target_factory.html" title=" " alt="" coords="15,225,189,251"/>
+<area shape="rect" id="node4" href="$struct_i_image_target_factory.html" title=" " alt="" coords="32,152,172,177"/>
+<area shape="rect" id="node5" href="$struct_i_image_factory.html" title=" " alt="" coords="50,79,154,104"/>
+<area shape="rect" id="node6" title=" " alt="" coords="45,5,159,31"/>
+</map>

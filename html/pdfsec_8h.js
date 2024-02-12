@@ -1,0 +1,25 @@
+var pdfsec_8h =
+[
+    [ "PdfSec", "class_pdf_sec.html", null ],
+    [ "PdfSecClass", "class_pdf_sec_class.html", null ],
+    [ "IPdfSec", "struct_i_pdf_sec.html", "struct_i_pdf_sec" ],
+    [ "IPdfSecFactory", "struct_i_pdf_sec_factory.html", "struct_i_pdf_sec_factory" ],
+    [ "GetIPdfSecFactory", "pdfsec_8h.html#ad8c286609eef338e62d9fe4618afc1df", null ],
+    [ "PdfSecPtr", "pdfsec_8h.html#ab50aebf67e23ef80058a538780f869c0", null ],
+    [ "PdfSec_New", "pdfsec_8h.html#a17b7e107e4b37c97fe82395777de13b6", null ],
+    [ "PdfSec_Create", "pdfsec_8h.html#a494ccd8b5b9d6f6801f14c1ed2fe0369", null ],
+    [ "PdfSec_IsValidUser", "pdfsec_8h.html#ae18bb0b52950a3c353257acf08998d59", null ],
+    [ "PdfSec_IsValidOwner", "pdfsec_8h.html#ad634903c539eaf7b21c650a2e610976b", null ],
+    [ "PdfSec_Authorize", "pdfsec_8h.html#aa2baf6e0fbe3747037535ec702902940", null ],
+    [ "PdfSec_CurrentPermissions", "pdfsec_8h.html#a89c161cd7e2b194752c69d83d1f21be1", null ],
+    [ "PdfSec_GetKey", "pdfsec_8h.html#a06386c99c957235dd9a3c0a362fa6309", null ],
+    [ "PdfSec_GetFlags", "pdfsec_8h.html#aea2860939f193935cf877860faf9f143", null ],
+    [ "PdfSec_DecryptString", "pdfsec_8h.html#a8b23e282990ae9bb4d4bf88238bfe428", null ],
+    [ "PdfSec_DecryptStream", "pdfsec_8h.html#a42771d52b1a6d6f19f925b85105af8b2", null ],
+    [ "PdfSec_EncryptString", "pdfsec_8h.html#ae5968aa5d0b37473a0bce2e9f51851b4", null ],
+    [ "PdfSec_EncryptStream", "pdfsec_8h.html#ac23b6b0b5b3239d385f29bd0f67fc91e", null ],
+    [ "PdfSec_ChangePermissions", "pdfsec_8h.html#ade0953a0ca3e83b3575ab5e91d351461", null ],
+    [ "PdfSec_AttachmentsOnly", "pdfsec_8h.html#a21fdd4cb95782082b08af2e522e29aa1", null ],
+    [ "PdfSecAsIPdfSec", "pdfsec_8h.html#a1bb7a5c12cdfb7a05ac77c9ee0e2236a", null ],
+    [ "IPdfSecAsPdfSec", "pdfsec_8h.html#affb8f8414ee1a49183ee9f004ccd7f31", null ]
+];

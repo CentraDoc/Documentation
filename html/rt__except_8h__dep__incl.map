@@ -1,0 +1,24 @@
+<map id="gco/rt_except.h" name="gco/rt_except.h">
+<area shape="rect" id="node1" title=" " alt="" coords="335,5,447,31"/>
+<area shape="rect" id="node2" href="$rt__utils_8h.html" title=" " alt="" coords="343,79,440,104"/>
+<area shape="rect" id="node3" href="$gcobase_8h.html" title="gcobase contains the root class Generic, numerous support functions are in gcoutils...." alt="" coords="338,152,445,177"/>
+<area shape="rect" id="node4" href="$dirfiles_8h.html" title=" " alt="" coords="5,225,92,251"/>
+<area shape="rect" id="node5" href="$clr_8h.html" title=" " alt="" coords="168,225,236,251"/>
+<area shape="rect" id="node6" href="$imaging_8h.html" title="Imaging &#45; encapsulate images and image operations." alt="" coords="117,299,215,324"/>
+<area shape="rect" id="node9" href="$fnt_8h.html" title=" " alt="" coords="260,225,328,251"/>
+<area shape="rect" id="node10" href="$pdf_8h.html" title="Pdf High Level interface." alt="" coords="393,299,485,324"/>
+<area shape="rect" id="node17" href="$pdfannot_8h.html" title=" " alt="" coords="293,372,417,397"/>
+<area shape="rect" id="node18" href="$pdfdoc_8h.html" title=" " alt="" coords="455,225,568,251"/>
+<area shape="rect" id="node19" href="$pdftree_8h.html" title=" " alt="" coords="699,299,814,324"/>
+<area shape="rect" id="node21" href="$pdfsec_8h.html" title=" " alt="" coords="644,225,757,251"/>
+<area shape="rect" id="node22" href="$pvsdk_8h.html" title="PreviewSDK &#45; simplified DLL interface" alt="" coords="781,225,884,251"/>
+<area shape="rect" id="node7" href="$imagebuf_8h.html" title=" " alt="" coords="17,372,123,397"/>
+<area shape="rect" id="node8" href="$cdocrip_8h.html" title="CDocRIP &#45; simplified RIP interface" alt="" coords="147,372,241,397"/>
+<area shape="rect" id="node11" href="$pdfrw_8h.html" title=" " alt="" coords="481,372,587,397"/>
+<area shape="rect" id="node12" href="$pdfcreate1_8c.html" title=" " alt="" coords="258,445,453,471"/>
+<area shape="rect" id="node13" href="$pdflayers_8c.html" title=" " alt="" coords="47,445,234,471"/>
+<area shape="rect" id="node14" href="$pdftrimesh_8c.html" title=" " alt="" coords="477,445,671,471"/>
+<area shape="rect" id="node15" href="$pdftype1font_8c.html" title=" " alt="" coords="695,445,901,471"/>
+<area shape="rect" id="node16" href="$pdftype3font_8c.html" title=" " alt="" coords="925,445,1130,471"/>
+<area shape="rect" id="node20" href="$pdfupd_8h.html" title=" " alt="" coords="561,299,675,324"/>
+</map>

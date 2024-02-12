@@ -1,0 +1,5 @@
+<map id="ImageInfoPtr" name="ImageInfoPtr">
+<area shape="rect" id="node1" title="everything you need to know about an image" alt="" coords="28,93,123,119"/>
+<area shape="rect" id="node2" href="$class_clr.html" title="ref Clr, IClr, IClrFactory and the C API starting with Clr_ in gfx/clr.h" alt="" coords="5,5,44,31"/>
+<area shape="rect" id="node3" href="$class_image.html" title="Image returns ImageInfo and can cast to something else but doesn&#39;t do much otherwise." alt="" coords="99,5,156,31"/>
+</map>

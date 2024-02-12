@@ -1,0 +1,26 @@
+var struct_i_clr =
+[
+    [ "Equal", "struct_i_clr.html#adcfe63d0c58f6b496c683688270718a4", null ],
+    [ "Type", "struct_i_clr.html#a29b16df5d2e0cf28f3104fdfb6b6d668", null ],
+    [ "BaseColor", "struct_i_clr.html#a53f93fdafadb4b0039c96b3bc485afdc", null ],
+    [ "NComponents", "struct_i_clr.html#ae3035bdca4e399ee9e36dae2257fcd4e", null ],
+    [ "Range", "struct_i_clr.html#addde119e8c4903becfc00d76c9e8dd3b", null ],
+    [ "SetValues", "struct_i_clr.html#a49a01a4a0e8cfff4527fd98e3423d4b3", null ],
+    [ "GetValues", "struct_i_clr.html#a846991636f63772f2be20cb240c52aab", null ],
+    [ "GetBaseValues", "struct_i_clr.html#af9838a7bd991eb6209be1c4bea45c0bc", null ],
+    [ "GetFBaseValues", "struct_i_clr.html#ad6c2fa3db0d538afe9bcaeb232ad388c", null ],
+    [ "SetFValues", "struct_i_clr.html#aee04b97a31b84f2360d52598fc8fca5a", null ],
+    [ "GetFValues", "struct_i_clr.html#a413d19ac34cd2388cbfb1344133a032e", null ],
+    [ "GetFGray", "struct_i_clr.html#a0d441012f9b7e488efa97fa5ce631534", null ],
+    [ "GetFRGB", "struct_i_clr.html#a8935952dcdeef4a610234e7586aa7f27", null ],
+    [ "GetFCMYK", "struct_i_clr.html#abd8a73e5f3334be1da5139b84c7d4e09", null ],
+    [ "BestModel", "struct_i_clr.html#adecf04b40b65bcf3af1477fbf93cd3c2", null ],
+    [ "GetWhite", "struct_i_clr.html#a53662140d724692a95a9a6b30c41e1f4", null ],
+    [ "GetBlack", "struct_i_clr.html#a744ddfdf8f09ad343cfc500007dd4f34", null ],
+    [ "IsSubtractive", "struct_i_clr.html#a829fde7ad7d537b1fb754c1c1e32ed85", null ],
+    [ "IsNone", "struct_i_clr.html#aa7df089e9b14ea1fcfa3f300d5c08de7", null ],
+    [ "SetMode", "struct_i_clr.html#a7037d53e3d77d4c58bca515fd4fd70c8", null ],
+    [ "GetMode", "struct_i_clr.html#ae87816f7fcea2a6ad95cf8ab33432b5b", null ],
+    [ "GetColorants", "struct_i_clr.html#a388c0c27b4a846c68539461782c1a0ff", null ],
+    [ "getDeviceBytes", "struct_i_clr.html#a18b69484c75856cd725af5cb3fe483b1", null ]
+];

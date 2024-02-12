@@ -1,0 +1,11 @@
+<map id="IClr" name="IClr">
+<area shape="rect" id="node1" title=" " alt="" coords="218,79,259,104"/>
+<area shape="rect" id="node3" href="$struct_i_clr_cmyk.html" title=" " alt="" coords="5,152,80,177"/>
+<area shape="rect" id="node4" href="$struct_i_clr_gray.html" title=" " alt="" coords="104,152,173,177"/>
+<area shape="rect" id="node6" href="$struct_i_clr_indirect.html" title=" " alt="" coords="197,152,280,177"/>
+<area shape="rect" id="node8" href="$struct_i_clr_pat.html" title=" " alt="" coords="304,152,365,177"/>
+<area shape="rect" id="node9" href="$struct_i_clr_rgb.html" title=" " alt="" coords="389,152,453,177"/>
+<area shape="rect" id="node2" title=" " alt="" coords="203,5,274,31"/>
+<area shape="rect" id="node5" href="$struct_i_clr_none.html" title=" " alt="" coords="103,225,174,251"/>
+<area shape="rect" id="node7" href="$struct_i_clr_index.html" title=" " alt="" coords="203,225,275,251"/>
+</map>
